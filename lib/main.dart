@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'screens/Home.dart';
+import 'screens/SavedJobs.dart';
+import 'screens/Application.dart';
+import 'screens/Message.dart';
+import 'screens/Profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,11 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'JobsGo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: ''),
+      home: const MyHomePage(title: 'Flutter demo'),
     );
   }
 }
@@ -28,26 +33,49 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int currentIndex = 0;
+  final screens = [
+    Home(),
+    SavedJobs(),
+    Application(),
+    Message(),
+    Profile(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      body: IndexedStack(
+        index: currentIndex,
+        children: screens,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Hello World',
-                style: TextStyle(color: Colors.blue, fontSize: 50),
+      bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: currentIndex,
+          onTap: (index) => setState(
+                () => currentIndex = index,
               ),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_filled),
+              label: 'Home',
             ),
-          ],
-        ),
-      ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark_border),
+              label: 'Saved Jobs',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.ballot_outlined),
+              label: 'Applications',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.message_outlined),
+              label: 'Message',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.portrait),
+              label: 'Profile',
+            )
+          ]),
     );
   }
 }
