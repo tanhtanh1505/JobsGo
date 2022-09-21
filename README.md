@@ -28,4 +28,4 @@ samples, guidance on mobile development, and a full API reference.
 - Install Flutter and create the first project
 - Capture screen
 
-<img src="./lib/assets/img/helloworld.png" width="400"/>
+<img src="assets/img/helloworld.png" width="400"/>
