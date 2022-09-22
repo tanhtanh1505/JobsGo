@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/Category.dart';
 import 'package:jobsgo/component/JobCard.dart';
-import 'package:jobsgo/screens/Profile.dart';
-import '../component/AvatarWidget.dart';
+import 'package:jobsgo/helper/ColorHelper.dart';
 import '../component/SearchBar.dart';
-import '../component/TitleText.dart';
 import '../component/Advertisement.dart';
 
 class Home extends StatelessWidget {
@@ -31,7 +29,7 @@ class Home extends StatelessWidget {
                 //     child: const AvatarWidget(
                 //       height: 58,
                 //       width: 60,
-                //       urlImage: 'assets/images/logo.jpg',
+                //       urlImage: 'assets/images/logo.png',
                 //       radius: 45,
                 //     ),
                 //   ),
@@ -49,9 +47,9 @@ class Home extends StatelessWidget {
                           "Hello Hafiz",
                           style: TextStyle(
                             fontFamily: 'Poppins',
-                            fontSize: 16,
+                            fontSize: 15,
                             fontWeight: FontWeight.w700,
-                            color: Color.fromARGB(255, 37, 49, 65),
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -61,9 +59,9 @@ class Home extends StatelessWidget {
                           "Find your dream job!",
                           style: TextStyle(
                             fontFamily: 'Nunito Sans',
-                            fontSize: 19,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 37, 49, 65),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -130,15 +128,15 @@ class Home extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: const [
-                Category(title: "Remote", urlImage: 'assets/images/remote.jpg'),
+                Category(title: "Remote", urlImage: 'assets/images/remote.png'),
                 Category(
                     title: "Freelance",
-                    urlImage: 'assets/images/freelance.jpg'),
+                    urlImage: 'assets/images/freelance.png'),
                 Category(
-                    title: "Fulltime", urlImage: 'assets/images/fulltime.jpg'),
+                    title: "Fulltime", urlImage: 'assets/images/fulltime.png'),
                 Category(
                     title: "Internship",
-                    urlImage: 'assets/images/internship.jpg'),
+                    urlImage: 'assets/images/internship.png'),
               ],
             ),
           )
@@ -153,20 +151,34 @@ class Home extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "New jobs",
-            style: TextStyle(
-              fontFamily: "Poppins",
-              fontWeight: FontWeight.w700,
-              fontSize: 16,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "New jobs",
+                style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                "See more",
+                style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                  color: ColorHelper.blue(),
+                ),
+              ),
+            ],
           ),
           Padding(
             padding: EdgeInsets.only(top: 20),
             child: Column(
               children: const [
                 JobCard(
-                    logo: 'assets/images/freelance.jpg',
+                    logo: 'assets/images/twitter.png',
                     company: "Twitter",
                     role: "Remote UI/UX Designer",
                     location: "Jakata-Indonesia",
@@ -174,15 +186,15 @@ class Home extends StatelessWidget {
                     postedIn: "12",
                     marked: true),
                 JobCard(
-                    logo: 'assets/images/freelance.jpg',
+                    logo: 'assets/images/freelance.png',
                     company: "Twitter",
                     role: "Remote UI/UX Designer",
                     location: "Jakata-Indonesia",
                     salary: "500-1k",
                     postedIn: "12",
-                    marked: true),
+                    marked: false),
                 JobCard(
-                    logo: 'assets/images/freelance.jpg',
+                    logo: 'assets/images/freelance.png',
                     company: "Twitter",
                     role: "Remote UI/UX Designer",
                     location: "Jakata-Indonesia",

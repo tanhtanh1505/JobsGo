@@ -17,11 +17,12 @@ class ButtonImage extends StatelessWidget {
               ),
             ),
         child: Container(
-          height: 56,
-          width: 56,
+          height: 55,
+          width: 55,
           padding: const EdgeInsets.all(13),
           decoration: BoxDecoration(
-            color: ColorHelper.colorFromHex("#FAFAFA"), //#f0f0f0
+            color:
+                ColorHelper.colorFromHex("#f0f0f0").withOpacity(0.6), //#FAFAFA
             borderRadius: const BorderRadius.all(Radius.circular(16)),
           ),
           child: Image(image: AssetImage(urlImage)),

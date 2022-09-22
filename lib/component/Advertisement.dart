@@ -20,7 +20,7 @@ class _AdvertisementState extends State<Advertisement> {
         color: ColorHelper.colorFromHex("#E4F9FF"),
         image: const DecorationImage(
           image: AssetImage("assets/images/ads.png"),
-          fit: BoxFit.contain,
+          scale: 4,
           alignment: Alignment.bottomRight,
         ),
         border: Border.all(

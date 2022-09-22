@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/ButtonImage.dart';
 import '../helper/ColorHelper.dart';
+import '../screens/Profile.dart';
 
 class JobCard extends StatefulWidget {
   const JobCard(
@@ -30,89 +31,112 @@ class JobCard extends StatefulWidget {
 class _JobCardState extends State<JobCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 152,
-        padding: EdgeInsets.all(16),
-        margin: const EdgeInsets.only(top: 20),
-        decoration: BoxDecoration(
-          border: Border.all(
-              color: const Color.fromARGB(255, 189, 189, 189),
-              width: 1,
-              style: BorderStyle.solid),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(10),
-          ),
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Profile(),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    ButtonImage(urlImage: widget.logo),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(widget.company),
-                        Text(widget.role),
-                      ],
-                    ),
-                  ],
-                ),
-                widget.marked
-                    ? const Icon(
-                        Icons.favorite,
-                        color: Colors.red,
-                      )
-                    : const Icon(
-                        Icons.favorite,
-                        color: Colors.black,
-                      )
-              ],
+      ),
+      child: Container(
+          height: 140,
+          padding: const EdgeInsets.all(16),
+          margin: const EdgeInsets.only(bottom: 20),
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: const Color.fromARGB(255, 189, 189, 189),
+                width: 0.8,
+                style: BorderStyle.solid),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10),
             ),
-            Row(
-              children: [
-                Icon(
-                  Icons.location_on,
-                  color: ColorHelper.gray(),
-                  size: 18,
-                ),
-                Text(
-                  widget.location,
-                  style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500,
-                      color: ColorHelper.gray()),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.monetization_on,
-                  color: ColorHelper.gray(),
-                  size: 18,
-                ),
-                Text(
-                  "\$ ${widget.salary} /",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: ColorHelper.blue()),
-                ),
-                Text(
-                  "Month",
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    color: ColorHelper.blue(),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(right: 12),
+                        child: ButtonImage(urlImage: widget.logo),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.company,
+                            style: const TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            widget.role,
+                            style: const TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            )
-          ],
-        ));
+                  Container(
+                    padding: EdgeInsets.only(bottom: 12),
+                    child: widget.marked
+                        ? const Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          )
+                        : Icon(
+                            Icons.favorite,
+                            color: ColorHelper.gray(),
+                          ),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.location_on,
+                    color: ColorHelper.gray(),
+                    size: 18,
+                  ),
+                  Text(
+                    " ${widget.location}",
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: ColorHelper.gray()),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.monetization_on,
+                    color: ColorHelper.gray(),
+                    size: 18,
+                  ),
+                  Text(
+                    " \$${widget.salary} /",
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: ColorHelper.blue()),
+                  ),
+                  Text(
+                    "Month",
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: ColorHelper.blue(),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          )),
+    );
   }
 }
