@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'jobsgo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
       ),
       home: const MyHomePage(title: 'Flutter demo'),
     );
