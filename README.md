@@ -11,21 +11,22 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-# Group 7 - INT3020 40
+## Group 7 - INT3020 40
 
-# Members
+## Members
 
-### - Le Tuan Anh - 20021287
+- Le Tuan Anh - 20021287
 
-### - Pham Huy Hieu - 20020137
+- Pham Huy Hieu - 20020137
 
-### - Do Thi Anh Duong - 20020274
+- Do Thi Anh Duong - 20020274
 
-# Report
+## Report
 
-# Week 2 - Run "Hello World!"
+https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/edit?usp=sharing
 
-- Install Flutter and create the first project
-- Capture screen
+## Report Week 4
 
-<img src="./lib/assets/img/helloworld.png" width="400"/>
+### Video demo
+
+https://audio-for-text-to-speech-api.s3.us-east-2.amazonaws.com/2022-09-30+10-40-27.gif
