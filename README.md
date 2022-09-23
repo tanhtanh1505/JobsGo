@@ -11,9 +11,9 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-# Group 7 - INT3020 40
+## Group 7 - INT3020 40
 
-# Members
+## Members
 
 ### - Le Tuan Anh - 20021287
 
@@ -21,11 +21,6 @@ samples, guidance on mobile development, and a full API reference.
 
 ### - Do Thi Anh Duong - 20020274
 
-# Report
+## Report
 
-# Week 2 - Run "Hello World!"
-
-- Install Flutter and create the first project
-- Capture screen
-
-<img src="assets/img/helloworld.png" width="400"/>
+https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/edit?usp=sharing
