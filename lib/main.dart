@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/screens/WelcomePages/WelcomePage.dart';
 import 'screens/Home.dart';
 import 'screens/SavedJobs.dart';
 import 'screens/Application.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Poppins',
       ),
-      home: const MyHomePage(title: 'Flutter demo'),
+      home: const WelcomePage(),
     );
   }
 }
