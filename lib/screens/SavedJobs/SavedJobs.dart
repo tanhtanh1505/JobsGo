@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobsgo/component/ListJob.dart';
 import 'package:jobsgo/models/post.dart';
 
-import '../component/TitleText.dart';
+import '../../component/TitleText.dart';
 
 class SavedJobs extends StatelessWidget {
   SavedJobs({super.key});
