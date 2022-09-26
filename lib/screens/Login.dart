@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/main.dart';
 import 'package:jobsgo/screens/Register.dart';
 
 class Login extends StatefulWidget {
@@ -125,7 +126,14 @@ class _LoginState extends State<Login> {
                   width: 604,
                   padding: const EdgeInsets.fromLTRB(29, 31, 29, 0),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return MyHomePage(title: "Flutter Demo");
+                        },
+                        ),
+                      );
+                    },
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Color(0xff1976D2)),

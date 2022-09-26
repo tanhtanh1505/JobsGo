@@ -80,7 +80,7 @@ class welcome_page3 extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return MyHomePage(title: "Flutter Demoo");
+                        return MyHomePage(title: "Flutter Demo");
                       },
                     ),
                   );
