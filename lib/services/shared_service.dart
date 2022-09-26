@@ -4,6 +4,7 @@ import 'package:api_cache_manager/api_cache_manager.dart';
 import 'package:api_cache_manager/models/cache_db_model.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsgo/models/login_response_model.dart';
+import 'package:jobsgo/models/user_model.dart';
 import 'package:jobsgo/screens/Login/Login.dart';
 
 class SharedService {
@@ -22,6 +23,18 @@ class SharedService {
       return loginResponseModelFromJson(cacheData.syncData);
     }
     return null;
+  }
+
+  static Future<UserModel> userInfo() async {
+    var isKeyExist =
+        await APICacheManager().isAPICacheKeyExist("login_details");
+    if (isKeyExist) {
+      var cacheData = await APICacheManager().getCacheData("login_details");
+
+      return userModelFromJson(cacheData.syncData);
+    }
+
+    return exampleUser();
   }
 
   static Future<void> setLoginDetails(LoginResponseModel model) async {

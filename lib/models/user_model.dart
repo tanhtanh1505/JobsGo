@@ -4,6 +4,16 @@ UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
 
 String userModelToJson(UserModel data) => json.encode(data.toJson());
 
+UserModel exampleUser() => UserModel.fromJson({
+      "id": "97cbd119-bb71-4f72-bed6-aed9efa11fa6",
+      "username": "tanhnenene",
+      "name": "Tanh",
+      "avatar": "avatar",
+      "email": "tanhtanh1505@gmailee.com",
+      "phone": "094415050234",
+      "createdAt": "2022-09-25T09:07:02.000Z"
+    });
+
 class UserModel {
   UserModel({
     required this.id,

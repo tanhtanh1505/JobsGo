@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/component/ChatArea.dart';
 import 'package:jobsgo/screens/Profile/conponent/Username.dart';
 
 import '../../component/TitleText.dart';
@@ -8,11 +9,11 @@ class Message extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xffC4DFCB),
-      child: const Center(
-        child: Username(),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Chat'),
       ),
+      body: ListView(children: [ChatArea()]),
     );
   }
 }
