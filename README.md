@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Getting Started
 
 This project is a starting point for a Flutter application.
@@ -12,6 +13,9 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Group 7 - INT3020 40
+=======
+# Group 7 - INT3020 40
+>>>>>>> ebaa368dd03a907baf958e259993cd407736afca
 
 ## Members
 
