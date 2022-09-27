@@ -8,10 +8,10 @@ class AvatarWidget extends StatelessWidget {
 
   const AvatarWidget(
       {Key? key,
-      required this.height,
-      required this.width,
-      required this.urlImage,
-      required this.radius})
+      this.height = 50,
+      this.width = 50,
+      this.urlImage = 'assets/images/logo.jpg',
+      this.radius = 45})
       : super(key: key);
 
   @override

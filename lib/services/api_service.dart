@@ -67,7 +67,20 @@ class APIService {
     return userModelFromJson(response.body);
   }
 
-  static Future<UserModel> getListUser() async {
+  static Future<List<UserModel>> getListUserChated() async {
+    List<UserModel> listUsers = [];
+
+    listUsers.add(exampleUser(username: 'tanhnee'));
+    listUsers.add(exampleUser(username: 'tanhne'));
+    listUsers.add(exampleUser(username: 'tanhhh'));
+    listUsers.add(exampleUser(username: 'tanhnee'));
+    listUsers.add(exampleUser(username: 'tanhne'));
+    listUsers.add(exampleUser(username: 'tanhhh'));
+    listUsers.add(exampleUser(username: 'tanhnee'));
+    listUsers.add(exampleUser(username: 'tanhne'));
+    listUsers.add(exampleUser(username: 'tanhhh'));
+
+    //test call api to get feel of waiting =))))))
     var loginDetails = await SharedService.loginDetails();
 
     Map<String, String> requestHeader = {
@@ -77,8 +90,8 @@ class APIService {
 
     var url = getUri(Config.profileAPI);
 
-    var response = await client.get(url, headers: requestHeader);
+    await client.get(url, headers: requestHeader);
 
-    return userModelFromJson(response.body);
+    return listUsers;
   }
 }

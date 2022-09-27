@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/models/user_model.dart';
 import 'package:jobsgo/screens/Message/component/ChatItem.dart';
+import 'package:jobsgo/services/api_service.dart';
 
 class ListMessages extends StatefulWidget {
   const ListMessages({super.key});
@@ -12,8 +13,9 @@ class ListMessages extends StatefulWidget {
 }
 
 class _ListMessagesState extends State<ListMessages> {
-  var isLoaded = true;
-  List<UserModel> listUser = [];
+  var isLoaded = false;
+  List<UserModel> users = [];
+
   @override
   void initState() {
     super.initState();
@@ -23,7 +25,12 @@ class _ListMessagesState extends State<ListMessages> {
   }
 
   getData() async {
-    
+    users = await APIService.getListUserChated();
+    if (users.isNotEmpty) {
+      setState(() {
+        isLoaded = true;
+      });
+    }
   }
 
   @override
@@ -34,9 +41,9 @@ class _ListMessagesState extends State<ListMessages> {
         child: CircularProgressIndicator(),
       ),
       child: ListView.builder(
-        itemCount: 2,
+        itemCount: users.length,
         itemBuilder: (BuildContext context, int index) {
-          return const ChatItem();
+          return ChatItem(user: users.elementAt(index));
         },
       ),
     );

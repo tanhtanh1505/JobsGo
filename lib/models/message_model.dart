@@ -5,6 +5,9 @@ MessageModel messageModelFromJson(String str) =>
 
 String messageModelToJson(MessageModel data) => json.encode(data.toJson());
 
+MessageModel failureMessage =
+    MessageModel(senderId: 'xxx', recieverId: 'xxx', msg: 'xxx');
+
 class MessageModel {
   MessageModel({
     required this.senderId,
@@ -16,11 +19,17 @@ class MessageModel {
   String recieverId;
   String msg;
 
-  factory MessageModel.fromJson(Map<String, dynamic> json) => MessageModel(
+  factory MessageModel.fromJson(Map<String, dynamic> json) {
+    try {
+      return MessageModel(
         senderId: json["senderId"],
         recieverId: json["recieverId"],
         msg: json["msg"],
       );
+    } catch (err) {
+      return failureMessage;
+    }
+  }
 
   Map<String, dynamic> toJson() => {
         "senderId": senderId,

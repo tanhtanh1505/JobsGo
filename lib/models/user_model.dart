@@ -4,9 +4,9 @@ UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
 
 String userModelToJson(UserModel data) => json.encode(data.toJson());
 
-UserModel exampleUser() => UserModel.fromJson({
+UserModel exampleUser({username = 'tanhne'}) => UserModel.fromJson({
       "id": "97cbd119-bb71-4f72-bed6-aed9efa11fa6",
-      "username": "tanhnenene",
+      "username": username,
       "name": "Tanh",
       "avatar": "avatar",
       "email": "tanhtanh1505@gmailee.com",

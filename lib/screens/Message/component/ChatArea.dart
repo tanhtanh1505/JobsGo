@@ -9,9 +9,9 @@ import 'package:jobsgo/services/shared_service.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class ChatArea extends StatefulWidget {
-  const ChatArea({super.key, required this.recieverId});
+  const ChatArea({super.key, required this.reciever});
 
-  final String recieverId;
+  final UserModel reciever;
 
   @override
   State<ChatArea> createState() => _ChatAreaState();
@@ -61,9 +61,13 @@ class _ChatAreaState extends State<ChatArea> {
       if (isLoaded) socket.emit("join", user.username);
     });
     socket.on('getMessage', (newMessage) {
-      setState(() {
-        messageList.add(MessageItem(message: messageModelFromJson(newMessage)));
-      });
+      MessageModel newMess = messageModelFromJson(newMessage);
+      if (newMess != failureMessage &&
+          newMess.senderId == widget.reciever.username) {
+        setState(() {
+          messageList.add(MessageItem(message: newMess));
+        });
+      }
     });
     socket.onDisconnect((_) => print('Connection Disconnection'));
     socket.onConnectError((err) => print(err));
@@ -75,7 +79,7 @@ class _ChatAreaState extends State<ChatArea> {
     if (message.isEmpty) return;
     MessageModel newMsg = MessageModel(
         senderId: user.username,
-        recieverId: widget.recieverId,
+        recieverId: widget.reciever.username,
         msg: textEditingController.text.trim());
     socket.emit('sendNewMessage', newMsg.toJson());
   }
@@ -84,7 +88,7 @@ class _ChatAreaState extends State<ChatArea> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chat'),
+        title: Text(widget.reciever.username),
       ),
       body: Column(
         children: [bodyChat(context), sendBox(context)],
