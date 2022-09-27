@@ -9,7 +9,9 @@ import 'package:jobsgo/services/shared_service.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class ChatArea extends StatefulWidget {
-  const ChatArea({super.key});
+  const ChatArea({super.key, required this.recieverId});
+
+  final String recieverId;
 
   @override
   State<ChatArea> createState() => _ChatAreaState();
@@ -73,15 +75,20 @@ class _ChatAreaState extends State<ChatArea> {
     if (message.isEmpty) return;
     MessageModel newMsg = MessageModel(
         senderId: user.username,
-        recieverId: 'tanhne',
+        recieverId: widget.recieverId,
         msg: textEditingController.text.trim());
     socket.emit('sendNewMessage', newMsg.toJson());
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [bodyChat(context), sendBox(context)],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Chat'),
+      ),
+      body: Column(
+        children: [bodyChat(context), sendBox(context)],
+      ),
     );
   }
 
