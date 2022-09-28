@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:jobsgo/themes/styles.dart';
 
 class AvatarWidget extends StatelessWidget {
   final double height;
@@ -24,6 +25,7 @@ class AvatarWidget extends StatelessWidget {
           image: AssetImage(urlImage),
           fit: BoxFit.fill,
         ),
+        border: Border.all(width: 2, color: AppColor.blue),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.all(Radius.circular(radius)),
       ),

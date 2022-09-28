@@ -46,24 +46,26 @@ class _HeaderState extends State<Header> {
           //noti
           Expanded(
             child: Container(
-                alignment: Alignment.centerRight,
-                padding: const EdgeInsets.only(right: 18),
-                child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 189, 189, 189),
-                          width: 0.8,
-                          style: BorderStyle.solid), //Border.all
-                      /*** The BorderRadius widget  is here ***/
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(10),
-                      ), //BorderRadius.all
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Icon(Icons.notifications_none_outlined,
-                          size: 25, color: AppColor.black),
-                    ))),
+              alignment: Alignment.centerRight,
+              padding: const EdgeInsets.only(right: 18),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 189, 189, 189),
+                      width: 0.8,
+                      style: BorderStyle.solid), //Border.all
+                  /*** The BorderRadius widget  is here ***/
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(10),
+                  ), //BorderRadius.all
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Icon(Icons.notifications_none_outlined,
+                      size: 25, color: AppColor.black),
+                ),
+              ),
+            ),
           ),
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:jobsgo/screens/Profile/Profile.dart';
+import 'package:jobsgo/screens/SearchPage/SearchPage.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class AppbarCustom extends StatelessWidget {
@@ -16,6 +16,7 @@ class AppbarCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.only(left: 12, right: 12),
       child: Row(
         children: [
           Text(
@@ -24,7 +25,21 @@ class AppbarCustom extends StatelessWidget {
                 color: AppColor.black,
                 fontWeight: FontWeight.w700,
                 fontSize: 22),
-          )
+          ),
+          Expanded(
+            child: Container(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                child: Icon(Icons.search, color: AppColor.black),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Profile(),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

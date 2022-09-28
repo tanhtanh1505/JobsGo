@@ -5,6 +5,7 @@ import 'package:jobsgo/models/login_response_model.dart';
 import 'package:jobsgo/models/message_model.dart';
 import 'package:jobsgo/models/user_model.dart';
 import 'package:jobsgo/services/shared_service.dart';
+import 'package:jobsgo/themes/styles.dart';
 
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
@@ -24,6 +25,7 @@ class _ChatAreaState extends State<ChatArea> {
   List<MessageItem> messageList = [];
   final textEditingController = TextEditingController();
   late UserModel user;
+
   @override
   void initState() {
     super.initState();
@@ -80,8 +82,11 @@ class _ChatAreaState extends State<ChatArea> {
     MessageModel newMsg = MessageModel(
         senderId: user.username,
         recieverId: widget.reciever.username,
-        msg: textEditingController.text.trim());
+        msg: message);
     socket.emit('sendNewMessage', newMsg.toJson());
+    setState(() {
+      messageList.add(MessageItem(isMine: true, message: newMsg));
+    });
   }
 
   @override
@@ -91,43 +96,71 @@ class _ChatAreaState extends State<ChatArea> {
         title: Text(widget.reciever.username),
       ),
       body: Column(
-        children: [bodyChat(context), sendBox(context)],
+        children: [
+          Expanded(
+            child: bodyChat(context),
+          ),
+          sendBox(context),
+        ],
       ),
     );
   }
 
   Widget bodyChat(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          ListView.builder(
-            itemCount: messageList.length,
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: ((context, index) {
-              return messageList.elementAt(index);
-            }),
-          )
-        ],
+      child: ListView.builder(
+        itemCount: messageList.length,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: ((context, index) {
+          return messageList.elementAt(index);
+        }),
       ),
     );
   }
 
   Widget sendBox(BuildContext context) {
-    return Column(
-      children: [
-        TextField(
-          controller: textEditingController,
-        ),
-        TextButton(
-          // When the user presses the button, show an alert dialog containing
-          // the text that the user has entered into the text field.
-          onPressed: () {
-            sendMessage();
-          },
-          child: const Icon(Icons.text_fields),
-        ),
-      ],
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 8),
+      height: 70,
+      color: AppColor.white,
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add_circle_rounded),
+            iconSize: 25,
+            color: AppColor.blue,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.camera_alt_rounded),
+            iconSize: 25,
+            color: AppColor.blue,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.photo),
+            iconSize: 25,
+            color: AppColor.blue,
+          ),
+          Expanded(
+            child: TextField(
+              controller: textEditingController,
+              decoration: InputDecoration.collapsed(hintText: "Send a message"),
+              textCapitalization: TextCapitalization.sentences,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              sendMessage();
+            },
+            icon: const Icon(Icons.send),
+            iconSize: 25,
+            color: AppColor.blue,
+          ),
+        ],
+      ),
     );
   }
 }

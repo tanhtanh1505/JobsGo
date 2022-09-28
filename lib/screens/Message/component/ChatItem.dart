@@ -56,16 +56,17 @@ class _ChatItemState extends State<ChatItem> {
           Text(
             widget.user.name,
             style: TextStyle(
-                color: AppColor.black,
-                fontSize: 17,
-                fontWeight: FontWeight.w600),
+              color: AppColor.black,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           Text(
             widget.lastMessage,
             style: TextStyle(
               color: AppColor.black,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
+              fontSize: 13,
+              fontWeight: FontWeight.w400,
             ),
           )
         ],
