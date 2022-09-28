@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/component/AppbarCustom.dart';
+import 'package:jobsgo/component/SearchBar.dart';
 import 'package:jobsgo/screens/Message/component/ChatArea.dart';
 import 'package:jobsgo/screens/Message/component/ListMessages.dart';
 import 'package:jobsgo/screens/Profile/conponent/Username.dart';
@@ -12,9 +14,19 @@ class Message extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chat'),
+        title: const AppbarCustom(
+          title: 'Message',
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
       ),
-      body: const ListMessages(),
+      body: Column(
+        // padding: const EdgeInsets.only(left: 30, right: 30),
+        children: const <Widget>[
+          SearchBar(text: "Search"),
+          Expanded(child: ListMessages())
+        ],
+      ),
     );
   }
 }
