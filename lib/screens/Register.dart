@@ -10,6 +10,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   bool value = false;
+  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +44,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
+                padding: EdgeInsets.fromLTRB(29, 28, 30, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -70,7 +71,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
+                padding: EdgeInsets.fromLTRB(29, 28, 30, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -87,6 +88,18 @@ class _RegisterState extends State<Register> {
                       Icons.lock,
                       color: Color(0xffCCCCCC),
                     ),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState (() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                      child: Icon(_obscureText
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                        color: Color(0xffCCCCCC),
+                      ),
+                    ),
                     hintText: "Password",
                     hintStyle: TextStyle(
                       color: Color(0xffCCCCCC),
@@ -94,6 +107,7 @@ class _RegisterState extends State<Register> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  obscureText: _obscureText,
                 ),
               ),
               Container(
