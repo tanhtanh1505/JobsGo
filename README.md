@@ -27,6 +27,17 @@ https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/
 
 ## Report Week 4
 
-### Video demo
+### Gif demo (File too big to render here)
 
-https://audio-for-text-to-speech-api.s3.us-east-2.amazonaws.com/2022-09-30+10-40-27.gif
+https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/2022-09-30+10-40-27.gif
+
+### Screen Capture
+
+<table>
+<tr>
+<td><img src="https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/c6c758eba55b6105384a.jpg" height="300"></td>
+<td><img src="https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/e0cd4735ba857edb2794.jpg" height="300"></td>
+<td><img src="https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/40b0947b6bcbaf95f6da.jpg" height="300"></td>
+<td><img src="https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/c28fcab22a02ee5cb713.jpg" height="300"></td>
+</tr>
+</table>
