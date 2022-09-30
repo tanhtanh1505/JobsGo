@@ -25,7 +25,6 @@ class welcome_page1 extends StatelessWidget {
               width: 400,
             ),
           ),
-
          const Positioned(
            bottom: 220,
            child: Center(
