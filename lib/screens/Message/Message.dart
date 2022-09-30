@@ -19,7 +19,13 @@ class Message extends StatelessWidget {
       ),
       body: Column(
         // padding: const EdgeInsets.only(left: 30, right: 30),
-        children: const <Widget>[Expanded(child: ListMessages())],
+        children: const <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
+            child: SearchBar(text: "Search"),
+          ),
+          Expanded(child: ListMessages())
+        ],
       ),
     );
   }

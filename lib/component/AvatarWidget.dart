@@ -11,7 +11,8 @@ class AvatarWidget extends StatelessWidget {
       {Key? key,
       this.height = 50,
       this.width = 50,
-      this.urlImage = 'assets/images/logo.jpg',
+      this.urlImage =
+          'https://img.freepik.com/free-vector/cute-cat-with-love-sign-hand-cartoon-illustration-animal-nature-concept-isolated-flat-cartoon-style_138676-3419.jpg?w=2000',
       this.radius = 45})
       : super(key: key);
 
@@ -22,7 +23,7 @@ class AvatarWidget extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(urlImage),
+          image: NetworkImage(urlImage),
           fit: BoxFit.fill,
         ),
         border: Border.all(width: 2, color: AppColor.blue),

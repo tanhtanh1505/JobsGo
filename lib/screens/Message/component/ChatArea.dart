@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/component/MessageItem.dart';
+import 'package:jobsgo/screens/Message/component/MessageItem.dart';
 import 'package:jobsgo/config.dart';
 import 'package:jobsgo/models/login_response_model.dart';
 import 'package:jobsgo/models/message_model.dart';
 import 'package:jobsgo/models/user_model.dart';
+import 'package:jobsgo/screens/Message/component/HeaderChatArea.dart';
 import 'package:jobsgo/services/shared_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 
@@ -93,7 +94,9 @@ class _ChatAreaState extends State<ChatArea> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.reciever.username),
+        leadingWidth: 28,
+        backgroundColor: AppColor.blue,
+        title: HeaderChatArea(user: widget.reciever),
       ),
       body: Column(
         children: [
@@ -108,6 +111,7 @@ class _ChatAreaState extends State<ChatArea> {
 
   Widget bodyChat(BuildContext context) {
     return SingleChildScrollView(
+      padding: const EdgeInsets.only(top: 16),
       child: ListView.builder(
         itemCount: messageList.length,
         shrinkWrap: true,
@@ -121,46 +125,39 @@ class _ChatAreaState extends State<ChatArea> {
 
   Widget sendBox(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       height: 70,
       color: AppColor.white,
       child: Row(
         children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.add_circle_rounded),
-            iconSize: 25,
-            color: AppColor.blue,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.camera_alt_rounded),
-            iconSize: 25,
-            color: AppColor.blue,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.photo),
-            iconSize: 25,
-            color: AppColor.blue,
-          ),
+          iconButton(
+              Icon(Icons.add_circle_rounded, color: AppColor.blue), () {}),
+          iconButton(
+              Icon(Icons.camera_alt_rounded, color: AppColor.blue), () {}),
+          iconButton(Icon(Icons.photo, color: AppColor.blue), () {}),
           Expanded(
-            child: TextField(
-              controller: textEditingController,
-              decoration: InputDecoration.collapsed(hintText: "Send a message"),
-              textCapitalization: TextCapitalization.sentences,
+            child: Container(
+              padding: EdgeInsets.only(left: 12),
+              child: TextField(
+                controller: textEditingController,
+                decoration:
+                    const InputDecoration.collapsed(hintText: "Send a message"),
+                textCapitalization: TextCapitalization.sentences,
+              ),
             ),
           ),
-          IconButton(
-            onPressed: () {
-              sendMessage();
-            },
-            icon: const Icon(Icons.send),
-            iconSize: 25,
-            color: AppColor.blue,
-          ),
+          iconButton(Icon(Icons.send, color: AppColor.blue), () {
+            sendMessage();
+          }),
         ],
       ),
+    );
+  }
+
+  Widget iconButton(Icon icon, Function onPress) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: GestureDetector(onTap: () => onPress(), child: icon),
     );
   }
 }

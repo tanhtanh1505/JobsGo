@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/models/message_model.dart';
-import 'package:jobsgo/themes/styles.dart';
 
 class MessageItem extends StatelessWidget {
   const MessageItem({super.key, this.isMine = false, required this.message});
@@ -16,9 +13,9 @@ class MessageItem extends StatelessWidget {
       // asymmetric padding
       padding: EdgeInsets.fromLTRB(
         isMine ? 64.0 : 16.0,
-        4,
+        2,
         isMine ? 16.0 : 64.0,
-        4,
+        2,
       ),
       child: Align(
         // align the child within the container

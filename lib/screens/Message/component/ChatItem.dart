@@ -38,7 +38,7 @@ class _ChatItemState extends State<ChatItem> {
       padding: EdgeInsets.only(left: 12, right: 12),
       child: Row(
         children: [
-          const AvatarWidget(),
+          AvatarWidget(urlImage: widget.user.avatar),
           infoMessage(),
           Expanded(child: timeLastMess()),
         ],

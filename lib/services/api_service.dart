@@ -67,18 +67,33 @@ class APIService {
     return userModelFromJson(response.body);
   }
 
+  static Future<UserModel> getOtherProfile(String username) async {
+    var url = getUri(Config.otherProfileApi + username);
+
+    var response = await client.get(url);
+
+    return userModelFromJson(response.body);
+  }
+
   static Future<List<UserModel>> getListUserChated() async {
     List<UserModel> listUsers = [];
+    var tanh = await getOtherProfile("tanhne");
+    var test1 = await getOtherProfile("test1");
+    var test2 = await getOtherProfile("test2");
+    var test3 = await getOtherProfile("test3");
 
-    listUsers.add(exampleUser(username: 'tanhnee'));
-    listUsers.add(exampleUser(username: 'tanhne'));
-    listUsers.add(exampleUser(username: 'tanhhh'));
-    listUsers.add(exampleUser(username: 'tanhnee'));
-    listUsers.add(exampleUser(username: 'tanhne'));
-    listUsers.add(exampleUser(username: 'tanhhh'));
-    listUsers.add(exampleUser(username: 'tanhnee'));
-    listUsers.add(exampleUser(username: 'tanhne'));
-    listUsers.add(exampleUser(username: 'tanhhh'));
+    listUsers.add(tanh);
+    listUsers.add(test1);
+    listUsers.add(test2);
+    listUsers.add(test3);
+    listUsers.add(tanh);
+    listUsers.add(test1);
+    listUsers.add(test2);
+    listUsers.add(test3);
+    listUsers.add(tanh);
+    listUsers.add(test1);
+    listUsers.add(test2);
+    listUsers.add(test3);
 
     //test call api to get feel of waiting =))))))
     var loginDetails = await SharedService.loginDetails();
