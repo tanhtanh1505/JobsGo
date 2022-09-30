@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:jobsgo/main.dart';
+import 'package:jobsgo/screens/Login.dart';
 
 class welcome_page3 extends StatelessWidget {
   const welcome_page3({Key? key}) : super(key: key);
@@ -80,7 +81,7 @@ class welcome_page3 extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return MyHomePage(title: "Flutter Demo");
+                        return Login();
                       },
                     ),
                   );

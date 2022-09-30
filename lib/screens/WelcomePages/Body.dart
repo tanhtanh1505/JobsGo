@@ -37,6 +37,8 @@ class Body extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 20,
                 fontFamily: "Poppins",
+                color: Colors.black,
+                inherit: false,
               ),
             ),
           ),
@@ -48,6 +50,8 @@ class Body extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontFamily: "Poppins",
+                color: Colors.black,
+                inherit: false,
               ),
             ),
           ),
@@ -59,6 +63,8 @@ class Body extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontFamily: "Poppins",
+                color: Colors.black,
+                inherit: false,
               ),
             ),
           ),
@@ -132,7 +138,7 @@ class Body extends StatelessWidget {
             bottom: 100,
             child: SizedBox(
               height: 47.29,
-              width: 302.4,
+              width: 310,
               child: OutlinedButton(
                 onPressed: () {
                   Navigator.push(
