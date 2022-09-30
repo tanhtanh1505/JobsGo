@@ -15,11 +15,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
   final screens = [
-    Home(),
-    SavedJobs(),
-    Application(),
-    Message(),
-    Profile(),
+    const Home(),
+    const SavedJobs(),
+    const Application(),
+    const Message(),
+    const Profile(),
   ];
   @override
   Widget build(BuildContext context) {

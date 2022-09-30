@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/themes/styles.dart';
-import '../helper/ColorHelper.dart';
 
 class Advertisement extends StatefulWidget {
   const Advertisement({super.key});
@@ -37,7 +34,7 @@ class _AdvertisementState extends State<Advertisement> {
         children: [
           Expanded(
               child: Container(
-            padding: EdgeInsets.only(left: 19, top: 27, bottom: 27),
+            padding: const EdgeInsets.only(left: 19, top: 27, bottom: 27),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,

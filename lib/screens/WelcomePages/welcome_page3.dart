@@ -1,9 +1,8 @@
-import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:jobsgo/MyHomePage.dart';
-import 'package:jobsgo/main.dart';
 import 'package:jobsgo/screens/Auth/Login.dart';
 
+// ignore: camel_case_types
 class welcome_page3 extends StatelessWidget {
   const welcome_page3({Key? key}) : super(key: key);
 
@@ -29,7 +28,7 @@ class welcome_page3 extends StatelessWidget {
               width: 400,
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 220,
             child: Center(
               child: Text(
@@ -44,7 +43,7 @@ class welcome_page3 extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 180,
             child: Center(
               child: Text(
@@ -59,7 +58,7 @@ class welcome_page3 extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 140,
             child: Center(
               child: Text(
@@ -73,7 +72,7 @@ class welcome_page3 extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 120,
             child: Center(
               child: Text(
@@ -98,12 +97,13 @@ class welcome_page3 extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return Login();
+                        return const Login();
                       },
                     ),
                   );
                 },
-                child: Text(
+                // ignore: sort_child_properties_last
+                child: const Text(
                   "Get Started",
                   style: TextStyle(
                       fontSize: 17,
@@ -113,10 +113,10 @@ class welcome_page3 extends StatelessWidget {
                 ),
                 style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(Color(0xff176DC2)),
+                        MaterialStateProperty.all(const Color(0xff176DC2)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.black),
+                      side: const BorderSide(color: Colors.black),
                     ))),
               ),
             ),

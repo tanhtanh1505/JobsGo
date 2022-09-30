@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
           Container(
             height: size.height,
             width: double.infinity,
-            color: Color(0xffFFFFFF),
+            color: const Color(0xffFFFFFF),
           ),
           Positioned(
             top: 142,
@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
               width: 315.88,
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 330,
             left: 30,
             child: Text(
@@ -40,7 +40,7 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 300,
             left: 30,
             child: Text(
@@ -51,7 +51,7 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 283,
             left: 30,
             child: Text(
@@ -74,12 +74,13 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return Register();
+                        return const Register();
                       },
                     ),
                   );
                 },
-                child: Text(
+                // ignore: sort_child_properties_last
+                child: const Text(
                   "Register",
                   style: TextStyle(
                       fontSize: 17,
@@ -90,7 +91,7 @@ class Body extends StatelessWidget {
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Color(0xff3586D7)),
+                  side: const BorderSide(color: Color(0xff3586D7)),
                 ))),
               ),
             ),
@@ -107,12 +108,13 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return Login();
+                        return const Login();
                       },
                     ),
                   );
                 },
-                child: Text(
+                // ignore: sort_child_properties_last
+                child: const Text(
                   "Login",
                   style: TextStyle(
                       fontSize: 17,
@@ -123,7 +125,7 @@ class Body extends StatelessWidget {
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Color(0xff3586D7)),
+                  side: const BorderSide(color: Color(0xff3586D7)),
                 ))),
               ),
             ),
@@ -139,12 +141,13 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return welcome_page1();
+                        return const welcome_page1();
                       },
                     ),
                   );
                 },
-                child: Text(
+                // ignore: sort_child_properties_last
+                child: const Text(
                   "Start Exploring",
                   style: TextStyle(
                       fontSize: 17,
@@ -154,10 +157,10 @@ class Body extends StatelessWidget {
                 ),
                 style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(Color(0xff176DC2)),
+                        MaterialStateProperty.all(const Color(0xff176DC2)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-                      side: BorderSide(color: Colors.black),
+                      side: const BorderSide(color: Colors.black),
                     ))),
               ),
             ),
