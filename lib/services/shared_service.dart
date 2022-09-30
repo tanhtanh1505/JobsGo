@@ -5,7 +5,7 @@ import 'package:api_cache_manager/models/cache_db_model.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsgo/models/login_response_model.dart';
 import 'package:jobsgo/models/user_model.dart';
-import 'package:jobsgo/screens/Login/Login.dart';
+import 'package:jobsgo/screens/Auth/Login.dart';
 
 class SharedService {
   static Future<bool> isLoggedIn() async {

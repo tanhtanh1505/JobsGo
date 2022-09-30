@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/MyHomePage.dart';
-import 'package:jobsgo/screens/Login/Login.dart';
+import 'package:jobsgo/screens/WelcomePages/WelcomePage.dart';
 import 'package:jobsgo/services/shared_service.dart';
 
-Widget defaultHome = const Login();
+Widget defaultHome = const WelcomePage();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

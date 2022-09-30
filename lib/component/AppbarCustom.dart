@@ -30,7 +30,7 @@ class AppbarCustom extends StatelessWidget {
             child: Container(
               alignment: Alignment.centerRight,
               child: GestureDetector(
-                child: Icon(Icons.search, color: AppColor.black),
+                child: Icon(Icons.more_horiz_rounded, color: AppColor.black),
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(

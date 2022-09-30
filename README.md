@@ -15,12 +15,18 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Members
 
-### - Le Tuan Anh - 20021287
+- Le Tuan Anh - 20021287
 
-### - Pham Huy Hieu - 20020137
+- Pham Huy Hieu - 20020137
 
-### - Do Thi Anh Duong - 20020274
+- Do Thi Anh Duong - 20020274
 
 ## Report
 
 https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/edit?usp=sharing
+
+## Report Week 4
+
+### Video demo
+
+https://audio-for-text-to-speech-api.s3.us-east-2.amazonaws.com/2022-09-30+10-40-27.gif
