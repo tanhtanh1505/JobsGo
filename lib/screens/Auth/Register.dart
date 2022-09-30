@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/screens/Login.dart';
+import 'package:jobsgo/screens/Auth/Login.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -44,25 +44,25 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(29, 28, 30, 0),
+                padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.transparent),
+                      borderSide: const BorderSide(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.transparent),
+                      borderSide: const BorderSide(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     filled: true,
-                    fillColor: Color(0xffF6F6F6),
-                    prefixIcon: Icon(
+                    fillColor: const Color(0xffF6F6F6),
+                    prefixIcon: const Icon(
                       Icons.email,
                       color: Color(0xffCCCCCC),
                     ),
                     hintText: "Email",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                       color: Color(0xffCCCCCC),
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -71,37 +71,36 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(29, 28, 30, 0),
+                padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.transparent),
+                      borderSide: const BorderSide(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.transparent),
+                      borderSide: const BorderSide(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     filled: true,
-                    fillColor: Color(0xffF6F6F6),
-                    prefixIcon: Icon(
+                    fillColor: const Color(0xffF6F6F6),
+                    prefixIcon: const Icon(
                       Icons.lock,
                       color: Color(0xffCCCCCC),
                     ),
                     suffixIcon: GestureDetector(
                       onTap: () {
-                        setState (() {
+                        setState(() {
                           _obscureText = !_obscureText;
                         });
                       },
-                      child: Icon(_obscureText
-                          ? Icons.visibility_off
-                          : Icons.visibility,
-                        color: Color(0xffCCCCCC),
+                      child: Icon(
+                        _obscureText ? Icons.visibility_off : Icons.visibility,
+                        color: const Color(0xffCCCCCC),
                       ),
                     ),
                     hintText: "Password",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                       color: Color(0xffCCCCCC),
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -111,12 +110,12 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(97, 35, 97, 0),
+                padding: const EdgeInsets.fromLTRB(97, 35, 97, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     buildCheckbox(),
-                    Text(
+                    const Text(
                       'Remember me',
                       softWrap: true,
                       style: TextStyle(
@@ -136,7 +135,7 @@ class _RegisterState extends State<Register> {
                   onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(Color(0xff1976D2)),
+                        MaterialStateProperty.all(const Color(0xff1976D2)),
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(90),
@@ -154,11 +153,11 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                  padding: EdgeInsets.fromLTRB(43, 125, 45, 0),
+                  padding: const EdgeInsets.fromLTRB(43, 125, 45, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Aready have an account?",
                         style: TextStyle(
                           color: Color(0xffA9A9A9),
@@ -173,12 +172,12 @@ class _RegisterState extends State<Register> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return Login();
+                                return const Login();
                               },
                             ),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           'Sign in',
                           style: TextStyle(
                             color: Color(0xFF1979D2),
@@ -204,7 +203,7 @@ class _RegisterState extends State<Register> {
             this.value = value!;
           });
         },
-        activeColor: Color(0xff1976D2),
+        activeColor: const Color(0xff1976D2),
         checkColor: Colors.white,
       );
 }

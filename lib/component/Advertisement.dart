@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:jobsgo/themes/styles.dart';
 import '../helper/ColorHelper.dart';
 
 class Advertisement extends StatefulWidget {
@@ -17,7 +18,7 @@ class _AdvertisementState extends State<Advertisement> {
       height: 152,
       margin: const EdgeInsets.only(top: 20),
       decoration: BoxDecoration(
-        color: ColorHelper.colorFromHex("#E4F9FF"),
+        color: AppColor.bluel2,
         image: const DecorationImage(
           image: AssetImage("assets/images/ads.png"),
           scale: 4,
@@ -60,14 +61,13 @@ class _AdvertisementState extends State<Advertisement> {
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8))),
                     foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blue),
-                    backgroundColor: MaterialStateProperty.all(
-                        ColorHelper.colorFromHex("#1976D2")),
+                        MaterialStateProperty.all<Color>(AppColor.blue),
+                    backgroundColor: MaterialStateProperty.all(AppColor.blue),
                   ),
                   onPressed: () {},
-                  child: const Text(
+                  child: Text(
                     'Read More',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: AppColor.white),
                   ),
                 )
               ],

@@ -5,9 +5,7 @@ class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context) => const MaterialApp(
       home: Body(),
     );
-  }
 }

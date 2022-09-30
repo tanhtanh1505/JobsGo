@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/screens/Login.dart';
-import 'package:jobsgo/screens/Register.dart';
+import 'package:jobsgo/screens/Auth/Login.dart';
+import 'package:jobsgo/screens/Auth/Register.dart';
 import 'package:jobsgo/screens/WelcomePages/welcome_page1.dart';
 
 class Body extends StatelessWidget {
@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
           Container(
             height: size.height,
             width: double.infinity,
-            color: Color(0xffFFFFFF),
+            color: const Color(0xffFFFFFF),
           ),
           Positioned(
             top: 142,
@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
               width: 315.88,
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 330,
             left: 30,
             child: Text(
@@ -42,7 +42,7 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 300,
             left: 30,
             child: Text(
@@ -55,7 +55,7 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 283,
             left: 30,
             child: Text(
@@ -80,12 +80,17 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return Register();
+                        return const Register();
                       },
                     ),
                   );
                 },
-                child: Text(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  side: const BorderSide(color: Color(0xff3586D7)),
+                ))),
+                child: const Text(
                   "Register",
                   style: TextStyle(
                       fontSize: 17,
@@ -93,11 +98,6 @@ class Body extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Color(0xff3586D7)),
                 ),
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Color(0xff3586D7)),
-                ))),
               ),
             ),
           ),
@@ -113,12 +113,17 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return Login();
+                        return const Login();
                       },
                     ),
                   );
                 },
-                child: Text(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  side: const BorderSide(color: Color(0xff3586D7)),
+                ))),
+                child: const Text(
                   "Login",
                   style: TextStyle(
                       fontSize: 17,
@@ -126,11 +131,6 @@ class Body extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Color(0xff3586D7)),
                 ),
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Color(0xff3586D7)),
-                ))),
               ),
             ),
           ),
@@ -145,12 +145,19 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return welcome_page1();
+                        return const WelcomePage1();
                       },
                     ),
                   );
                 },
-                child: Text(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(const Color(0xff176DC2)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      side: const BorderSide(color: Colors.black),
+                    ))),
+                child: const Text(
                   "Start Exploring",
                   style: TextStyle(
                       fontSize: 17,
@@ -158,13 +165,6 @@ class Body extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(Color(0xff176DC2)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      side: BorderSide(color: Colors.black),
-                    ))),
               ),
             ),
           ),
