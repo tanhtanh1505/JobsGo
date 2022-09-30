@@ -1,8 +1,8 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/WelcomePages/welcome_page2.dart';
 
 
+// ignore: camel_case_types
 class welcome_page1 extends StatelessWidget {
   const welcome_page1({Key? key}) : super(key: key);
 
@@ -15,7 +15,7 @@ class welcome_page1 extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(height: size.height, width: double.infinity, color: Color(0xffFAFAFA),),
+          Container(height: size.height, width: double.infinity, color: const Color(0xffFAFAFA),),
 
           Positioned(
             top: 110,
@@ -26,7 +26,7 @@ class welcome_page1 extends StatelessWidget {
             ),
           ),
 
-         Positioned(
+         const Positioned(
            bottom: 220,
            child: Center(
              child: Text(
@@ -37,7 +37,7 @@ class welcome_page1 extends StatelessWidget {
              ),
          ),
 
-          Positioned(
+          const Positioned(
             bottom: 180,
             child: Center(
               child: Text(
@@ -48,7 +48,7 @@ class welcome_page1 extends StatelessWidget {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             bottom: 140,
             child: Center(
               child: Text(
@@ -59,7 +59,7 @@ class welcome_page1 extends StatelessWidget {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             bottom: 120,
             child: Center(
               child: Text(
@@ -81,20 +81,21 @@ class welcome_page1 extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return welcome_page2();
+                        return const welcome_page2();
                       },
                     ),
                   );
                 },
-                child: Text(
+                // ignore: sort_child_properties_last
+                child: const Text(
                   "Next",
                   style: TextStyle(fontSize: 17, fontFamily: "Poppins", fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Color(0xff176DC2)),
+                    backgroundColor: MaterialStateProperty.all(const Color(0xff176DC2)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.black),
+                      side: const BorderSide(color: Colors.black),
                     ))
 
                 ),

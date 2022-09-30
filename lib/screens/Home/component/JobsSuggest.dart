@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/JobCard.dart';
-import 'package:jobsgo/helper/ColorHelper.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class JobsSuggest extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/ButtonImage.dart';
 import 'package:jobsgo/screens/Message/Message.dart';
-import 'package:jobsgo/screens/Profile/Profile.dart';
 
 class Category extends StatefulWidget {
   const Category({super.key, required this.title, required this.urlImage});
@@ -21,7 +20,7 @@ class _CategoryState extends State<Category> {
           padding: const EdgeInsets.only(bottom: 8),
           child: ButtonImage(
             urlImage: widget.urlImage,
-            goto: Message(),
+            goto: const Message(),
           )),
       Text(
         widget.title,

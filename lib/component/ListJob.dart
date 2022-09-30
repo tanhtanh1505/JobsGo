@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/services/remote_service.dart';
 
 import '../models/post.dart';
@@ -43,9 +41,7 @@ class _ListJobState extends State<ListJob> {
       child: ListView.builder(
         itemCount: posts?.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            child: Text(posts!.elementAt(index).title),
-          );
+          return Text(posts!.elementAt(index).title);
         },
       ),
     );

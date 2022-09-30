@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/models/user_model.dart';
 import 'package:jobsgo/services/api_service.dart';
-import 'package:jobsgo/themes/styles.dart';
 
 class Username extends StatefulWidget {
   const Username({super.key});

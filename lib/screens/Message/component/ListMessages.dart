@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/models/user_model.dart';
 import 'package:jobsgo/screens/Message/component/ChatItem.dart';
 import 'package:jobsgo/services/api_service.dart';

@@ -1,13 +1,15 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/Message/component/MessageItem.dart';
 import 'package:jobsgo/config.dart';
-import 'package:jobsgo/models/login_response_model.dart';
 import 'package:jobsgo/models/message_model.dart';
 import 'package:jobsgo/models/user_model.dart';
 import 'package:jobsgo/screens/Message/component/HeaderChatArea.dart';
 import 'package:jobsgo/services/shared_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 
+// ignore: library_prefixes
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class ChatArea extends StatefulWidget {
@@ -137,7 +139,7 @@ class _ChatAreaState extends State<ChatArea> {
           iconButton(Icon(Icons.photo, color: AppColor.blue), () {}),
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 12),
+              padding: const EdgeInsets.only(left: 12),
               child: TextField(
                 controller: textEditingController,
                 decoration:

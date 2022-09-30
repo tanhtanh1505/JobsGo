@@ -60,7 +60,7 @@ class _JobCardState extends State<JobCard> {
                         margin: const EdgeInsets.only(right: 12),
                         child: ButtonImage(
                           urlImage: widget.logo,
-                          goto: Profile(),
+                          goto: const Profile(),
                         ),
                       ),
                       Column(
@@ -81,7 +81,7 @@ class _JobCardState extends State<JobCard> {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(bottom: 12),
+                    padding: const EdgeInsets.only(bottom: 12),
                     child: widget.marked
                         ? Icon(
                             Icons.favorite,

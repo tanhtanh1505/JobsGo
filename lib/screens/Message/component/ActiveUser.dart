@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/component/AvatarWidget.dart';
 
 class ActiveUser extends StatefulWidget {
@@ -13,7 +11,7 @@ class ActiveUser extends StatefulWidget {
 class _ActiveUserState extends State<ActiveUser> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       child: ListView.builder(
         itemCount: 10,
@@ -26,8 +24,6 @@ class _ActiveUserState extends State<ActiveUser> {
   }
 
   Widget activeUserCard() {
-    return Container(
-      child: AvatarWidget(),
-    );
+    return const AvatarWidget();
   }
 }

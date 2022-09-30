@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/component/AvatarWidget.dart';
 import 'package:jobsgo/models/user_model.dart';
 import 'package:jobsgo/screens/Message/component/ChatArea.dart';
@@ -35,7 +33,7 @@ class _ChatItemState extends State<ChatItem> {
   Widget itemUserChat(BuildContext context) {
     return Container(
       height: 60,
-      padding: EdgeInsets.only(left: 12, right: 12),
+      padding: const EdgeInsets.only(left: 12, right: 12),
       child: Row(
         children: [
           AvatarWidget(urlImage: widget.user.avatar),
@@ -98,10 +96,10 @@ class _ChatItemState extends State<ChatItem> {
         height: 20,
         alignment: Alignment.center,
         decoration:
-            BoxDecoration(shape: BoxShape.circle, color: Colors.transparent),
+            const BoxDecoration(shape: BoxShape.circle, color: Colors.transparent),
         child: Text(
           widget.countLastMessage.toString(),
-          style: TextStyle(color: Colors.transparent),
+          style: const TextStyle(color: Colors.transparent),
         ),
       );
     }
