@@ -11,7 +11,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool value = false;
-
+  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
+                  padding: EdgeInsets.fromLTRB(29, 28, 30, 0),
                   child: TextField(
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -94,6 +94,18 @@ class _LoginState extends State<Login> {
                         Icons.lock,
                         color: Color(0xffCCCCCC),
                       ),
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState (() {
+                              _obscureText = !_obscureText;
+                          });
+                          },
+                        child: Icon(_obscureText
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                          color: Color(0xffCCCCCC),
+                        ),
+                      ),
                       hintText: "Password",
                       hintStyle: TextStyle(
                         color: Color(0xffCCCCCC),
@@ -101,6 +113,7 @@ class _LoginState extends State<Login> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    obscureText: _obscureText,
                   ),
                 ),
                 Container(
