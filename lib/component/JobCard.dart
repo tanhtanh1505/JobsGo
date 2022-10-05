@@ -1,9 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/ButtonImage.dart';
-import '../helper/ColorHelper.dart';
-import '../screens/Profile.dart';
+import 'package:jobsgo/themes/styles.dart';
+import '../screens/Profile/Profile.dart';
 
 class JobCard extends StatefulWidget {
   const JobCard(
@@ -44,9 +42,7 @@ class _JobCardState extends State<JobCard> {
           margin: const EdgeInsets.only(bottom: 20),
           decoration: BoxDecoration(
             border: Border.all(
-                color: const Color.fromARGB(255, 189, 189, 189),
-                width: 0.8,
-                style: BorderStyle.solid),
+                color: AppColor.gray, width: 0.8, style: BorderStyle.solid),
             borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
@@ -62,7 +58,10 @@ class _JobCardState extends State<JobCard> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(right: 12),
-                        child: ButtonImage(urlImage: widget.logo),
+                        child: ButtonImage(
+                          urlImage: widget.logo,
+                          goto: const Profile(),
+                        ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,15 +81,15 @@ class _JobCardState extends State<JobCard> {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(bottom: 12),
+                    padding: const EdgeInsets.only(bottom: 12),
                     child: widget.marked
-                        ? const Icon(
+                        ? Icon(
                             Icons.favorite,
-                            color: Colors.red,
+                            color: AppColor.red,
                           )
                         : Icon(
                             Icons.favorite,
-                            color: ColorHelper.gray(),
+                            color: AppColor.gray,
                           ),
                   )
                 ],
@@ -99,7 +98,7 @@ class _JobCardState extends State<JobCard> {
                 children: [
                   Icon(
                     Icons.location_on,
-                    color: ColorHelper.gray(),
+                    color: AppColor.gray,
                     size: 18,
                   ),
                   Text(
@@ -107,7 +106,7 @@ class _JobCardState extends State<JobCard> {
                     style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
-                        color: ColorHelper.gray()),
+                        color: AppColor.gray),
                   ),
                 ],
               ),
@@ -115,7 +114,7 @@ class _JobCardState extends State<JobCard> {
                 children: [
                   Icon(
                     Icons.monetization_on,
-                    color: ColorHelper.gray(),
+                    color: AppColor.gray,
                     size: 18,
                   ),
                   Text(
@@ -123,14 +122,14 @@ class _JobCardState extends State<JobCard> {
                     style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
-                        color: ColorHelper.blue()),
+                        color: AppColor.blue),
                   ),
                   Text(
                     "Month",
                     textAlign: TextAlign.end,
                     style: TextStyle(
                       fontSize: 12,
-                      color: ColorHelper.blue(),
+                      color: AppColor.blue,
                     ),
                   ),
                 ],

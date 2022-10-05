@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import '../helper/ColorHelper.dart';
+import 'package:jobsgo/themes/styles.dart';
 
 class Advertisement extends StatefulWidget {
   const Advertisement({super.key});
@@ -17,7 +15,7 @@ class _AdvertisementState extends State<Advertisement> {
       height: 152,
       margin: const EdgeInsets.only(top: 20),
       decoration: BoxDecoration(
-        color: ColorHelper.colorFromHex("#E4F9FF"),
+        color: AppColor.bluel2,
         image: const DecorationImage(
           image: AssetImage("assets/images/ads.png"),
           scale: 4,
@@ -36,7 +34,7 @@ class _AdvertisementState extends State<Advertisement> {
         children: [
           Expanded(
               child: Container(
-            padding: EdgeInsets.only(left: 19, top: 27, bottom: 27),
+            padding: const EdgeInsets.only(left: 19, top: 27, bottom: 27),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -60,14 +58,13 @@ class _AdvertisementState extends State<Advertisement> {
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8))),
                     foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blue),
-                    backgroundColor: MaterialStateProperty.all(
-                        ColorHelper.colorFromHex("#1976D2")),
+                        MaterialStateProperty.all<Color>(AppColor.blue),
+                    backgroundColor: MaterialStateProperty.all(AppColor.blue),
                   ),
                   onPressed: () {},
-                  child: const Text(
+                  child: Text(
                     'Read More',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: AppColor.white),
                   ),
                 )
               ],
