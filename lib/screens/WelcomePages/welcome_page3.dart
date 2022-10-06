@@ -18,7 +18,7 @@ class welcome_page3 extends StatelessWidget {
           Container(
             height: size.height,
             width: double.infinity,
-            color: Color(0xffFAFAFA),
+            color: const Color(0xffFAFAFA),
           ),
           Positioned(
             top: 110,

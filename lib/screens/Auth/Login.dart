@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:jobsgo/MyHomePage.dart';
 import 'package:jobsgo/config.dart';

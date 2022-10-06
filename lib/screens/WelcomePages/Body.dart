@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/Auth/Login.dart';
 import 'package:jobsgo/screens/Auth/Register.dart';

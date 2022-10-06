@@ -15,7 +15,7 @@ class welcome_page2 extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(height: size.height, width: double.infinity, color: Color(0xffFAFAFA),),
+          Container(height: size.height, width: double.infinity, color: const Color(0xffFAFAFA),),
 
           Positioned(
             top: 110,

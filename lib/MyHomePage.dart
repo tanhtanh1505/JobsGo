@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'screens/Home/Home.dart';
 import 'screens/SavedJobs/SavedJobs.dart';
 import 'screens/Application/Application.dart';
