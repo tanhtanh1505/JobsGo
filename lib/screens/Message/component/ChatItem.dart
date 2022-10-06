@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/AvatarWidget.dart';
 import 'package:jobsgo/models/user_model.dart';

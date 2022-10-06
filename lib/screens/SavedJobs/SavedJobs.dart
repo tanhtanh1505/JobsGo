@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/AppbarCustom.dart';
 import 'package:jobsgo/component/JobCard.dart';
@@ -28,13 +29,13 @@ class SavedJobs extends StatelessWidget {
             child: Column(
               children: const [
                 JobCard(
-                  logo: 'assets/images/twitter.png',
-                  company: "Twitter",
-                  role: "Remote UI/UX Designer",
-                  location: "Jakata-Indonesia",
-                  salary: "500-1k",
-                  postedIn: "12",
-                  marked: true),
+                    logo: 'assets/images/twitter.png',
+                    company: "Twitter",
+                    role: "Remote UI/UX Designer",
+                    location: "Jakata-Indonesia",
+                    salary: "500-1k",
+                    postedIn: "12",
+                    marked: true),
               ],
             ),
           ),

@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: file_names, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/Message/component/MessageItem.dart';
@@ -62,7 +62,6 @@ class _ChatAreaState extends State<ChatArea> {
     });
     socket.connect();
     socket.onConnect((_) {
-      print('Connection established');
       if (isLoaded) socket.emit("join", user.username);
     });
     socket.on('getMessage', (newMessage) {
