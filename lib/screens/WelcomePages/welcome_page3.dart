@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:jobsgo/screens/Auth/Login.dart';
+import 'package:jobsgo/screens/Auth/login.dart';
 
 // ignore: camel_case_types
 class welcome_page3 extends StatelessWidget {
