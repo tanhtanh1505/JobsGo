@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/my_home_page.dart';
-import 'package:jobsgo/screens/WelcomePages/welcome_page.dart';
-import 'package:jobsgo/services/shared_service.dart';
+import 'package:jobsgo/screens/Auth/login.dart';
 
-Widget defaultHome = const WelcomePage();
+Widget defaultHome = const Login();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  bool result = await SharedService.isLoggedIn();
-  if (result) {
-    defaultHome = const MyHomePage();
-  }
 
   runApp(const MyApp());
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/helper/ColorHelper.dart';
+import 'package:jobsgo/helper/color_helper.dart';
 
 class AppColor {
   static Color gray = ColorHelper.colorFromHex("#A9A9A9");
