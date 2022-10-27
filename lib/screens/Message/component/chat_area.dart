@@ -56,7 +56,7 @@ class _ChatAreaState extends State<ChatArea> {
   }
 
   initSocket() {
-    socket = IO.io(Config.socket, <String, dynamic>{
+    socket = IO.io('https://${Config.apiURL}', <String, dynamic>{
       'autoConnect': false,
       'transports': ['websocket'],
     });
