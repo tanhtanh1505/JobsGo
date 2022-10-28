@@ -4,6 +4,8 @@ class Config {
   static const String apiURL = "tanhuet.site";
   static const String loginAPI = "/login";
   static const String registerAPI = "/register";
-  static const String profileAPI = "/profile";
-  static const String otherProfileApi = "/info/";
+
+  //user api
+  static const String profileAPI = "/user/profile";
+  static const String otherProfileApi = "/user/";
 }

@@ -1,15 +1,11 @@
 import 'dart:convert';
 
-MessageModel messageModelFromJson(String str) =>
-    MessageModel.fromJson(json.decode(str));
+Message messageFromJson(String str) => Message.fromJson(json.decode(str));
 
-String messageModelToJson(MessageModel data) => json.encode(data.toJson());
+String messageToJson(Message data) => json.encode(data.toJson());
 
-MessageModel failureMessage =
-    MessageModel(senderId: 'xxx', recieverId: 'xxx', msg: 'xxx');
-
-class MessageModel {
-  MessageModel({
+class Message {
+  Message({
     required this.senderId,
     required this.recieverId,
     required this.msg,
@@ -19,9 +15,9 @@ class MessageModel {
   String recieverId;
   String msg;
 
-  factory MessageModel.fromJson(Map<String, dynamic> json) {
+  factory Message.fromJson(Map<String, dynamic> json) {
     try {
-      return MessageModel(
+      return Message(
         senderId: json["senderId"],
         recieverId: json["recieverId"],
         msg: json["msg"],
@@ -37,3 +33,6 @@ class MessageModel {
         "msg": msg,
       };
 }
+
+Message failureMessage =
+    Message(senderId: 'xxx', recieverId: 'xxx', msg: 'xxx');

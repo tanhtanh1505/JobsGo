@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/Message/component/message_item.dart';
 import 'package:jobsgo/config.dart';
-import 'package:jobsgo/models/message_model.dart';
-import 'package:jobsgo/models/user_model.dart';
+import 'package:jobsgo/models/message/message.dart';
+import 'package:jobsgo/models/user/user.dart';
 import 'package:jobsgo/screens/Message/component/header_chat_area.dart';
 import 'package:jobsgo/services/shared_service.dart';
 import 'package:jobsgo/themes/styles.dart';
@@ -65,7 +65,7 @@ class _ChatAreaState extends State<ChatArea> {
       if (isLoaded) socket.emit("join", user.username);
     });
     socket.on('getMessage', (newMessage) {
-      MessageModel newMess = messageModelFromJson(newMessage);
+      Message newMess = messageFromJson(newMessage);
       if (newMess != failureMessage &&
           newMess.senderId == widget.reciever.username) {
         setState(() {
@@ -81,7 +81,7 @@ class _ChatAreaState extends State<ChatArea> {
   sendMessage() {
     String message = textEditingController.text.trim();
     if (message.isEmpty) return;
-    MessageModel newMsg = MessageModel(
+    Message newMsg = Message(
         senderId: user.username,
         recieverId: widget.reciever.username,
         msg: message);

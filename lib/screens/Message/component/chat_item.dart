@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/avatar_widget.dart';
-import 'package:jobsgo/models/user_model.dart';
+import 'package:jobsgo/models/user/user.dart';
 import 'package:jobsgo/screens/Message/component/chat_area.dart';
 import 'package:jobsgo/themes/styles.dart';
 
