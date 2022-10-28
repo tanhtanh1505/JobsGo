@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/my_home_page.dart';
 import 'package:jobsgo/config.dart';
-import 'package:jobsgo/models/login_request_model.dart';
+import 'package:jobsgo/models/auth/login_request.dart';
 import 'package:jobsgo/screens/Auth/register.dart';
 import 'package:jobsgo/services/api_service.dart';
 import 'package:snippet_coder_utils/FormHelper.dart';

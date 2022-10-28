@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/models/user_model.dart';
+import 'package:jobsgo/models/user/user.dart';
 import 'package:jobsgo/screens/Message/component/chat_item.dart';
-import 'package:jobsgo/services/api_service.dart';
+import 'package:jobsgo/services/user_service.dart';
 
 class ListMessages extends StatefulWidget {
   const ListMessages({super.key});
@@ -23,7 +23,7 @@ class _ListMessagesState extends State<ListMessages> {
   }
 
   getData() async {
-    users = await APIService.getListUserChated();
+    users = await UserService.getListUserChated();
     if (users.isNotEmpty) {
       setState(() {
         isLoaded = true;

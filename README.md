@@ -27,10 +27,7 @@ https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/
 
 ## Report Week 4
 
-
-### Gif demo (File too big to render here)
-
-https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/2022-09-30+10-40-27.gif
+### Gif demo <a href="https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/2022-09-30+10-40-27.gif">click here</a>
 
 ### Screen Capture
 
@@ -43,10 +40,10 @@ https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/2022-09-30+10-40-
 </tr>
 </table>
 
-
 ## Report Week 5
 
 ### Welcome Page
+
 <table>
 <tr>
 <td><img src="https://user-images.githubusercontent.com/75035577/194481523-1842a052-1a64-44e6-8dbd-81bb019c4133.png" height="300"></td>
@@ -56,8 +53,8 @@ https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/2022-09-30+10-40-
 </tr>
 </table>
 
-
 ### Application and SavedJobs screens
+
 <table>
 <tr>
 <td><img src="https://user-images.githubusercontent.com/75035577/194484973-78256f54-e168-46e5-8b97-b300af05b46d.png" height="300"></td>
@@ -65,3 +62,6 @@ https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/2022-09-30+10-40-
 </tr>
 </table>
 
+## Report Week 6
+
+### UI/Application Exerciser Monkey <a href="lib/logs/test_logs.txt">(log file here)</a>

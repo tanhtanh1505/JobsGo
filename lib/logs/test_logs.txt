@@ -1,0 +1,176 @@
+  bash arg: -p
+  bash arg: com.example.jobsgo
+  bash arg: -v
+  bash arg: 500
+:Monkey: seed=1667138626722 count=500
+:AllowPackage: com.example.jobsgo
+:IncludeCategory: android.intent.category.LAUNCHER
+:IncludeCategory: android.intent.category.MONKEY
+// Event percentages:
+//   0: 15.0%
+//   1: 10.0%
+//   2: 2.0%
+//   3: 15.0%
+//   4: -0.0%
+//   5: -0.0%
+//   6: 25.0%
+//   7: 15.0%
+//   8: 2.0%
+//   9: 2.0%
+//   10: 1.0%
+//   11: 13.0%
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.jobsgo/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.jobsgo/.MainActivity } in package com.example.jobsgo
+:Sending Touch (ACTION_DOWN): 0:(441.0,1444.0)
+:Sending Touch (ACTION_UP): 0:(381.2354,1433.6415)
+:Sending Touch (ACTION_DOWN): 0:(745.0,785.0)
+:Sending Touch (ACTION_UP): 0:(742.173,790.657)
+:Sending Touch (ACTION_DOWN): 0:(872.0,754.0)
+:Sending Touch (ACTION_UP): 0:(878.0495,759.00446)
+:Sending Trackball (ACTION_MOVE): 0:(-2.0,-1.0)
+:Sending Touch (ACTION_DOWN): 0:(189.0,426.0)
+:Sending Touch (ACTION_UP): 0:(245.34898,395.72534)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,-1.0)
+:Sending Touch (ACTION_DOWN): 0:(175.0,1773.0)
+:Sending Touch (ACTION_UP): 0:(174.61563,1783.7865)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,-2.0)
+:Sending Touch (ACTION_DOWN): 0:(343.0,801.0)
+:Sending Touch (ACTION_UP): 0:(323.79807,795.8113)
+:Sending Touch (ACTION_DOWN): 0:(466.0,1756.0)
+:Sending Touch (ACTION_UP): 0:(465.99713,1756.836)
+:Sending Touch (ACTION_DOWN): 0:(491.0,887.0)
+:Sending Touch (ACTION_UP): 0:(444.28964,826.9693)
+:Sending Touch (ACTION_DOWN): 0:(266.0,1131.0)
+:Sending Touch (ACTION_UP): 0:(263.69644,1151.4128)
+:Sending Touch (ACTION_DOWN): 0:(997.0,729.0)
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(986.57465,663.3123)
+:Sending Touch (ACTION_DOWN): 0:(122.0,358.0)
+:Sending Touch (ACTION_UP): 0:(119.336205,354.8307)
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,-2.0)
+    //[calendar_time:2022-10-28 12:40:13.649  system_uptime:69709527]
+    // Sending event #100
+:Sending Touch (ACTION_DOWN): 0:(190.0,1151.0)
+:Sending Touch (ACTION_UP): 0:(176.77318,1138.6268)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,-5.0)
+:Sending Touch (ACTION_DOWN): 0:(1027.0,439.0)
+:Sending Touch (ACTION_UP): 0:(1080.0,303.77115)
+:Sending Touch (ACTION_DOWN): 0:(586.0,1410.0)
+:Sending Touch (ACTION_UP): 0:(579.84015,1414.4838)
+:Sending Touch (ACTION_DOWN): 0:(541.0,214.0)
+:Sending Touch (ACTION_UP): 0:(530.1435,209.31671)
+:Sending Touch (ACTION_DOWN): 0:(237.0,1413.0)
+:Sending Touch (ACTION_UP): 0:(308.89282,1347.1274)
+:Sending Trackball (ACTION_MOVE): 0:(-3.0,-1.0)
+:Sending Trackball (ACTION_UP): 0:(0.0,0.0)
+:Sending Touch (ACTION_DOWN): 0:(738.0,1061.0)
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(738.78217,1051.3031)
+    // Injection Failed
+:Sending Trackball (ACTION_MOVE): 0:(-3.0,-5.0)
+:Sending Touch (ACTION_DOWN): 0:(482.0,1316.0)
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(538.5885,1313.0043)
+    // Injection Failed
+:Sending Trackball (ACTION_MOVE): 0:(4.0,1.0)
+    //[calendar_time:2022-10-28 12:40:13.973  system_uptime:69709848]
+    // Sending event #200
+:Sending Touch (ACTION_DOWN): 0:(690.0,1470.0)
+:Sending Touch (ACTION_UP): 0:(716.21747,1434.8033)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,0.0)
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,0.0)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,-1.0)
+:Sending Touch (ACTION_DOWN): 0:(868.0,499.0)
+:Sending Touch (ACTION_UP): 0:(846.9762,515.2232)
+:Sending Touch (ACTION_DOWN): 0:(115.0,1039.0)
+:Sending Touch (ACTION_UP): 0:(120.43549,1037.0432)
+:Sending Trackball (ACTION_MOVE): 0:(-2.0,1.0)
+:Sending Trackball (ACTION_MOVE): 0:(3.0,4.0)
+:Sending Touch (ACTION_DOWN): 0:(305.0,1684.0)
+:Sending Touch (ACTION_UP): 0:(303.60025,1694.9196)
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,0.0)
+:Sending Touch (ACTION_DOWN): 0:(657.0,684.0)
+:Sending Touch (ACTION_UP): 0:(652.5352,684.52026)
+    //[calendar_time:2022-10-28 12:40:14.436  system_uptime:69710311]
+    // Sending event #300
+    //[calendar_time:2022-10-28 12:40:14.436  system_uptime:69710311]
+    // Sending event #300
+:Sending Touch (ACTION_DOWN): 0:(685.0,57.0)
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(738.6433,118.44037)
+    // Injection Failed
+:Sending Touch (ACTION_DOWN): 0:(982.0,117.0)
+:Sending Touch (ACTION_UP): 0:(899.1628,190.71503)
+:Sending Touch (ACTION_DOWN): 0:(988.0,1248.0)
+:Sending Touch (ACTION_UP): 0:(987.9159,1262.9696)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.jobsgo/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.jobsgo/.MainActivity } in package com.example.jobsgo
+:Sending Trackball (ACTION_MOVE): 0:(3.0,-5.0)
+:Sending Trackball (ACTION_MOVE): 0:(1.0,-5.0)
+:Sending Touch (ACTION_DOWN): 0:(916.0,437.0)
+:Sending Touch (ACTION_UP): 0:(960.17426,441.28107)
+:Sending Trackball (ACTION_MOVE): 0:(-1.0,-4.0)
+:Sending Touch (ACTION_DOWN): 0:(337.0,84.0)
+:Sending Touch (ACTION_UP): 0:(339.05215,84.73538)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,4.0)
+:Sending Trackball (ACTION_MOVE): 0:(0.0,-2.0)
+:Sending Touch (ACTION_DOWN): 0:(61.0,28.0)
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(68.80869,0.0)
+    // Injection Failed
+:Sending Trackball (ACTION_MOVE): 0:(1.0,-2.0)
+    //[calendar_time:2022-10-28 12:40:14.669  system_uptime:69710544]
+    // Sending event #400
+:Sending Touch (ACTION_DOWN): 0:(810.0,1232.0)
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(821.0977,1242.0585)
+    // Injection Failed
+:Sending Trackball (ACTION_MOVE): 0:(4.0,3.0)
+:Sending Touch (ACTION_DOWN): 0:(606.0,1662.0)
+:Sending Touch (ACTION_UP): 0:(611.0551,1651.0382)
+:Sending Touch (ACTION_DOWN): 0:(496.0,1044.0)
+:Sending Touch (ACTION_UP): 0:(555.10626,1034.6033)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.jobsgo/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.jobsgo/.MainActivity } in package com.example.jobsgo
+:Sending Touch (ACTION_DOWN): 0:(912.0,1175.0)
+:Sending Touch (ACTION_UP): 0:(910.5312,1175.6152)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,2.0)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.jobsgo/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.jobsgo/.MainActivity } in package com.example.jobsgo
+:Sending Touch (ACTION_DOWN): 0:(719.0,1075.0)
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(720.3163,1071.72)
+    // Injection Failed
+:Sending Touch (ACTION_DOWN): 0:(793.0,858.0)
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(792.3374,850.86896)
+    // Injection Failed
+:Sending Trackball (ACTION_MOVE): 0:(4.0,-1.0)
+:Sending Touch (ACTION_DOWN): 0:(294.0,441.0)
+:Sending Touch (ACTION_UP): 0:(298.48932,440.93152)
+:Sending Trackball (ACTION_MOVE): 0:(-2.0,-1.0)
+Events injected: 500
+:Sending rotation degree=0, persist=false
+:Dropped: keys=0 pointers=35 trackballs=0 flips=0 rotations=0
+## Network stats: elapsed time=2110ms (0ms mobile, 0ms wifi, 2110ms not connected)
+// Monkey finished

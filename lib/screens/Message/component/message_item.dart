@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/models/message_model.dart';
+import 'package:jobsgo/models/message/message.dart';
 
 class MessageItem extends StatelessWidget {
   const MessageItem({super.key, this.isMine = false, required this.message});
 
-  final MessageModel message;
+  final Message message;
   final bool isMine;
 
   @override

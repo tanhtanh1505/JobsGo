@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/button_image.dart';
+import 'package:jobsgo/screens/JobDetail/job_detail.dart';
 import 'package:jobsgo/themes/styles.dart';
-import '../screens/Profile/profile.dart';
 
 class JobCard extends StatefulWidget {
   const JobCard(
@@ -33,7 +33,9 @@ class _JobCardState extends State<JobCard> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const Profile(),
+          builder: (context) => const JobDetail(
+            jobId: 'id',
+          ),
         ),
       ),
       child: Container(
@@ -60,7 +62,9 @@ class _JobCardState extends State<JobCard> {
                         margin: const EdgeInsets.only(right: 12),
                         child: ButtonImage(
                           urlImage: widget.logo,
-                          goto: const Profile(),
+                          goto: const JobDetail(
+                            jobId: "id",
+                          ),
                         ),
                       ),
                       Column(
