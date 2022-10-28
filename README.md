@@ -21,9 +21,9 @@ samples, guidance on mobile development, and a full API reference.
 
 - Do Thi Anh Duong - 20020274
 
-## Report
+## Report <a href="https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/edit?usp=sharing">here</a>
 
-https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/edit?usp=sharing
+## Figma <a href="https://www.figma.com/file/Dg8RZqQsy4TSgrC1egQ9EL/JobsGO">here</a>
 
 ## Report Week 4
 
@@ -65,3 +65,7 @@ https://docs.google.com/document/d/1V0KGDuIp_Clor8z5-1-Hhp-1jZfLhlT-qffcnEn1J_I/
 ## Report Week 6
 
 ### UI/Application Exerciser Monkey <a href="lib/logs/test_logs.txt">(log file here)</a>
+
+### Integration Test
+
+<img src="https://jobsgo-storage.s3.ap-southeast-1.amazonaws.com/images/b7d02c09ac5c6a02334d.jpg">
