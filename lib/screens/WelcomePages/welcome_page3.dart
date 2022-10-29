@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/Auth/Login.dart';
 

@@ -1,6 +1,6 @@
 class Config {
   static const String appName = "JobsGo";
-  static const bool isProductMode = true;
+  static const bool isProductMode = false;
   static const String apiURL = "tanhuet.site";
   static const String socket = "https://tanhuet.site";
   static const String loginAPI = "/login";
