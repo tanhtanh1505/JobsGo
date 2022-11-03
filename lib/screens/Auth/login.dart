@@ -8,8 +8,8 @@ import 'package:snippet_coder_utils/FormHelper.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
-
+  const Login({super.key, this.onSignedIn});
+  final VoidCallback? onSignedIn;
   @override
   State<Login> createState() => _LoginState();
 }
@@ -48,6 +48,8 @@ class _LoginState extends State<Login> {
           isApiCallProcess = false;
         });
         if (response) {
+          widget.onSignedIn != () {} ? widget.onSignedIn!() : () {};
+
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -107,9 +109,9 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Container(
-                  key: const Key("login_feild"),
                   padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
                   child: TextField(
+                    key: const Key("email_feild"),
                     controller: usernameEditingController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -136,9 +138,9 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Container(
-                  key: const Key("password_feild"),
                   padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
                   child: TextField(
+                    key: const Key("password_feild"),
                     controller: passwordEditingController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -199,9 +201,9 @@ class _LoginState extends State<Login> {
                 Container(
                   height: 94,
                   width: 604,
-                  key: const Key("login_btn"),
                   padding: const EdgeInsets.fromLTRB(29, 31, 29, 0),
                   child: TextButton(
+                    key: const Key("login_btn"),
                     onPressed: () {
                       actionLogin();
                     },

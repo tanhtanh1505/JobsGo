@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/screens/Auth/login.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class ProfileAva extends StatelessWidget {
@@ -17,12 +18,17 @@ class ProfileAva extends StatelessWidget {
             backgroundImage: const AssetImage("assets/images/Vector.png"),
             backgroundColor: AppColor.white,
           ),
-
           Container(
             padding: const EdgeInsets.only(top: 15),
             //alignment: Alignment.bottomRight,
             child: TextButton(
-              onPressed: () { },
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Login(),
+                    ));
+              },
               child: Image.asset("assets/images/pen-to-square-solid 1.png"),
             ),
           ),
