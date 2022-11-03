@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/ButtonImage.dart';
+import 'package:jobsgo/screens/JobDetail/JobDetail.dart';
 import 'package:jobsgo/themes/styles.dart';
 import '../screens/Profile/Profile.dart';
 
@@ -35,7 +36,7 @@ class _JobCardState extends State<JobCard> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const Profile(),
+          builder: (context) => const JobDetail(),
         ),
       ),
       child: Container(

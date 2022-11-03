@@ -133,7 +133,7 @@ class Profile extends StatelessWidget {
           ),
 
           Container(
-            padding: const EdgeInsets.only(left: 22),
+            padding: const EdgeInsets.only(left: 32),
             child: const Text(
               "ACCOUNT",
               style: TextStyle(
@@ -163,7 +163,7 @@ class Profile extends StatelessWidget {
           ),
 
           Container(
-            padding: const EdgeInsets.only(left: 22),
+            padding: const EdgeInsets.only(left: 32, top: 20),
             child: const Text(
               "OTHER",
               style: TextStyle(
@@ -184,7 +184,7 @@ class Profile extends StatelessWidget {
 
           const ProfileButton(
             text: 'Logout',
-            asset: "assets/images/Setting.png",
+            asset: "assets/images/Logout.png",
             //press: () => {},
           ),
         ],
