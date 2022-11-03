@@ -33,9 +33,7 @@ class _JobCardState extends State<JobCard> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const JobDetail(
-            jobId: 'id',
-          ),
+          builder: (context) => const JobDetail(),
         ),
       ),
       child: Container(
@@ -62,9 +60,7 @@ class _JobCardState extends State<JobCard> {
                         margin: const EdgeInsets.only(right: 12),
                         child: ButtonImage(
                           urlImage: widget.logo,
-                          goto: const JobDetail(
-                            jobId: "id",
-                          ),
+                          goto: const JobDetail(),
                         ),
                       ),
                       Column(

@@ -28,7 +28,7 @@ class _BodyJobDetailState extends State<BodyJobDetail> {
           goto: const Profile(),
         ),
         Column(
-          children: [],
+          children: const [Text("data")],
         )
       ],
     );

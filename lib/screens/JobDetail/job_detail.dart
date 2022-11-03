@@ -1,66 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/models/job/job.dart';
-import 'package:jobsgo/screens/JobDetail/component/bodyJobDetail.dart';
-import 'package:jobsgo/services/job_service.dart';
-import 'package:jobsgo/themes/styles.dart';
+import 'package:jobsgo/screens/JobDetail/component/content.dart';
+import 'package:jobsgo/screens/JobDetail/component/jd_appbar.dart';
 
-class JobDetail extends StatefulWidget {
-  const JobDetail({super.key, required this.jobId});
-
-  final String jobId;
-
-  @override
-  State<JobDetail> createState() => _JobDetailState();
-}
-
-class _JobDetailState extends State<JobDetail> {
-  var isLoaded = true;
-  // Job job = nullJob;
-
-  @override
-  void initState() {
-    super.initState();
-
-    //fetch data
-    // getData();
-  }
-
-  getData() async {
-    //get job from api by jobId below
-    // job = await JobService().getJob(widget.jobId);
-    // if (job != nullJob) {
-    //   setState(() {
-    //     isLoaded = true;
-    //   });
-    // }
-  }
+class JobDetail extends StatelessWidget {
+  const JobDetail({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Visibility(
-      visible: isLoaded,
-      replacement: const Center(
-        child: CircularProgressIndicator(),
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 50,
+        iconTheme: const IconThemeData(color: Color(0xffA9A9A9), size: 32),
+        title: const JDAppBar(title: "Job Detail"),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
       ),
-      child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 80,
-          title: Text(
-            "Job Detail",
-            style: TextStyle(
-                color: AppColor.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w600),
-          ),
-          centerTitle: true,
-          iconTheme: IconThemeData(color: AppColor.black),
-          backgroundColor: Colors.transparent,
-          // actions: [Icon(Icons.mark_as_unread)],
-          elevation: 0.0,
-        ),
-        body: const Text("Job Detail"),
-        // body: BodyJobDetail(job: job),
-      ),
+      body: const Content(),
     );
   }
 }

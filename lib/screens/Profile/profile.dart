@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/component/AppbarCustom.dart';
-import 'package:jobsgo/screens/Profile/conponent/ProfileButton.dart';
-import 'package:jobsgo/screens/Profile/conponent/ProfileAva.dart';
-import 'package:jobsgo/services/shared_service.dart';
-import 'package:jobsgo/themes/styles.dart';
+import 'package:jobsgo/component/appbar_custom.dart';
+import 'package:jobsgo/screens/Profile/conponent/profile_button.dart';
+import 'package:jobsgo/screens/Profile/conponent/profile_ava.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -19,7 +17,6 @@ class Profile extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-
       body: ListView(
         children: [
           Center(
@@ -27,17 +24,16 @@ class Profile extends StatelessWidget {
               children: [
                 const ProfileAva(),
                 const Text(
-                    "Team 7",
+                  "Team 7",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 20,
                   ),
                 ),
-
                 Container(
                   padding: const EdgeInsets.only(top: 8, bottom: 15),
                   child: const Text(
-                      "Senior UI/UX Designer",
+                    "Senior UI/UX Designer",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
@@ -45,7 +41,6 @@ class Profile extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -61,7 +56,6 @@ class Profile extends StatelessWidget {
                               fontSize: 22,
                             ),
                           ),
-
                           Text(
                             "Applied",
                             style: TextStyle(
@@ -73,7 +67,6 @@ class Profile extends StatelessWidget {
                         ],
                       ),
                     ),
-
                     SizedBox(
                       height: 80,
                       width: 80,
@@ -86,7 +79,6 @@ class Profile extends StatelessWidget {
                               fontSize: 22,
                             ),
                           ),
-
                           Text(
                             "Reviewed",
                             style: TextStyle(
@@ -98,7 +90,6 @@ class Profile extends StatelessWidget {
                         ],
                       ),
                     ),
-
                     SizedBox(
                       height: 80,
                       width: 80,
@@ -111,7 +102,6 @@ class Profile extends StatelessWidget {
                               fontSize: 22,
                             ),
                           ),
-
                           Text(
                             "Contacted",
                             style: TextStyle(
@@ -125,11 +115,9 @@ class Profile extends StatelessWidget {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),
-
           Container(
             padding: const EdgeInsets.only(left: 32),
             child: const Text(
@@ -137,10 +125,10 @@ class Profile extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
-                color: Color(0xffC8C8C8),),
+                color: Color(0xffC8C8C8),
+              ),
             ),
           ),
-
           const ProfileButton(
             text: 'Personal Data',
             asset: "assets/images/Account.png",
@@ -159,7 +147,6 @@ class Profile extends StatelessWidget {
             asset: "assets/images/Application.png",
             //press: () => {},
           ),
-
           Container(
             padding: const EdgeInsets.only(left: 32, top: 20),
             child: const Text(
@@ -167,10 +154,10 @@ class Profile extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
-                color: Color(0xffC8C8C8),),
+                color: Color(0xffC8C8C8),
+              ),
             ),
           ),
-
           const Padding(
             padding: EdgeInsets.only(bottom: 20),
             child: ProfileButton(
@@ -179,7 +166,6 @@ class Profile extends StatelessWidget {
               //press: () => {},
             ),
           ),
-
           const ProfileButton(
             text: 'Logout',
             asset: "assets/images/Logout.png",
