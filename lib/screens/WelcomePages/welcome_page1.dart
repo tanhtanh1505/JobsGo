@@ -96,7 +96,6 @@ class welcome_page1 extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                       side: const BorderSide(color: Colors.black),
                     ))
-
                 ),
               ),
             ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/services/remote_service.dart';
-
 import '../models/post.dart';
 
 class ListJob extends StatefulWidget {
