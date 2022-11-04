@@ -46,6 +46,7 @@ class _RegisterState extends State<Register> {
               Container(
                 padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
                 child: TextField(
+                  key: const Key('email'),
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.transparent),
@@ -73,6 +74,7 @@ class _RegisterState extends State<Register> {
               Container(
                 padding: const EdgeInsets.fromLTRB(29, 28, 30, 0),
                 child: TextField(
+                  key: const Key('password'),
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.transparent),
@@ -89,6 +91,7 @@ class _RegisterState extends State<Register> {
                       color: Color(0xffCCCCCC),
                     ),
                     suffixIcon: GestureDetector(
+                      key: const Key('passwordVisibility'),
                       onTap: () {
                         setState(() {
                           _obscureText = !_obscureText;
@@ -132,6 +135,7 @@ class _RegisterState extends State<Register> {
                 width: 604,
                 padding: const EdgeInsets.fromLTRB(29, 31, 29, 0),
                 child: TextButton(
+                  key: const Key('register'),
                   onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor:
@@ -167,6 +171,7 @@ class _RegisterState extends State<Register> {
                         ),
                       ),
                       TextButton(
+                        key: const Key('login'),
                         onPressed: () {
                           Navigator.push(
                             context,

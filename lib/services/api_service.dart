@@ -5,8 +5,6 @@ import 'package:jobsgo/config.dart';
 import 'package:jobsgo/helper/uri_helper.dart';
 import 'package:jobsgo/models/auth/login_request.dart';
 import 'package:jobsgo/models/auth/login_response.dart';
-import 'package:jobsgo/models/auth/register_request.dart';
-import 'package:jobsgo/models/auth/register_response.dart';
 import 'package:jobsgo/services/shared_service.dart';
 
 class APIService {
@@ -29,19 +27,5 @@ class APIService {
     } else {
       return false;
     }
-  }
-
-  static Future<RegisterResponseModel> register(
-      RegisterRequestModel model) async {
-    Map<String, String> requestHeader = {
-      'Content-Type': 'application/json',
-    };
-
-    var url = UriHelper.getUri(Config.registerAPI);
-
-    var response = await client.post(url,
-        headers: requestHeader, body: jsonEncode(model.toJson()));
-
-    return registerResponseModelFromJson(response.body);
   }
 }

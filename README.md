@@ -1,7 +1,5 @@
 # Group 7 - INT3020 40
 
-### <a href="https://www.figma.com/file/Dg8RZqQsy4TSgrC1egQ9EL/JobsGO">Figma</a>
-
 ### Members
 
 - Le Tuan Anh - 20021287
@@ -9,6 +7,8 @@
 - Pham Huy Hieu - 20020137
 
 - Do Thi Anh Duong - 20020274
+
+### <a href="https://www.figma.com/file/Dg8RZqQsy4TSgrC1egQ9EL/JobsGO">Figma</a>
 
 ### Requirement
 
@@ -129,7 +129,18 @@ flutter run
   
 <table>
 <tr>
-<td><img src="https://jobsgo-storage.s3.ap-southeast-1.amazonaws.com/images/b7d02c09ac5c6a02334d.jpg"></td>
+<td><img src="assets/screens/intergration_test_login.jpg"></td>
+</tr>
+</table>
+
+</details>
+
+<details>
+  <summary>Coverage Test</summary>
+  
+<table>
+<tr>
+<td><img src="assets/screens/coverage_test.jpg"></td>
 </tr>
 </table>
 

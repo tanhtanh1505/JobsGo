@@ -3,8 +3,8 @@ import 'dart:convert';
 LoginResponseModel loginResponseModelFromJson(String str) =>
     LoginResponseModel.fromJson(json.decode(str));
 
-String loginResponseModelToJson(LoginResponseModel data) =>
-    json.encode(data.toJson());
+// String loginResponseModelToJson(LoginResponseModel data) =>
+//     json.encode(data.toJson());
 
 class LoginResponseModel {
   LoginResponseModel({

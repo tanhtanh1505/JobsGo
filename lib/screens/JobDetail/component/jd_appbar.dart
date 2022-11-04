@@ -3,10 +3,10 @@ import 'package:jobsgo/themes/styles.dart';
 
 class JDAppBar extends StatelessWidget {
   const JDAppBar({
-    Key? key,
+    super.key,
     required this.title,
     this.canBack = false,
-  }) : super(key: key);
+  });
 
   final String title;
   final bool canBack;

@@ -55,8 +55,11 @@ class _AdvertisementState extends State<Advertisement> {
                 ),
                 TextButton(
                   style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8))),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
                     foregroundColor:
                         MaterialStateProperty.all<Color>(AppColor.blue),
                     backgroundColor: MaterialStateProperty.all(AppColor.blue),

@@ -140,6 +140,7 @@ class _ChatAreaState extends State<ChatArea> {
             child: Container(
               padding: const EdgeInsets.only(left: 12),
               child: TextField(
+                key: const Key('message'),
                 controller: textEditingController,
                 decoration:
                     const InputDecoration.collapsed(hintText: "Send a message"),

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
 
-String userModelToJson(UserModel data) => json.encode(data.toJson());
+// String userModelToJson(UserModel data) => json.encode(data.toJson());
 
 UserModel exampleUser({username = 'tanhne'}) => UserModel.fromJson({
       "id": "97cbd119-bb71-4f72-bed6-aed9efa11fa6",
@@ -43,13 +43,13 @@ class UserModel {
         createdAt: DateTime.parse(json["create_time"]),
       );
 
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "username": username,
-        "name": name,
-        "avatar": avatar,
-        "email": email,
-        "phone": phone,
-        "create_time": createdAt.toIso8601String(),
-      };
+  // Map<String, dynamic> toJson() => {
+  //       "id": id,
+  //       "username": username,
+  //       "name": name,
+  //       "avatar": avatar,
+  //       "email": email,
+  //       "phone": phone,
+  //       "create_time": createdAt.toIso8601String(),
+  //     };
 }
