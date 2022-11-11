@@ -41,7 +41,7 @@ class Content extends StatelessWidget {
         ),
 
         Container(
-          padding: const EdgeInsets.only(left: 22, top: 22),
+          padding: const EdgeInsets.only(left: 22, top: 22, bottom: 10),
           child: Table(
             //border: TableBorder.all(),
             children: [
@@ -154,9 +154,8 @@ class Content extends StatelessWidget {
         ),
 
         Container(
-          height: 90,
+          height: 80,
           width: 316,
-          padding: const EdgeInsets.only(),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color(0xffF6F6F6)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -177,7 +176,7 @@ class Content extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xffA9A9A9),
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 17,
                     ),
                   ),
                 ),
@@ -198,7 +197,7 @@ class Content extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xffA9A9A9),
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 17,
                     ),
                   ),
                 ),
@@ -208,7 +207,7 @@ class Content extends StatelessWidget {
         ),
 
         Container(
-          padding: const EdgeInsets.only(left: 22, right: 30, top: 30, bottom: 35),
+          padding: const EdgeInsets.only(left: 22, right: 30, top: 10, bottom: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -301,7 +300,6 @@ class Content extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              Container(height: 10),
               const Text(
                 "651 Brannan St, San Francisco, CA 94107, USA",
                 style: TextStyle(
@@ -329,7 +327,7 @@ class Content extends StatelessWidget {
                 "Apply This Job",
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 20,
+                fontSize: 18,
                 color: Color(0xffFFFFFF),
               ),
             ),

@@ -12,7 +12,7 @@ class JobDetail extends StatelessWidget {
         toolbarHeight: 50,
         iconTheme: const IconThemeData(color: Color(0xffA9A9A9), size: 32),
         title: const JDAppBar(title: "Job Detail"),
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xffFAFAFA),
         elevation: 0.0,
       ),
       body: const Content(),
