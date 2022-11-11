@@ -6,6 +6,9 @@ class Config {
   static const String registerAPI = "/register";
 
   //user api
-  static const String profileAPI = "/user/profile";
+  static const String profileAPI = "/jobseeker";
   static const String otherProfileApi = "/user/";
+
+  //job api
+  static const String recommendJobAPI = "/job/recommend/";
 }

@@ -7,9 +7,12 @@ class ProfileButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.asset,
+    required this.goto,
   }) : super(key: key);
 
   final String text, asset;
+  final Widget goto;
+
   //final VoidCallback? press;
 
   @override
@@ -17,7 +20,12 @@ class ProfileButton extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 22, right: 22, bottom: 3),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => goto,
+          ),
+        ),
         child: Row(
           children: [
             Image.asset(asset),

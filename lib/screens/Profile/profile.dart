@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
+import 'package:jobsgo/screens/Auth/login.dart';
 import 'package:jobsgo/screens/Profile/conponent/profile_button.dart';
 import 'package:jobsgo/screens/Profile/conponent/profile_ava.dart';
 
@@ -133,17 +134,17 @@ class Profile extends StatelessWidget {
           const ProfileButton(
             text: 'Personal Data',
             asset: "assets/images/Account.png",
-            //press: () => {},
+            goto: Profile(),
           ),
           const ProfileButton(
             text: 'Resume & My info',
             asset: "assets/images/Info.png",
-            //press: () => {},
+            goto: Profile(),
           ),
           const ProfileButton(
             text: 'My Application',
             asset: "assets/images/Application.png",
-            //press: () => {},
+            goto: Profile(),
           ),
           Container(
             padding: const EdgeInsets.only(left: 32),
@@ -160,12 +161,12 @@ class Profile extends StatelessWidget {
           const ProfileButton(
             text: 'Setting',
             asset: "assets/images/Setting.png",
-            //press: () => {},
+            goto: Profile(),
           ),
           const ProfileButton(
             text: 'Logout',
             asset: "assets/images/Logout.png",
-            //press: () => {},
+            goto: Login(),
           ),
         ],
       ),

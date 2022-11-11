@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/job_card.dart';
+import 'package:jobsgo/models/job/job.dart';
+import 'package:jobsgo/services/job_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class JobsSuggest extends StatefulWidget {
@@ -12,6 +14,7 @@ class JobsSuggest extends StatefulWidget {
 class _JobsSuggestState extends State<JobsSuggest> {
   @override
   Widget build(BuildContext context) {
+    listJobSuggest();
     return Container(
       padding: const EdgeInsets.only(top: 32),
       child: Column(
@@ -72,6 +75,20 @@ class _JobsSuggestState extends State<JobsSuggest> {
           )
         ],
       ),
+    );
+  }
+
+  Widget listJobSuggest() {
+    return FutureBuilder<List<Job>>(
+      future: JobService().getListSuggestJob(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          print(snapshot.data);
+        } else if (snapshot.hasError) {
+          return const Text("Error");
+        }
+        return const Text("Loading");
+      },
     );
   }
 }
