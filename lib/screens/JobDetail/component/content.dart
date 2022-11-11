@@ -39,7 +39,6 @@ class Content extends StatelessWidget {
             ],
           ),
         ),
-
         Container(
           padding: const EdgeInsets.only(left: 22, top: 22, bottom: 10),
           child: Table(
@@ -51,7 +50,8 @@ class Content extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 10),
                     child: Row(
                       children: const [
-                        Icon(Icons.location_on_outlined, color: Color(0xffA9A9A9)),
+                        Icon(Icons.location_on_outlined,
+                            color: Color(0xffA9A9A9)),
                         Text(
                           "San Francisco, USA",
                           style: TextStyle(
@@ -65,7 +65,8 @@ class Content extends StatelessWidget {
                   ),
                   Row(
                     children: const [
-                      Icon(Icons.upload_file_outlined, color: Color(0xffA9A9A9)),
+                      Icon(Icons.upload_file_outlined,
+                          color: Color(0xffA9A9A9)),
                       Text(
                         "300 Applicants",
                         style: TextStyle(
@@ -77,7 +78,6 @@ class Content extends StatelessWidget {
                     ],
                   ),
                 ],
-
               ),
               TableRow(
                 children: [
@@ -86,7 +86,11 @@ class Content extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(width: 3),
-                        const Icon(Icons.monetization_on_outlined, color: Color(0xffA9A9A9), size: 20,),
+                        const Icon(
+                          Icons.monetization_on_outlined,
+                          color: Color(0xffA9A9A9),
+                          size: 20,
+                        ),
                         Text(
                           "  \$10k- \$20k / Month",
                           style: TextStyle(
@@ -104,45 +108,57 @@ class Content extends StatelessWidget {
                       Row(
                         children: [
                           TextButton(
-                            onPressed: (){},
+                            onPressed: () {},
                             style: ButtonStyle(
-                                backgroundColor:
-                                MaterialStateProperty.all(const Color(0xffE4F9FF)),
-                                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                                backgroundColor: MaterialStateProperty.all(
+                                    const Color(0xffE4F9FF)),
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30),
                                 ))),
                             child: const Text(
                               "UI/UX Designer",
-                              style: TextStyle(color: Color(0xff1976D2), fontSize: 10, fontWeight: FontWeight.bold),
-                              ),
+                              style: TextStyle(
+                                  color: Color(0xff1976D2),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                           const SizedBox(width: 10),
                           TextButton(
-                            onPressed: (){},
+                            onPressed: () {},
                             style: ButtonStyle(
-                                backgroundColor:
-                                MaterialStateProperty.all(const Color(0xffE4F9FF)),
-                                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                                backgroundColor: MaterialStateProperty.all(
+                                    const Color(0xffE4F9FF)),
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30),
                                 ))),
                             child: const Text(
                               "Remote",
-                              style: TextStyle(color: Color(0xff1976D2), fontSize: 10, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  color: Color(0xff1976D2),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
                         ],
                       ),
                       TextButton(
-                        onPressed: (){},
+                        onPressed: () {},
                         style: ButtonStyle(
-                            backgroundColor:
-                            MaterialStateProperty.all(const Color(0xffE4F9FF)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            backgroundColor: MaterialStateProperty.all(
+                                const Color(0xffE4F9FF)),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ))),
                         child: const Text(
                           "Fulltime",
-                          style: TextStyle(color: Color(0xff1976D2), fontSize: 10, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Color(0xff1976D2),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -152,52 +168,54 @@ class Content extends StatelessWidget {
             ],
           ),
         ),
-
         Container(
-          height: 80,
+          height: 60,
           width: 316,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color(0xffF6F6F6)),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: const Color(0xffF6F6F6)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                height: 60,
+                height: 40,
                 width: 180,
                 child: TextButton(
                   onPressed: () {},
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(const Color(0xffF6F6F6),),
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color(0xffF6F6F6),
+                      ),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
-                      ))
-                  ),
+                      ))),
                   child: const Text(
                     "Description",
                     style: TextStyle(
                       color: Color(0xffA9A9A9),
                       fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                      fontSize: 15,
                     ),
                   ),
                 ),
               ),
               SizedBox(
-                height: 60,
+                height: 40,
                 width: 180,
                 child: TextButton(
                   onPressed: () {},
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(const Color(0xffFFFFFF)),
+                      backgroundColor:
+                          MaterialStateProperty.all(const Color(0xffFFFFFF)),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
-                      ))
-                  ),
+                      ))),
                   child: const Text(
                     "Company",
                     style: TextStyle(
                       color: Color(0xffA9A9A9),
                       fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                      fontSize: 15,
                     ),
                   ),
                 ),
@@ -205,19 +223,19 @@ class Content extends StatelessWidget {
             ],
           ),
         ),
-
         Container(
-          padding: const EdgeInsets.only(left: 22, right: 30, top: 10, bottom: 30),
+          padding:
+              const EdgeInsets.only(left: 22, right: 30, top: 10, bottom: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 "Pinterest is a visual discovery engine for finding ideas like recipes,"
-                    " home and style inspiration, and more.",
+                " home and style inspiration, and more.",
                 style: TextStyle(
                   color: Color(0xffA9A9A9),
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
               Container(height: 40),
@@ -296,7 +314,7 @@ class Content extends StatelessWidget {
               const Text(
                 "Office address",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -305,29 +323,28 @@ class Content extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xffA9A9A9),
                   fontWeight: FontWeight.bold,
-                  fontSize: 15,
+                  fontSize: 13,
                 ),
               ),
             ],
           ),
         ),
-
         Container(
-          padding: const EdgeInsets.only(left: 30, right: 30),
-          height: 50,
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+          margin: const EdgeInsets.only(bottom: 30),
           child: TextButton(
-            onPressed: (){},
+            onPressed: () {},
             style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(const Color(0xff1976D2)),
+                backgroundColor:
+                    MaterialStateProperty.all(const Color(0xff1976D2)),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
-                ))
-            ),
+                ))),
             child: const Text(
-                "Apply This Job",
+              "Apply This Job",
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 18,
+                fontSize: 17,
                 color: Color(0xffFFFFFF),
               ),
             ),

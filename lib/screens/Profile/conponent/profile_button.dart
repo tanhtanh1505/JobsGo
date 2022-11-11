@@ -3,10 +3,11 @@ import 'package:jobsgo/themes/styles.dart';
 // ignore_for_file: file_names
 
 class ProfileButton extends StatelessWidget {
-  const ProfileButton({Key? key,
+  const ProfileButton({
+    Key? key,
     required this.text,
     required this.asset,
-    }) : super(key: key);
+  }) : super(key: key);
 
   final String text, asset;
   //final VoidCallback? press;
@@ -14,9 +15,7 @@ class ProfileButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 315,
-      padding: const EdgeInsets.only(left: 22, right: 22),
+      padding: const EdgeInsets.only(left: 22, right: 22, bottom: 3),
       child: TextButton(
         onPressed: () {},
         child: Row(
@@ -40,4 +39,3 @@ class ProfileButton extends StatelessWidget {
     );
   }
 }
-

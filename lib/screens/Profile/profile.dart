@@ -120,8 +120,9 @@ class Profile extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.only(left: 32),
+            margin: const EdgeInsets.only(top: 10, bottom: 10),
             child: const Text(
-              "ACCOUNT",
+              "Account",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
@@ -134,13 +135,10 @@ class Profile extends StatelessWidget {
             asset: "assets/images/Account.png",
             //press: () => {},
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 20, bottom: 20),
-            child: ProfileButton(
-              text: 'Resume & My info',
-              asset: "assets/images/Info.png",
-              //press: () => {},
-            ),
+          const ProfileButton(
+            text: 'Resume & My info',
+            asset: "assets/images/Info.png",
+            //press: () => {},
           ),
           const ProfileButton(
             text: 'My Application',
@@ -148,9 +146,10 @@ class Profile extends StatelessWidget {
             //press: () => {},
           ),
           Container(
-            padding: const EdgeInsets.only(left: 32, top: 20),
+            padding: const EdgeInsets.only(left: 32),
+            margin: const EdgeInsets.only(top: 10, bottom: 10),
             child: const Text(
-              "OTHER",
+              "Other",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
@@ -158,13 +157,10 @@ class Profile extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 20),
-            child: ProfileButton(
-              text: 'Setting',
-              asset: "assets/images/Setting.png",
-              //press: () => {},
-            ),
+          const ProfileButton(
+            text: 'Setting',
+            asset: "assets/images/Setting.png",
+            //press: () => {},
           ),
           const ProfileButton(
             text: 'Logout',

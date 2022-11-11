@@ -48,7 +48,7 @@ class _LoginState extends State<Login> {
           isApiCallProcess = false;
         });
         if (response) {
-          widget.onSignedIn != () {} ? widget.onSignedIn!() : () {};
+          // widget.onSignedIn != () {} ? widget.onSignedIn!() : () {};
 
           Navigator.push(
             context,

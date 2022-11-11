@@ -14,6 +14,8 @@ class LoginResponseModel {
     required this.avatar,
     required this.email,
     required this.phone,
+    required this.address,
+    required this.role,
     required this.createdAt,
     required this.accessToken,
   });
@@ -24,6 +26,8 @@ class LoginResponseModel {
   String avatar;
   String email;
   String phone;
+  String address;
+  String role;
   DateTime createdAt;
   String accessToken;
 
@@ -35,7 +39,9 @@ class LoginResponseModel {
         avatar: json["avatar"],
         email: json["email"],
         phone: json["phone"],
-        createdAt: DateTime.parse(json["create_time"]),
+        address: json["address"],
+        role: json["role"],
+        createdAt: DateTime.parse(json["createdAt"]),
         accessToken: json["accessToken"],
       );
 
@@ -46,7 +52,9 @@ class LoginResponseModel {
         "avatar": avatar,
         "email": email,
         "phone": phone,
-        "create_time": createdAt.toIso8601String(),
+        "address": address,
+        "role": role,
+        "createdAt": createdAt.toIso8601String(),
         "accessToken": accessToken,
       };
 }

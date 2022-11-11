@@ -145,3 +145,27 @@ flutter run
 </table>
 
 </details>
+
+## Week 8
+
+<details>
+  <summary>Job detail screen</summary>
+  
+<table>
+<tr>
+<td><img src="assets/screens/jobdetail.jpg"></td>
+</tr>
+</table>
+
+</details>
+
+<details>
+  <summary>Profile screen</summary>
+  
+<table>
+<tr>
+<td><img src="assets/screens/profile.jpg"></td>
+</tr>
+</table>
+
+</details>

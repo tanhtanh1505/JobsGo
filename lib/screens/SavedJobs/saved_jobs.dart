@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
 import 'package:jobsgo/component/job_card.dart';
-import 'package:jobsgo/component/list_job.dart';
 import 'package:jobsgo/component/search_bar.dart';
 
 class SavedJobs extends StatelessWidget {
@@ -37,7 +36,6 @@ class SavedJobs extends StatelessWidget {
               ],
             ),
           ),
-          const ListJob(),
         ],
       ),
     );

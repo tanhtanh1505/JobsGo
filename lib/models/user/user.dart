@@ -11,7 +11,9 @@ UserModel exampleUser({username = 'tanhne'}) => UserModel.fromJson({
       "avatar": "avatar",
       "email": "tanhtanh1505@gmailee.com",
       "phone": "094415050234",
-      "create_time": "2022-09-25T09:07:02.000Z"
+      "address": "address",
+      "role": "jobseeker",
+      "createdAt": "2022-09-25T09:07:02.000Z"
     });
 
 class UserModel {
@@ -22,6 +24,8 @@ class UserModel {
     required this.avatar,
     required this.email,
     required this.phone,
+    required this.address,
+    required this.role,
     required this.createdAt,
   });
 
@@ -31,6 +35,8 @@ class UserModel {
   String avatar;
   String email;
   String phone;
+  String address;
+  String role;
   DateTime createdAt;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
@@ -40,7 +46,9 @@ class UserModel {
         avatar: json["avatar"],
         email: json["email"],
         phone: json["phone"],
-        createdAt: DateTime.parse(json["create_time"]),
+        address: json["address"],
+        role: json["role"],
+        createdAt: DateTime.parse(json["createdAt"]),
       );
 
   // Map<String, dynamic> toJson() => {
@@ -50,6 +58,6 @@ class UserModel {
   //       "avatar": avatar,
   //       "email": email,
   //       "phone": phone,
-  //       "create_time": createdAt.toIso8601String(),
+  //       "createdAt": createdAt.toIso8601String(),
   //     };
 }
