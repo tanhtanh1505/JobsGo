@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/button_image.dart';
+import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/screens/JobDetail/job_detail.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class JobCard extends StatefulWidget {
-  const JobCard(
-      {super.key,
-      required this.logo,
-      required this.company,
-      required this.role,
-      required this.location,
-      required this.salary,
-      required this.postedIn,
-      required this.marked});
+  const JobCard({super.key, required this.job});
 
-  final String logo;
-  final String company;
-  final String role;
-  final String location;
-  final String salary;
-  final String postedIn;
-  final bool marked;
+  final Job job;
 
   @override
   State<JobCard> createState() => _JobCardState();
@@ -33,7 +20,7 @@ class _JobCardState extends State<JobCard> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const JobDetail(),
+          builder: (context) => JobDetail(job: widget.job),
         ),
       ),
       child: Container(
@@ -59,20 +46,21 @@ class _JobCardState extends State<JobCard> {
                       Container(
                         margin: const EdgeInsets.only(right: 12),
                         child: ButtonImage(
-                          urlImage: widget.logo,
-                          goto: const JobDetail(),
+                          urlImage: widget.job.authorAvatar,
+                          goto: JobDetail(job: widget.job),
+                          isNetWorkImage: true,
                         ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            widget.company,
+                            widget.job.authorName,
                             style: const TextStyle(
                                 fontSize: 13, fontWeight: FontWeight.w500),
                           ),
                           Text(
-                            widget.role,
+                            widget.job.title,
                             style: const TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w600),
                           ),
@@ -82,7 +70,7 @@ class _JobCardState extends State<JobCard> {
                   ),
                   Container(
                     padding: const EdgeInsets.only(bottom: 12),
-                    child: widget.marked
+                    child: widget.job.bookmark
                         ? Icon(
                             Icons.favorite,
                             color: AppColor.red,
@@ -102,7 +90,7 @@ class _JobCardState extends State<JobCard> {
                     size: 18,
                   ),
                   Text(
-                    " ${widget.location}",
+                    " ${widget.job.authorAddress}",
                     style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
@@ -118,7 +106,7 @@ class _JobCardState extends State<JobCard> {
                     size: 18,
                   ),
                   Text(
-                    " \$${widget.salary} /",
+                    " \$${widget.job.salary} /",
                     style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,

@@ -21,6 +21,14 @@ class Job {
   final String exp;
   final String benefits;
   final String imageUrl;
+  final bool bookmark;
+  final String authorName;
+  final String authorAddress;
+  final String authorEmail;
+  final String authorPhone;
+  final String authorAvatar;
+  final String authorAbout;
+  final int authorSize;
 
   Job(
       {required this.id,
@@ -39,7 +47,15 @@ class Job {
       required this.slots,
       required this.exp,
       required this.benefits,
-      required this.imageUrl});
+      required this.imageUrl,
+      required this.bookmark,
+      required this.authorName,
+      required this.authorAddress,
+      required this.authorEmail,
+      required this.authorPhone,
+      required this.authorAvatar,
+      required this.authorAbout,
+      required this.authorSize});
 
   factory Job.fromJson(Map<String, dynamic> json) {
     return Job(
@@ -59,7 +75,15 @@ class Job {
         slots: json["slots"],
         exp: json["exp"],
         benefits: json["benefits"],
-        imageUrl: json["imageUrl"]);
+        imageUrl: json["imageUrl"],
+        bookmark: json["bookmark"],
+        authorName: json["authorName"],
+        authorAddress: json["authorAddress"],
+        authorEmail: json["authorEmail"],
+        authorPhone: json["authorPhone"],
+        authorAvatar: json["authorAvatar"],
+        authorAbout: json["authorAbout"],
+        authorSize: json["authorSize"]);
   }
 
   //to json
@@ -81,29 +105,45 @@ class Job {
       "slots": slots,
       "exp": exp,
       "benefits": benefits,
-      "imageUrl": imageUrl
+      "imageUrl": imageUrl,
+      "bookmark": bookmark,
+      "authorName": authorName,
+      "authorAddress": authorAddress,
+      "authorEmail": authorEmail,
+      "authorPhone": authorPhone,
+      "authorAvatar": authorAvatar,
+      "authorAbout": authorAbout,
+      "authorSize": authorSize,
     };
   }
 }
 
 Job exampleJob() => Job.fromJson({
-      "id": "1751da34-18d7-4d34-b232-ce10821f6ba7",
+      "id": "id",
       "title": "title",
       "description": "description",
       "requirements": "requirements",
       "tags": "tags",
-      "author": "24ef3dbd-46d7-4cab-85c0-4cc407b51786",
-      "startTime": "2022-11-01T00:00:00.000Z",
-      "endTime": "2022-12-01T00:00:00.000Z",
-      "createdAt": "2022-11-10T08:58:34.000Z",
-      "salary": 1000,
-      "typeOfWorking": "fulltime",
-      "gender": "male",
-      "positions": "staff",
-      "slots": 10,
-      "exp": "2 years",
+      "author": "author",
+      "startTime": "startTime",
+      "endTime": "endTime",
+      "createdAt": "createdAt",
+      "salary": "salary",
+      "typeOfWorking": "typeOfWorking",
+      "gender": "gender",
+      "positions": "positions",
+      "slots": "slots",
+      "exp": "exp",
       "benefits": "benefits",
-      "imageUrl": "imageUrl"
+      "imageUrl": "imageUrl",
+      "bookmark": "bookmark",
+      "authorName": "authorName",
+      "authorAddress": "authorAddress",
+      "authorEmail": "authorEmail",
+      "authorPhone": "authorPhone",
+      "authorAvatar": "authorAvatar",
+      "authorAbout": "authorAbout",
+      "authorSize": "authorSize"
     });
 Job nullJob = Job.fromJson({
   "id": "x",
@@ -122,5 +162,13 @@ Job nullJob = Job.fromJson({
   "slots": 0,
   "exp": "x",
   "benefits": "x",
-  "imageUrl": "x"
+  "imageUrl": "x",
+  "bookmark": false,
+  "authorName": "x",
+  "authorAddress": "x",
+  "authorEmail": "x",
+  "authorPhone": "x",
+  "authorAvatar": "x",
+  "authorAbout": "x",
+  "authorSize": 0
 });

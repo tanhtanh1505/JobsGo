@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/screens/JobDetail/component/content.dart';
 import 'package:jobsgo/screens/JobDetail/component/jd_appbar.dart';
 
 class JobDetail extends StatelessWidget {
-  const JobDetail({Key? key}) : super(key: key);
+  const JobDetail({Key? key, required this.job}) : super(key: key);
+  final Job job;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,9 @@ class JobDetail extends StatelessWidget {
         backgroundColor: const Color(0xffFAFAFA),
         elevation: 0.0,
       ),
-      body: const Content(),
+      body: Content(
+        job: job,
+      ),
     );
   }
 }

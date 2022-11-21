@@ -25,14 +25,14 @@ class SavedJobs extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20),
             child: Column(
               children: const [
-                JobCard(
-                    logo: 'assets/images/twitter.png',
-                    company: "Twitter",
-                    role: "Remote UI/UX Designer",
-                    location: "Jakata-Indonesia",
-                    salary: "500-1k",
-                    postedIn: "12",
-                    marked: true),
+                // JobCard(
+                //     logo: 'assets/images/twitter.png',
+                //     company: "Twitter",
+                //     role: "Remote UI/UX Designer",
+                //     location: "Jakata-Indonesia",
+                //     salary: "500-1k",
+                //     postedIn: "12",
+                //     marked: true),
               ],
             ),
           ),

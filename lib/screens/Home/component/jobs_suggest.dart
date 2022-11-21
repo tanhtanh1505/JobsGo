@@ -14,7 +14,6 @@ class JobsSuggest extends StatefulWidget {
 class _JobsSuggestState extends State<JobsSuggest> {
   @override
   Widget build(BuildContext context) {
-    listJobSuggest();
     return Container(
       padding: const EdgeInsets.only(top: 32),
       child: Column(
@@ -42,36 +41,37 @@ class _JobsSuggestState extends State<JobsSuggest> {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Column(
-              children: const [
-                JobCard(
-                    logo: 'assets/images/twitter.png',
-                    company: "Twitter",
-                    role: "Remote UI/UX Designer",
-                    location: "Jakata-Indonesia",
-                    salary: "500-1k",
-                    postedIn: "12",
-                    marked: true),
-                JobCard(
-                    logo: 'assets/images/freelance.png',
-                    company: "Twitter",
-                    role: "Remote UI/UX Designer",
-                    location: "Jakata-Indonesia",
-                    salary: "500-1k",
-                    postedIn: "12",
-                    marked: false),
-                JobCard(
-                    logo: 'assets/images/freelance.png',
-                    company: "Twitter",
-                    role: "Remote UI/UX Designer",
-                    location: "Jakata-Indonesia",
-                    salary: "500-1k",
-                    postedIn: "12",
-                    marked: true),
-              ],
-            ),
+          Container(
+            child: listJobSuggest(),
+
+            // child: Column(
+            //   children: [
+            //     JobCard(
+            //         logo: 'assets/images/twitter.png',
+            //         company: "Twitter",
+            //         role: "Remote UI/UX Designer",
+            //         location: "Jakata-Indonesia",
+            //         salary: "500-1k",
+            //         postedIn: "12",
+            //         marked: true),
+            //     JobCard(
+            //         logo: 'assets/images/freelance.png',
+            //         company: "Twitter",
+            //         role: "Remote UI/UX Designer",
+            //         location: "Jakata-Indonesia",
+            //         salary: "500-1k",
+            //         postedIn: "12",
+            //         marked: false),
+            //     JobCard(
+            //         logo: 'assets/images/freelance.png',
+            //         company: "Twitter",
+            //         role: "Remote UI/UX Designer",
+            //         location: "Jakata-Indonesia",
+            //         salary: "500-1k",
+            //         postedIn: "12",
+            //         marked: true),
+            //   ],
+            // ),
           )
         ],
       ),
@@ -83,11 +83,20 @@ class _JobsSuggestState extends State<JobsSuggest> {
       future: JobService().getListSuggestJob(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          print(snapshot.data);
+          List<Job>? listJob = snapshot.data;
+          return ListView.builder(
+              itemCount: listJob?.length,
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) {
+                return JobCard(
+                  job: listJob!.elementAt(index),
+                );
+              });
         } else if (snapshot.hasError) {
           return const Text("Error");
         }
-        return const Text("Loading");
+        return const CircularProgressIndicator();
       },
     );
   }

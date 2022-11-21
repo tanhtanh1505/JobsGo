@@ -9,6 +9,9 @@ class Config {
   static const String profileAPI = "/jobseeker";
   static const String otherProfileApi = "/user/";
 
+  //employer api
+  static const String employer = "/employer/";
+
   //job api
   static const String recommendJobAPI = "/job/recommend/";
 }

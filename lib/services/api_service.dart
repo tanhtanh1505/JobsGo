@@ -20,7 +20,6 @@ class APIService {
     var response = await client.post(url,
         headers: requestHeader, body: jsonEncode(model.toJson()));
 
-    print('responseeeeeee' + response.body);
     if (response.statusCode >= 200 && response.statusCode < 300) {
       await SharedService.setLoginDetails(
           loginResponseModelFromJson(response.body));

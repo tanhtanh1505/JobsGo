@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/component/button_image.dart';
+import 'package:jobsgo/models/job/job.dart';
+import 'package:jobsgo/screens/Employer/employer.dart';
 import 'package:jobsgo/themes/styles.dart';
 
-class Content extends StatelessWidget {
-  const Content({Key? key}) : super(key: key);
+Widget temp = const Text("temp");
+
+class Content extends StatefulWidget {
+  const Content({super.key, required this.job});
+  final Job job;
+
+  @override
+  State<Content> createState() => _ContentState();
+}
+
+class _ContentState extends State<Content> {
+  bool isDescription = true;
 
   @override
   Widget build(BuildContext context) {
@@ -12,24 +25,30 @@ class Content extends StatelessWidget {
           padding: const EdgeInsets.only(left: 22),
           child: Row(
             children: [
-              Image.asset("assets/images/Pinterest.png"),
+              ButtonImage(
+                  urlImage: widget.job.authorAvatar,
+                  isNetWorkImage: true,
+                  isStaticImage: false,
+                  goto: Employer(
+                    id: widget.job.author,
+                  )),
               Container(
                 padding: const EdgeInsets.only(left: 15),
                 child: RichText(
                   text: TextSpan(
-                    text: "Pinterest",
+                    text: widget.job.authorName,
                     style: TextStyle(
                       color: AppColor.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
                     ),
                     children: [
                       TextSpan(
-                        text: "\nUI/UX Designer",
+                        text: "\n${widget.job.title}",
                         style: TextStyle(
                           color: AppColor.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
                         ),
                       ),
                     ],
@@ -49,12 +68,12 @@ class Content extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: Row(
-                      children: const [
-                        Icon(Icons.location_on_outlined,
+                      children: [
+                        const Icon(Icons.location_on_outlined,
                             color: Color(0xffA9A9A9)),
                         Text(
-                          "San Francisco, USA",
-                          style: TextStyle(
+                          widget.job.authorAddress,
+                          style: const TextStyle(
                             color: Color(0xffA9A9A9),
                             fontWeight: FontWeight.w700,
                             fontSize: 12,
@@ -64,12 +83,12 @@ class Content extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    children: const [
-                      Icon(Icons.upload_file_outlined,
+                    children: [
+                      const Icon(Icons.upload_file_outlined,
                           color: Color(0xffA9A9A9)),
                       Text(
-                        "300 Applicants",
-                        style: TextStyle(
+                        " ${widget.job.slots} Applicants",
+                        style: const TextStyle(
                           color: Color(0xffA9A9A9),
                           fontWeight: FontWeight.w700,
                           fontSize: 12,
@@ -92,7 +111,7 @@ class Content extends StatelessWidget {
                           size: 20,
                         ),
                         Text(
-                          "  \$10k- \$20k / Month",
+                          "  \$${widget.job.salary}",
                           style: TextStyle(
                             color: AppColor.blue,
                             fontWeight: FontWeight.w700,
@@ -177,68 +196,18 @@ class Content extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(
-                height: 40,
-                width: 180,
-                child: TextButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        const Color(0xffF6F6F6),
-                      ),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ))),
-                  child: const Text(
-                    "Description",
-                    style: TextStyle(
-                      color: Color(0xffA9A9A9),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 40,
-                width: 180,
-                child: TextButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(const Color(0xffFFFFFF)),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ))),
-                  child: const Text(
-                    "Company",
-                    style: TextStyle(
-                      color: Color(0xffA9A9A9),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
+              buttonTab(context, isDescription, "Description"),
+              buttonTab(context, !isDescription, "Company"),
             ],
           ),
         ),
+        isDescription ? description() : company(),
         Container(
           padding:
               const EdgeInsets.only(left: 22, right: 30, top: 10, bottom: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Pinterest is a visual discovery engine for finding ideas like recipes,"
-                " home and style inspiration, and more.",
-                style: TextStyle(
-                  color: Color(0xffA9A9A9),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-              Container(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -298,9 +267,9 @@ class Content extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Text(
-                        "1-50 employees",
-                        style: TextStyle(
+                      Text(
+                        "${widget.job.authorSize} employees",
+                        style: const TextStyle(
                           color: Color(0xffA9A9A9),
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
@@ -314,13 +283,13 @@ class Content extends StatelessWidget {
               const Text(
                 "Office address",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              const Text(
-                "651 Brannan St, San Francisco, CA 94107, USA",
-                style: TextStyle(
+              Text(
+                widget.job.authorAddress,
+                style: const TextStyle(
                   color: Color(0xffA9A9A9),
                   fontWeight: FontWeight.bold,
                   fontSize: 13,
@@ -351,6 +320,59 @@ class Content extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+
+  Widget buttonTab(BuildContext context, isActive, text) {
+    return SizedBox(
+      height: 40,
+      width: 180,
+      child: TextButton(
+        onPressed: () {
+          setState(() {
+            isDescription = !isDescription;
+          });
+        },
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(
+              isActive ? const Color(0xffFFFFFF) : const Color(0xffF6F6F6),
+            ),
+            shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ))),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Color(0xffA9A9A9),
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget description() {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      child: Text(
+        widget.job.description,
+        style: const TextStyle(
+          fontSize: 13,
+        ),
+      ),
+    );
+  }
+
+  Widget company() {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      child: Text(
+        widget.job.authorAbout,
+        style: const TextStyle(
+          fontSize: 13,
+        ),
+      ),
     );
   }
 }

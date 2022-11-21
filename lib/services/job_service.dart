@@ -35,7 +35,7 @@ class JobService {
       'Authorization': 'Bearer ${loginDetails?.accessToken}',
     };
 
-    var url = UriHelper.getUri('${Config.recommendJobAPI}2');
+    var url = UriHelper.getUri('${Config.recommendJobAPI}3');
 
     var response = await client.get(url, headers: requestHeader);
 
