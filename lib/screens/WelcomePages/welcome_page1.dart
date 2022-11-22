@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/WelcomePages/welcome_page2.dart';
 
 
-class WelcomePage1 extends StatefulWidget {
-  const WelcomePage1({Key? key}) : super(key: key);
+// ignore: camel_case_types
+class welcome_page1 extends StatelessWidget {
+  const welcome_page1({Key? key}) : super(key: key);
 
-  @override
-  State<WelcomePage1> createState() => _WelcomePage1State();
-}
-
-class _WelcomePage1State extends State<WelcomePage1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,17 +25,16 @@ class _WelcomePage1State extends State<WelcomePage1> {
               width: 400,
             ),
           ),
-
-         const Positioned(
-           bottom: 220,
-           child: Center(
-             child: Text(
-               "We are the best job",
-               style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold, fontFamily: "Poppins", color: Color(0xff176DC2), inherit: false),
-               softWrap: true,
-             ),
-             ),
-         ),
+          const Positioned(
+            bottom: 220,
+            child: Center(
+              child: Text(
+                "We are the best job",
+                style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold, fontFamily: "Poppins", color: Color(0xff176DC2), inherit: false),
+                softWrap: true,
+              ),
+            ),
+          ),
 
           const Positioned(
             bottom: 180,
@@ -85,22 +80,22 @@ class _WelcomePage1State extends State<WelcomePage1> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const WelcomePage2();
+                        return const welcome_page2();
                       },
                     ),
                   );
                 },
+                // ignore: sort_child_properties_last
+                child: const Text(
+                  "Next",
+                  style: TextStyle(fontSize: 17, fontFamily: "Poppins", fontWeight: FontWeight.bold, color: Colors.white),
+                ),
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(const Color(0xff176DC2)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                       side: const BorderSide(color: Colors.black),
                     ))
-
-                ),
-                child: const Text(
-                  "Next",
-                  style: TextStyle(fontSize: 17, fontFamily: "Poppins", fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
             ),

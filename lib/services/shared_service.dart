@@ -3,15 +3,16 @@ import 'dart:convert';
 import 'package:api_cache_manager/api_cache_manager.dart';
 import 'package:api_cache_manager/models/cache_db_model.dart';
 import 'package:flutter/material.dart';
-import 'package:jobsgo/models/login_response_model.dart';
-import 'package:jobsgo/models/user_model.dart';
-import 'package:jobsgo/screens/Auth/Login.dart';
+import 'package:jobsgo/config.dart';
+import 'package:jobsgo/models/auth/login_response.dart';
+import 'package:jobsgo/models/user/user.dart';
+import 'package:jobsgo/screens/Auth/login.dart';
 
 class SharedService {
   static Future<bool> isLoggedIn() async {
     var isKeyExist =
         await APICacheManager().isAPICacheKeyExist("login_details");
-    return isKeyExist;
+    return isKeyExist || !Config.isProductMode;
   }
 
   static Future<LoginResponseModel?> loginDetails() async {

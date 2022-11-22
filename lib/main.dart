@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jobsgo/MyHomePage.dart';
-import 'package:jobsgo/screens/WelcomePages/WelcomePage.dart';
+import 'package:jobsgo/my_home_page.dart';
+import 'package:jobsgo/screens/WelcomePages/welcome_page.dart';
 import 'package:jobsgo/services/shared_service.dart';
 
 Widget defaultHome = const WelcomePage();

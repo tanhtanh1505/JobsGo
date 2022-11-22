@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/WelcomePages/welcome_page3.dart';
 
 
-class WelcomePage2 extends StatefulWidget {
-  const WelcomePage2({Key? key}) : super(key: key);
+// ignore: camel_case_types
+class welcome_page2 extends StatelessWidget {
+  const welcome_page2({Key? key}) : super(key: key);
 
-  @override
-  State<WelcomePage2> createState() => _WelcomePage2State();
-}
-
-class _WelcomePage2State extends State<WelcomePage2> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -85,11 +81,16 @@ class _WelcomePage2State extends State<WelcomePage2> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const WelcomePage3();
+                        return const welcome_page3();
                       },
                     ),
                   );
                 },
+                // ignore: sort_child_properties_last
+                child: const Text(
+                  "Next",
+                  style: TextStyle(fontSize: 17, fontFamily: "Poppins", fontWeight: FontWeight.bold, color: Colors.white),
+                ),
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(const Color(0xff176DC2)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -97,10 +98,6 @@ class _WelcomePage2State extends State<WelcomePage2> {
                       side: const BorderSide(color: Colors.black),
                     ))
 
-                ),
-                child: const Text(
-                  "Next",
-                  style: TextStyle(fontSize: 17, fontFamily: "Poppins", fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
             ),
