@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
-import 'package:jobsgo/screens/Auth/login.dart';
+import 'package:jobsgo/screens/FillProfile/fill_information.dart';
 import 'package:jobsgo/screens/Profile/component/profile_ava.dart';
 import 'profile_text_field.dart';
 
@@ -73,7 +73,7 @@ class _FillProfileState extends State<FillProfile> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const Login();
+                            return const FillInformation();
                           },
                         ),
                       );
