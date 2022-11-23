@@ -12,7 +12,7 @@ class Content extends StatelessWidget {
           padding: const EdgeInsets.only(left: 22),
           child: Row(
             children: [
-              Image.asset("assets/images/Pinterest.png"),
+              Image.asset("assets/images/Pinterest2.png"),
               Container(
                 padding: const EdgeInsets.only(left: 15),
                 child: RichText(
