@@ -17,8 +17,11 @@ class JobDetail extends StatelessWidget {
         backgroundColor: const Color(0xffFAFAFA),
         elevation: 0.0,
       ),
-      body: Content(
-        job: job,
+      body: Container(
+        padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
+        child: Content(
+          job: job,
+        ),
       ),
     );
   }

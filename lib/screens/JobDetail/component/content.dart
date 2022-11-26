@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/button_image.dart';
+import 'package:jobsgo/helper/color_helper.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/screens/Employer/employer.dart';
 import 'package:jobsgo/themes/styles.dart';
@@ -21,45 +22,57 @@ class _ContentState extends State<Content> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Container(
-          padding: const EdgeInsets.only(left: 22),
-          child: Row(
-            children: [
-              ButtonImage(
-                  urlImage: widget.job.authorAvatar,
-                  isNetWorkImage: true,
-                  isStaticImage: false,
-                  goto: Employer(
-                    id: widget.job.author,
-                  )),
-              Container(
-                padding: const EdgeInsets.only(left: 15),
-                child: RichText(
-                  text: TextSpan(
-                    text: widget.job.authorName,
+        Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(right: 10),
+              child: ButtonImage(
+                urlImage: widget.job.authorAvatar,
+                isNetWorkImage: true,
+                isStaticImage: false,
+                width: 65,
+                height: 65,
+                goto: Employer(
+                  id: widget.job.author,
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.job.authorName,
                     style: TextStyle(
                       color: AppColor.black,
                       fontWeight: FontWeight.w500,
-                      fontSize: 15,
+                      fontSize: 14,
                     ),
-                    children: [
-                      TextSpan(
-                        text: "\n${widget.job.title}",
-                        style: TextStyle(
-                          color: AppColor.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
                   ),
-                ),
+                  Text(
+                    widget.job.title,
+                    style: TextStyle(
+                      color: AppColor.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    "${widget.job.startTime.substring(0, 10).replaceAll(RegExp(r'-'), '.')} - ${widget.job.endTime.substring(0, 10).substring(0, 10).replaceAll(RegExp(r'-'), '.')}",
+                    style: TextStyle(
+                      color: AppColor.black,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         Container(
-          padding: const EdgeInsets.only(left: 22, top: 22, bottom: 10),
+          padding: const EdgeInsets.only(top: 22, bottom: 10),
           child: Table(
             //border: TableBorder.all(),
             children: [
@@ -121,65 +134,49 @@ class _ContentState extends State<Content> {
                       ],
                     ),
                   ),
-                  Column(
+                  Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xffE4F9FF)),
-                                shape: MaterialStateProperty.all(
-                                    RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ))),
-                            child: const Text(
-                              "UI/UX Designer",
-                              style: TextStyle(
-                                  color: Color(0xff1976D2),
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          TextButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xffE4F9FF)),
-                                shape: MaterialStateProperty.all(
-                                    RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ))),
-                            child: const Text(
-                              "Remote",
-                              style: TextStyle(
-                                  color: Color(0xff1976D2),
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(
-                                const Color(0xffE4F9FF)),
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ))),
-                        child: const Text(
-                          "Fulltime",
-                          style: TextStyle(
-                              color: Color(0xff1976D2),
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold),
+                      tag(widget.job.tags.split(",")[0]),
+                      widget.job.tags.split(",").length > 1
+                          ? tag(widget.job.tags.split(",")[1])
+                          : Container(),
+                    ],
+                  ),
+                ],
+              ),
+              TableRow(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(top: 14),
+                    child: Row(
+                      children: [
+                        Container(width: 3),
+                        const Icon(
+                          Icons.badge_outlined,
+                          color: Color(0xffA9A9A9),
+                          size: 20,
                         ),
-                      ),
+                        Text(
+                          "  ${widget.job.typeOfWorking}",
+                          style: TextStyle(
+                            color: AppColor.gray,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      widget.job.tags.split(",").length > 2
+                          ? tag(widget.job.tags.split(",")[2])
+                          : Container(),
+                      widget.job.tags.split(",").length > 3
+                          ? tag(widget.job.tags.split(",")[3])
+                          : Container(),
                     ],
                   ),
                 ],
@@ -188,23 +185,21 @@ class _ContentState extends State<Content> {
           ),
         ),
         Container(
-          height: 60,
-          width: 316,
+          padding: const EdgeInsets.only(top: 10, bottom: 10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: const Color(0xffF6F6F6)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buttonTab(context, isDescription, "Description"),
+              buttonTab(context, isDescription, "General"),
               buttonTab(context, !isDescription, "Company"),
             ],
           ),
         ),
-        isDescription ? description() : company(),
+        isDescription ? general() : company(),
         Container(
-          padding:
-              const EdgeInsets.only(left: 22, right: 30, top: 10, bottom: 30),
+          padding: const EdgeInsets.only(top: 10, bottom: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -323,10 +318,10 @@ class _ContentState extends State<Content> {
     );
   }
 
-  Widget buttonTab(BuildContext context, isActive, text) {
+  Widget buttonTab(BuildContext context, bool isActive, text) {
     return SizedBox(
       height: 40,
-      width: 180,
+      width: 150,
       child: TextButton(
         onPressed: () {
           setState(() {
@@ -342,8 +337,8 @@ class _ContentState extends State<Content> {
             ))),
         child: Text(
           text,
-          style: const TextStyle(
-            color: Color(0xffA9A9A9),
+          style: TextStyle(
+            color: isActive ? AppColor.blue : const Color(0xffA9A9A9),
             fontWeight: FontWeight.bold,
             fontSize: 15,
           ),
@@ -352,27 +347,87 @@ class _ContentState extends State<Content> {
     );
   }
 
-  Widget description() {
+  Widget descriptionContent(title, String content) {
+    return content.length > 1
+        ? Container(
+            margin: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: ColorHelper.colorFromHex("#F6F6F6"),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(bottom: 20),
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                Text(
+                  content,
+                  style: const TextStyle(
+                    color: Color(0xffA9A9A9),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+            ),
+          )
+        : Container();
+  }
+
+  Widget general() {
     return Container(
-      padding: const EdgeInsets.all(15),
-      child: Text(
-        widget.job.description,
-        style: const TextStyle(
-          fontSize: 13,
-        ),
-      ),
-    );
+        padding: const EdgeInsets.only(top: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            descriptionContent("Description", widget.job.description),
+            descriptionContent("Requirements", widget.job.requirements),
+            descriptionContent("Benefit", widget.job.benefits)
+          ],
+        ));
   }
 
   Widget company() {
     return Container(
-      padding: const EdgeInsets.all(15),
-      child: Text(
-        widget.job.authorAbout,
-        style: const TextStyle(
-          fontSize: 13,
-        ),
-      ),
-    );
+        padding: const EdgeInsets.only(top: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            descriptionContent("About", widget.job.authorAbout),
+          ],
+        ));
+  }
+
+  Widget tag(tag) {
+    return tag != null
+        ? Container(
+            margin: const EdgeInsets.only(right: 10),
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(const Color(0xffE4F9FF)),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ))),
+              child: Text(
+                tag,
+                style: const TextStyle(
+                    color: Color(0xff1976D2),
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          )
+        : Container();
   }
 }
