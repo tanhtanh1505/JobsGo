@@ -8,12 +8,17 @@ class ButtonImage extends StatelessWidget {
     this.goto = const Text(""),
     this.isNetWorkImage = false,
     this.isStaticImage = false,
+    this.width = 55,
+    this.height = 55,
   });
 
   final bool isNetWorkImage;
   final bool isStaticImage;
   final String urlImage;
   final Widget goto;
+  final double width;
+  final double height;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -26,8 +31,8 @@ class ButtonImage extends StatelessWidget {
               )
             : {},
         child: Container(
-          height: 55,
-          width: 55,
+          height: height,
+          width: width,
           padding: const EdgeInsets.all(13),
           decoration: BoxDecoration(
             color: AppColor.graylight, //#FAFAFA

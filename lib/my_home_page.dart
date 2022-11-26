@@ -41,11 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.bookmark_border),
-              label: 'Saved Jobs',
+              label: 'Favourite',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.ballot_outlined),
-              label: 'Applications',
+              label: 'Apply',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.message_outlined),
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(
               icon: Icon(Icons.portrait),
               label: 'Profile',
-            )
+            ),
           ]),
     );
   }
