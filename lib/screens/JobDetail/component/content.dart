@@ -389,9 +389,22 @@ class _ContentState extends State<Content> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            descriptionContent("Description", widget.job.description),
-            descriptionContent("Requirements", widget.job.requirements),
-            descriptionContent("Benefit", widget.job.benefits)
+            Row(children: [
+              Expanded(
+                child:
+                    descriptionContent("Description", widget.job.description),
+              ),
+            ]),
+            Row(children: [
+              Expanded(
+                child:
+                    descriptionContent("Requirements", widget.job.requirements),
+              ),
+            ]),
+            Row(children: [
+              Expanded(
+                  child: descriptionContent("Benefit", widget.job.benefits)),
+            ]),
           ],
         ));
   }

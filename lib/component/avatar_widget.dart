@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class AvatarWidget extends StatelessWidget {
@@ -6,6 +7,7 @@ class AvatarWidget extends StatelessWidget {
   final double width;
   final String urlImage;
   final double radius;
+  final bool background;
 
   const AvatarWidget(
       {Key? key,
@@ -13,7 +15,8 @@ class AvatarWidget extends StatelessWidget {
       this.width = 50,
       this.urlImage =
           'https://img.freepik.com/free-vector/cute-cat-with-love-sign-hand-cartoon-illustration-animal-nature-concept-isolated-flat-cartoon-style_138676-3419.jpg?w=2000',
-      this.radius = 45})
+      this.radius = 45,
+      this.background = false})
       : super(key: key);
 
   @override
@@ -22,6 +25,7 @@ class AvatarWidget extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
+        color: background ? AppColor.white : Colors.transparent,
         image: DecorationImage(
           image: NetworkImage(urlImage),
           fit: BoxFit.fill,

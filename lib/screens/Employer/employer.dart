@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
 import 'package:jobsgo/component/avatar_widget.dart';
 import 'package:jobsgo/models/employer/employer.dart';
+import 'package:jobsgo/screens/Employer/component/avatar_wallpaper.dart';
 import 'package:jobsgo/screens/Employer/component/size.dart';
 import 'package:jobsgo/screens/Message/component/chat_area.dart';
 import 'package:jobsgo/services/employer_service.dart';
@@ -65,9 +66,7 @@ class _EmployerState extends State<Employer> {
   Widget body() {
     return ListView(
       children: [
-        Container(
-          child: wallpaperAndAvatar(),
-        ),
+        AvatarWallpaper(employer: employer),
         paragraph("Address", employer.address),
         SizeCompany(size: employer.size),
         const ContactList()
@@ -92,62 +91,6 @@ class _EmployerState extends State<Employer> {
           Text(content)
         ],
       ),
-    );
-  }
-
-  Widget wallpaperAndAvatar() {
-    return Column(
-      children: [
-        Container(
-          height: 175,
-          decoration: BoxDecoration(
-            color: AppColor.bluel2,
-            image: DecorationImage(
-              image: NetworkImage(employer.wallpaper),
-              fit: BoxFit.fitWidth,
-              alignment: Alignment.topCenter,
-            ),
-          ),
-        ),
-        AvatarWidget(
-          width: 80,
-          height: 80,
-          urlImage: employer.avatar,
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 5),
-          child: Text(
-            employer.name,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 5),
-          child: const Text(
-            "Job service, Application and etc...",
-            style: TextStyle(fontSize: 13),
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 3),
-          child: TextButton(
-            style: TextButton.styleFrom(
-                backgroundColor: AppColor.blue,
-                padding: const EdgeInsets.only(
-                    top: 0, bottom: 0, right: 12, left: 12)),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ChatArea(reciever: employer),
-              ),
-            ),
-            child: Text(
-              'Contact',
-              style: TextStyle(color: AppColor.white),
-            ),
-          ),
-        )
-      ],
     );
   }
 }

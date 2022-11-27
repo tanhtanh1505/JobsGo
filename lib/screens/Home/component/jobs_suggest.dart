@@ -43,35 +43,6 @@ class _JobsSuggestState extends State<JobsSuggest> {
           ),
           Container(
             child: listJobSuggest(),
-
-            // child: Column(
-            //   children: [
-            //     JobCard(
-            //         logo: 'assets/images/twitter.png',
-            //         company: "Twitter",
-            //         role: "Remote UI/UX Designer",
-            //         location: "Jakata-Indonesia",
-            //         salary: "500-1k",
-            //         postedIn: "12",
-            //         marked: true),
-            //     JobCard(
-            //         logo: 'assets/images/freelance.png',
-            //         company: "Twitter",
-            //         role: "Remote UI/UX Designer",
-            //         location: "Jakata-Indonesia",
-            //         salary: "500-1k",
-            //         postedIn: "12",
-            //         marked: false),
-            //     JobCard(
-            //         logo: 'assets/images/freelance.png',
-            //         company: "Twitter",
-            //         role: "Remote UI/UX Designer",
-            //         location: "Jakata-Indonesia",
-            //         salary: "500-1k",
-            //         postedIn: "12",
-            //         marked: true),
-            //   ],
-            // ),
           )
         ],
       ),
