@@ -351,7 +351,8 @@ class _ContentState extends State<Content> {
     return content.length > 1
         ? Container(
             margin: const EdgeInsets.only(bottom: 20),
-            padding: const EdgeInsets.all(20),
+            padding:
+                const EdgeInsets.only(top: 25, bottom: 25, left: 20, right: 20),
             decoration: BoxDecoration(
               color: ColorHelper.colorFromHex("#F6F6F6"),
               borderRadius: BorderRadius.circular(10),
@@ -411,13 +412,21 @@ class _ContentState extends State<Content> {
 
   Widget company() {
     return Container(
-        padding: const EdgeInsets.only(top: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            descriptionContent("About", widget.job.authorAbout),
-          ],
-        ));
+      padding: const EdgeInsets.only(top: 15),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child:
+                    descriptionContent("Introduction", widget.job.authorAbout),
+              )
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   Widget tag(tag) {
