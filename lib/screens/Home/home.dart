@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
           elevation: 0.0,
         ),
         body: ListView(
-          padding: const EdgeInsets.only(left: 30, right: 30),
+          padding: const EdgeInsets.only(left: 25, right: 25),
           children: const <Widget>[
             SearchBar(text: "Search"),
             Advertisement(),

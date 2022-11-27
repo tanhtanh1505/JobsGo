@@ -89,7 +89,7 @@ class JobService {
       'Authorization': 'Bearer ${loginDetails?.accessToken}',
     };
 
-    var url = UriHelper.getUri('/job/list-marked}');
+    var url = UriHelper.getUri('/job/list-marked');
     var response = await client.get(url, headers: requestHeader);
 
     List<Job> listJobs = [];

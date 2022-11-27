@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
-import 'package:jobsgo/component/job_card.dart';
-import 'package:jobsgo/component/search_bar.dart';
+import 'package:jobsgo/screens/SavedJobs/component/content_saved_jobs.dart';
 
 class SavedJobs extends StatelessWidget {
   const SavedJobs({super.key});
@@ -17,26 +16,9 @@ class SavedJobs extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      body: ListView(
-        padding: const EdgeInsets.only(left: 30, right: 30),
-        children: <Widget>[
-          const SearchBar(text: "Search"),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Column(
-              children: const [
-                // JobCard(
-                //     logo: 'assets/images/twitter.png',
-                //     company: "Twitter",
-                //     role: "Remote UI/UX Designer",
-                //     location: "Jakata-Indonesia",
-                //     salary: "500-1k",
-                //     postedIn: "12",
-                //     marked: true),
-              ],
-            ),
-          ),
-        ],
+      body: Container(
+        padding: const EdgeInsets.only(left: 25, right: 25),
+        child: const ContentSavedJobs(),
       ),
     );
   }

@@ -22,7 +22,7 @@ class ContactList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+      padding: const EdgeInsets.only(left: 25, right: 25, top: 16, bottom: 16),
       child: Column(
         children: [
           Column(
@@ -34,13 +34,13 @@ class ContactList extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                     fontSize: 16,
                   )),
-              contactItem(Icon(Icons.home), website),
-              contactItem(Icon(Icons.email), email),
-              contactItem(Icon(Icons.phone), phone),
-              contactItem(Icon(Icons.facebook), facebook),
-              contactItem(Icon(Icons.linked_camera), linkedin),
-              contactItem(Icon(Icons.add_circle), google),
-              contactItem(Icon(Icons.add_circle), twitter),
+              contactItem(const Icon(Icons.home_outlined), website),
+              contactItem(const Icon(Icons.email_outlined), email),
+              contactItem(const Icon(Icons.phone_outlined), phone),
+              contactItem(const Icon(Icons.facebook_outlined), facebook),
+              contactItem(const Icon(Icons.linked_camera_outlined), linkedin),
+              contactItem(const Icon(Icons.g_mobiledata), google),
+              contactItem(const Icon(Icons.add_circle), twitter),
             ],
           )
         ],
@@ -60,7 +60,15 @@ class ContactList extends StatelessWidget {
               margin: const EdgeInsets.only(right: 10),
               child: icon,
             ),
-            Text(text)
+            Text(text),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Icon(size: 15, Icons.arrow_forward_ios_outlined)
+                ],
+              ),
+            ),
           ],
         ),
         Container(

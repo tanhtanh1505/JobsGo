@@ -8,22 +8,20 @@ class ChartSex extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(children: [
-        rateSex(height, heightMale, "Male", AppColor.green),
-        rateSex(height, height - heightMale, "Female", AppColor.yellow)
-      ]),
-    );
+    return Row(children: [
+      rateSex(height, heightMale, "Male", AppColor.blue),
+      rateSex(height, height - heightMale, "Female", AppColor.purple)
+    ]);
   }
 
   Widget rateSex(height, curHeight, sex, color) {
     return Container(
-        padding: EdgeInsets.only(right: 5, left: 5),
+        padding: const EdgeInsets.only(right: 5, left: 5),
         child: Column(
           children: [
-            Col(height, curHeight, color),
+            colChart(height, curHeight, color),
             Text(
-              '${sex}\n${(curHeight / height * 100).toStringAsFixed(0)}%',
+              '$sex\n${(curHeight / height * 100).toStringAsFixed(0)}%',
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 11,
@@ -34,22 +32,20 @@ class ChartSex extends StatelessWidget {
         ));
   }
 
-  Widget Col(double height, double curHeight, color) {
-    return Container(
-      child: Column(
-        children: [
-          Container(
-            height: height - curHeight,
-            width: 10,
-            color: AppColor.graylight,
-          ),
-          Container(
-            height: curHeight,
-            width: 10,
-            color: color,
-          )
-        ],
-      ),
+  Widget colChart(double height, double curHeight, color) {
+    return Column(
+      children: [
+        Container(
+          height: height - curHeight,
+          width: 10,
+          color: AppColor.graylight,
+        ),
+        Container(
+          height: curHeight,
+          width: 10,
+          color: color,
+        )
+      ],
     );
   }
 }

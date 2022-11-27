@@ -71,7 +71,9 @@ class _JobCardState extends State<JobCard> {
                                 fontSize: 13, fontWeight: FontWeight.w500),
                           ),
                           Text(
-                            widget.job.title,
+                            widget.job.title.length > 22
+                                ? '${widget.job.title.substring(0, 22)}...'
+                                : widget.job.title,
                             style: const TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w600),
                           ),
