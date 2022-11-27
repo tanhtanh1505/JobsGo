@@ -48,4 +48,56 @@ class JobService {
 
     return listJobs;
   }
+
+  Future<bool> markJob(String id) async {
+    var loginDetails = await SharedService.loginDetails();
+    Map<String, String> requestHeader = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ${loginDetails?.accessToken}',
+    };
+
+    var url = UriHelper.getUri('/job/$id/mark');
+    var response = await client.post(url, headers: requestHeader);
+
+    if (response.statusCode < 300) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  Future<bool> unmarkJob(String id) async {
+    var loginDetails = await SharedService.loginDetails();
+    Map<String, String> requestHeader = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ${loginDetails?.accessToken}',
+    };
+
+    var url = UriHelper.getUri('/job/$id/unmark');
+    var response = await client.delete(url, headers: requestHeader);
+    if (response.statusCode < 300) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  Future<List<Job>> listMarkedJob() async {
+    var loginDetails = await SharedService.loginDetails();
+    Map<String, String> requestHeader = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ${loginDetails?.accessToken}',
+    };
+
+    var url = UriHelper.getUri('/job/list-marked}');
+    var response = await client.get(url, headers: requestHeader);
+
+    List<Job> listJobs = [];
+    var jobJson = jsonDecode(response.body);
+    for (var item in jobJson) {
+      listJobs.add(Job.fromJson(item));
+    }
+
+    return listJobs;
+  }
 }
