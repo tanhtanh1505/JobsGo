@@ -7,7 +7,8 @@ class AvatarWidget extends StatelessWidget {
   final double width;
   final String urlImage;
   final double radius;
-  final bool background;
+  final Color backgroundColor;
+  final Color borderColor;
 
   const AvatarWidget(
       {Key? key,
@@ -16,7 +17,8 @@ class AvatarWidget extends StatelessWidget {
       this.urlImage =
           'https://img.freepik.com/free-vector/cute-cat-with-love-sign-hand-cartoon-illustration-animal-nature-concept-isolated-flat-cartoon-style_138676-3419.jpg?w=2000',
       this.radius = 45,
-      this.background = false})
+      this.backgroundColor = Colors.transparent,
+      this.borderColor = Colors.blue})
       : super(key: key);
 
   @override
@@ -25,12 +27,12 @@ class AvatarWidget extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        color: background ? AppColor.white : Colors.transparent,
+        color: backgroundColor,
         image: DecorationImage(
           image: NetworkImage(urlImage),
           fit: BoxFit.fill,
         ),
-        border: Border.all(width: 2, color: AppColor.blue),
+        border: Border.all(width: 2, color: borderColor),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.all(Radius.circular(radius)),
       ),

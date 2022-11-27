@@ -39,7 +39,7 @@ class AvatarWallpaper extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              margin: const EdgeInsets.only(top: 40),
+                              margin: const EdgeInsets.only(top: 30),
                               child: Text(
                                 employer.name,
                                 style: const TextStyle(
@@ -54,7 +54,7 @@ class AvatarWallpaper extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(top: 3),
+                              margin: const EdgeInsets.only(top: 10),
                               child: TextButton(
                                 style: TextButton.styleFrom(
                                     backgroundColor: AppColor.blue,
@@ -89,7 +89,7 @@ class AvatarWallpaper extends StatelessWidget {
                         urlImage: employer.avatar,
                         height: 80,
                         width: 80,
-                        background: true,
+                        backgroundColor: AppColor.white,
                       ),
                     ),
                   ),
