@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jobsgo/component/button_image.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/screens/JobDetail/job_detail.dart';
+import 'package:jobsgo/services/api_service.dart';
+import 'package:jobsgo/services/job_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class JobCard extends StatefulWidget {
@@ -14,6 +16,15 @@ class JobCard extends StatefulWidget {
 }
 
 class _JobCardState extends State<JobCard> {
+  bool isMarked = false;
+  @override
+  void initState() {
+    setState(() {
+      isMarked = widget.job.bookmark;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -70,14 +81,36 @@ class _JobCardState extends State<JobCard> {
                   ),
                   Container(
                     padding: const EdgeInsets.only(bottom: 12),
-                    child: widget.job.bookmark
-                        ? Icon(
-                            Icons.favorite,
-                            color: AppColor.red,
+                    child: isMarked
+                        ? IconButton(
+                            onPressed: () async {
+                              var res =
+                                  await JobService().unmarkJob(widget.job.id);
+                              if (res) {
+                                setState(() {
+                                  isMarked = false;
+                                });
+                              }
+                            },
+                            icon: Icon(
+                              Icons.favorite,
+                              color: AppColor.red,
+                            ),
                           )
-                        : Icon(
-                            Icons.favorite,
-                            color: AppColor.gray,
+                        : IconButton(
+                            onPressed: () async {
+                              var res =
+                                  await JobService().markJob(widget.job.id);
+                              if (res) {
+                                setState(() {
+                                  isMarked = true;
+                                });
+                              }
+                            },
+                            icon: Icon(
+                              Icons.favorite,
+                              color: AppColor.gray,
+                            ),
                           ),
                   )
                 ],
