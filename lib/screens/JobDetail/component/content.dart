@@ -200,6 +200,7 @@ class _ContentState extends State<Content> {
         isDescription ? general() : company(),
         Container(
           padding: const EdgeInsets.only(top: 10, bottom: 30),
+          margin: const EdgeInsets.only(bottom: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -293,27 +294,6 @@ class _ContentState extends State<Content> {
             ],
           ),
         ),
-        Container(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
-          margin: const EdgeInsets.only(bottom: 30),
-          child: TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(const Color(0xff1976D2)),
-                shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ))),
-            child: const Text(
-              "Apply This Job",
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 17,
-                color: Color(0xffFFFFFF),
-              ),
-            ),
-          ),
-        )
       ],
     );
   }
