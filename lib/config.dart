@@ -14,4 +14,7 @@ class Config {
 
   //job api
   static const String recommendJobAPI = "/job/recommend/";
+
+  //chat api
+  static const String chatAPI = "/chat";
 }

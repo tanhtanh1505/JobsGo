@@ -51,13 +51,13 @@ class UserModel {
         createdAt: DateTime.parse(json["createdAt"]),
       );
 
-  // Map<String, dynamic> toJson() => {
-  //       "id": id,
-  //       "username": username,
-  //       "name": name,
-  //       "avatar": avatar,
-  //       "email": email,
-  //       "phone": phone,
-  //       "createdAt": createdAt.toIso8601String(),
-  //     };
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "username": username,
+        "name": name,
+        "avatar": avatar,
+        "email": email,
+        "phone": phone,
+        "createdAt": createdAt.toIso8601String(),
+      };
 }

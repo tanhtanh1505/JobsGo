@@ -1,11 +1,14 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:jobsgo/models/conversation/conversation.dart';
+import 'package:jobsgo/models/message/message_response.dart';
 import 'package:jobsgo/screens/Message/component/message_item.dart';
 import 'package:jobsgo/config.dart';
 import 'package:jobsgo/models/message/message.dart';
 import 'package:jobsgo/models/user/user.dart';
 import 'package:jobsgo/screens/Message/component/header_chat_area.dart';
+import 'package:jobsgo/services/chat_service.dart';
 import 'package:jobsgo/services/shared_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 
@@ -13,9 +16,10 @@ import 'package:jobsgo/themes/styles.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class ChatArea extends StatefulWidget {
-  const ChatArea({super.key, required this.reciever});
+  const ChatArea({super.key, required this.conversation, this.textSend = ""});
 
-  final UserModel reciever;
+  final String textSend;
+  final ConversationModel conversation;
 
   @override
   State<ChatArea> createState() => _ChatAreaState();
@@ -34,6 +38,8 @@ class _ChatAreaState extends State<ChatArea> {
     super.initState();
     initSocket();
     getUser();
+    getOldMessage();
+    textEditingController.text = widget.textSend;
   }
 
   @override
@@ -45,12 +51,26 @@ class _ChatAreaState extends State<ChatArea> {
     super.dispose();
   }
 
+  getOldMessage() async {
+    var tempOldMessage =
+        await ChatService.getListMessage(widget.conversation.id);
+    setState(() {
+      //revert tempOldMessage
+      tempOldMessage = tempOldMessage.reversed.toList();
+      messageList = tempOldMessage.map((e) {
+        Message resMess =
+            Message(sender: e.sender, content: e.content, status: e.status);
+        return MessageItem(isMine: e.sender == user.id, message: resMess);
+      }).toList();
+      isLoaded = true;
+    });
+  }
+
   getUser() async {
     user = await SharedService.userInfo();
     if (user != exampleUser()) {
       setState(() {
         isLoaded = true;
-        socket.emit("join", user.username);
       });
     }
   }
@@ -62,16 +82,14 @@ class _ChatAreaState extends State<ChatArea> {
     });
     socket.connect();
     socket.onConnect((_) {
-      if (isLoaded) socket.emit("join", user.username);
+      if (isLoaded) socket.emit("joinRoom", widget.conversation.id);
     });
-    socket.on('getMessage', (newMessage) {
-      Message newMess = messageFromJson(newMessage);
-      if (newMess != failureMessage &&
-          newMess.senderId == widget.reciever.username) {
-        setState(() {
-          messageList.add(MessageItem(message: newMess));
-        });
-      }
+    socket.on('receiveMessage', (newMessage) {
+      Message newMess = Message.fromJson(newMessage);
+      setState(() {
+        messageList.add(
+            MessageItem(isMine: newMess.sender == user.id, message: newMess));
+      });
     });
     socket.onDisconnect((_) => print('Connection Disconnection'));
     socket.onConnectError((err) => print(err));
@@ -81,14 +99,10 @@ class _ChatAreaState extends State<ChatArea> {
   sendMessage() {
     String message = textEditingController.text.trim();
     if (message.isEmpty) return;
-    Message newMsg = Message(
-        senderId: user.username,
-        recieverId: widget.reciever.username,
-        msg: message);
-    socket.emit('sendNewMessage', newMsg.toJson());
-    setState(() {
-      messageList.add(MessageItem(isMine: true, message: newMsg));
-    });
+    Message newMsg =
+        Message(sender: user.id, content: message, status: "sending");
+    socket.emit('sendMessage', [widget.conversation.id, newMsg.toJson()]);
+    textEditingController.clear();
   }
 
   @override
@@ -97,7 +111,7 @@ class _ChatAreaState extends State<ChatArea> {
       appBar: AppBar(
         leadingWidth: 28,
         backgroundColor: AppColor.blue,
-        title: HeaderChatArea(user: widget.reciever),
+        title: HeaderChatArea(user: widget.conversation.other),
       ),
       body: Column(
         children: [

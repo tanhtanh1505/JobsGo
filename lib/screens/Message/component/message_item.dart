@@ -29,7 +29,7 @@ class MessageItem extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(12),
             child: Text(
-              message.msg,
+              message.content,
               style: Theme.of(context)
                   .textTheme
                   .bodyText1!

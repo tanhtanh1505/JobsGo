@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/avatar_widget.dart';
+import 'package:jobsgo/models/conversation/conversation.dart';
 import 'package:jobsgo/models/employer/employer.dart';
 import 'package:jobsgo/screens/Message/component/chat_area.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class AvatarWallpaper extends StatelessWidget {
-  const AvatarWallpaper({super.key, required this.employer});
+  const AvatarWallpaper(
+      {super.key, required this.employer, required this.conversation});
 
   final EmployerModel employer;
+  final ConversationModel conversation;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class AvatarWallpaper extends StatelessWidget {
         Container(
           height: 175,
           decoration: BoxDecoration(
-            color: AppColor.bluel2,
+            color: AppColor.bluelight,
             image: DecorationImage(
               image: NetworkImage(employer.wallpaper),
               fit: BoxFit.fitWidth,
@@ -66,8 +69,9 @@ class AvatarWallpaper extends StatelessWidget {
                                 onPressed: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        ChatArea(reciever: employer),
+                                    builder: (context) => ChatArea(
+                                      conversation: conversation,
+                                    ),
                                   ),
                                 ),
                                 child: Text(

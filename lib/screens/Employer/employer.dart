@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/models/conversation/conversation.dart';
 import 'package:jobsgo/models/employer/employer.dart';
 import 'package:jobsgo/screens/Employer/component/avatar_wallpaper.dart';
 import 'package:jobsgo/screens/Employer/component/size.dart';
+import 'package:jobsgo/services/chat_service.dart';
 import 'package:jobsgo/services/employer_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 
@@ -18,6 +20,7 @@ class Employer extends StatefulWidget {
 class _EmployerState extends State<Employer> {
   late EmployerModel employer;
   bool isLoaded = false;
+  late ConversationModel conversation;
 
   @override
   void initState() {
@@ -27,9 +30,13 @@ class _EmployerState extends State<Employer> {
 
   getInfoEmployer() async {
     EmployerModel? resData = await EmployerService().getEmployer(widget.id);
+    ConversationModel conversationModelTemp =
+        await ChatService.getConversationWith(widget.id);
     if (resData != null) {
       setState(() {
         employer = resData;
+        conversation = conversationModelTemp;
+
         isLoaded = true;
       });
     }
@@ -60,7 +67,7 @@ class _EmployerState extends State<Employer> {
   Widget body() {
     return ListView(
       children: [
-        AvatarWallpaper(employer: employer),
+        AvatarWallpaper(employer: employer, conversation: conversation),
         paragraph("Introduction", employer.about),
         Container(height: 10, color: AppColor.graylight),
         paragraph("Address", employer.address),

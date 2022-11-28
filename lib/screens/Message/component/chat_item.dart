@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/avatar_widget.dart';
-import 'package:jobsgo/models/user/user.dart';
+import 'package:jobsgo/models/conversation/conversation.dart';
 import 'package:jobsgo/screens/Message/component/chat_area.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class ChatItem extends StatefulWidget {
-  const ChatItem({super.key, required this.user});
+  const ChatItem({super.key, required this.conversation});
 
-  final UserModel user;
+  final ConversationModel conversation;
   final String lastMessage = 'Hello';
   final int countLastMessage = 0;
   final String timeLastMessage = 'Yesterday';
@@ -24,35 +24,39 @@ class _ChatItemState extends State<ChatItem> {
       onPressed: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ChatArea(reciever: widget.user),
+          builder: (context) => ChatArea(
+            conversation: widget.conversation,
+          ),
         ),
       ),
     );
   }
 
   Widget itemUserChat(BuildContext context) {
-    return Container(
-      height: 60,
-      padding: const EdgeInsets.only(left: 12, right: 12),
-      child: Row(
-        children: [
-          AvatarWidget(urlImage: widget.user.avatar),
-          infoMessage(),
-          Expanded(child: timeLastMess()),
-        ],
-      ),
-    );
+    return widget.conversation.lastMessage != null
+        ? Container(
+            height: 60,
+            padding: const EdgeInsets.only(left: 12, right: 12),
+            child: Row(
+              children: [
+                AvatarWidget(urlImage: widget.conversation.other.avatar),
+                infoMessage(),
+                Expanded(child: timeLastMess()),
+              ],
+            ),
+          )
+        : Container();
   }
 
   Widget infoMessage() {
     return Container(
-      padding: const EdgeInsets.only(left: 8),
+      padding: const EdgeInsets.only(left: 12),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.user.name,
+            widget.conversation.other.name,
             style: TextStyle(
               color: AppColor.black,
               fontSize: 16,
@@ -60,7 +64,9 @@ class _ChatItemState extends State<ChatItem> {
             ),
           ),
           Text(
-            widget.lastMessage,
+            widget.conversation.lastMessage!.content.length > 20
+                ? '${widget.conversation.lastMessage!.content.substring(0, 20)}...'
+                : widget.conversation.lastMessage!.content,
             style: TextStyle(
               color: AppColor.black,
               fontSize: 13,
@@ -80,7 +86,9 @@ class _ChatItemState extends State<ChatItem> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            widget.timeLastMessage,
+            widget.conversation.lastMessage!.createdAt
+                .toString()
+                .substring(10, 16),
             style: TextStyle(color: AppColor.gray),
           ),
           countLastMess()

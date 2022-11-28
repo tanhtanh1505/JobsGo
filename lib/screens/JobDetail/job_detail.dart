@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/screens/JobDetail/component/content.dart';
+import 'package:jobsgo/screens/JobDetail/component/footer_job_detail.dart';
 import 'package:jobsgo/screens/JobDetail/component/jd_appbar.dart';
 
 class JobDetail extends StatelessWidget {
@@ -17,6 +18,7 @@ class JobDetail extends StatelessWidget {
         backgroundColor: const Color(0xffFAFAFA),
         elevation: 0.0,
       ),
+      bottomSheet: FooterJobDetail(job: job),
       body: Container(
         padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
         child: Content(

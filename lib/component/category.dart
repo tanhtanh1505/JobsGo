@@ -20,6 +20,7 @@ class _CategoryState extends State<Category> {
           padding: const EdgeInsets.only(bottom: 8),
           child: ButtonImage(
             urlImage: widget.urlImage,
+            paddingImage: 13,
             goto: const Message(),
           )),
       Text(

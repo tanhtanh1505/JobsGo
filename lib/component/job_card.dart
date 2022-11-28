@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jobsgo/component/button_image.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/screens/JobDetail/job_detail.dart';
-import 'package:jobsgo/services/api_service.dart';
 import 'package:jobsgo/services/job_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 

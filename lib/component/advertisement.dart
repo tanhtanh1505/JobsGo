@@ -15,7 +15,7 @@ class _AdvertisementState extends State<Advertisement> {
       height: 152,
       margin: const EdgeInsets.only(top: 20),
       decoration: BoxDecoration(
-        color: AppColor.bluel2,
+        color: AppColor.bluelight,
         image: const DecorationImage(
           image: AssetImage("assets/images/ads.png"),
           scale: 4,

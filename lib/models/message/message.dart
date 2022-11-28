@@ -6,21 +6,21 @@ String messageToJson(Message data) => json.encode(data.toJson());
 
 class Message {
   Message({
-    required this.senderId,
-    required this.recieverId,
-    required this.msg,
+    required this.sender,
+    required this.content,
+    required this.status,
   });
 
-  String senderId;
-  String recieverId;
-  String msg;
+  String sender;
+  String content;
+  String status;
 
   factory Message.fromJson(Map<String, dynamic> json) {
     try {
       return Message(
-        senderId: json["senderId"],
-        recieverId: json["recieverId"],
-        msg: json["msg"],
+        sender: json["sender"],
+        content: json["content"],
+        status: json["status"],
       );
     } catch (err) {
       return failureMessage;
@@ -28,11 +28,10 @@ class Message {
   }
 
   Map<String, dynamic> toJson() => {
-        "senderId": senderId,
-        "recieverId": recieverId,
-        "msg": msg,
+        "sender": sender,
+        "content": content,
+        "status": status,
       };
 }
 
-Message failureMessage =
-    Message(senderId: 'xxx', recieverId: 'xxx', msg: 'xxx');
+Message failureMessage = Message(sender: 'xxx', content: 'xxx', status: 'xxx');
