@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jobsgo/screens/SearchPage/search_page.dart';
+import 'package:jobsgo/themes/styles.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({Key? key, required this.text}) : super(key: key);
@@ -7,17 +9,59 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(16),
-        prefixIcon: const Icon(Icons.search),
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(12),
+    // return TextField(
+    //   onTap: () => Navigator.push(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (context) => const SearchPage(),
+    //     ),
+    //   ),
+    //   decoration: InputDecoration(
+    //     contentPadding: const EdgeInsets.all(16),
+    //     prefixIcon: const Icon(Icons.search),
+    //     border: const OutlineInputBorder(
+    //       borderRadius: BorderRadius.all(
+    //         Radius.circular(12),
+    //       ),
+    //     ),
+    //     hintText: text,
+    //   ),
+    // );
+
+    return content(context);
+  }
+
+  Widget content(BuildContext context) {
+    return GestureDetector(
+        onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SearchPage(),
+              ),
+            ),
+        child: Container(
+          height: 55,
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: AppColor.gray,
+                width: 1,
+                style: BorderStyle.solid), //Border.all
+            /*** The BorderRadius widget  is here ***/
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
-        ),
-        hintText: text,
-      ),
-    );
+          child: Row(children: [
+            Container(
+              margin: const EdgeInsets.only(right: 10),
+              child: Icon(Icons.search, color: AppColor.gray),
+            ),
+            Text(
+              text,
+              style: TextStyle(color: AppColor.gray, fontSize: 16),
+            ),
+          ]),
+        ));
   }
 }
