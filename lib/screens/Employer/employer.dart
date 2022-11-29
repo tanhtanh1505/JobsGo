@@ -51,7 +51,7 @@ class _EmployerState extends State<Employer> {
               centerTitle: true,
               iconTheme: IconThemeData(color: AppColor.black),
               title: Text(
-                'Employer',
+                employer.name,
                 style: TextStyle(color: AppColor.black),
               ),
               backgroundColor: Colors.transparent,
