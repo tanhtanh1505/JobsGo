@@ -51,12 +51,15 @@ class _ContentState extends State<Content> {
                       fontSize: 14,
                     ),
                   ),
-                  Text(
-                    widget.job.title,
-                    style: TextStyle(
-                      color: AppColor.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    child: Text(
+                      widget.job.title,
+                      style: TextStyle(
+                        color: AppColor.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                   Text(
@@ -174,7 +177,8 @@ class _ContentState extends State<Content> {
                       widget.job.tags.split(",").length > 2
                           ? tag(widget.job.tags.split(",")[2])
                           : Container(),
-                      widget.job.tags.split(",").length > 3
+                      widget.job.tags.split(",").length > 3 &&
+                              widget.job.tags.split(",")[2].length < 10
                           ? tag(widget.job.tags.split(",")[3])
                           : Container(),
                     ],

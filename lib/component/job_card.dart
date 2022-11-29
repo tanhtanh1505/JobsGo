@@ -69,12 +69,13 @@ class _JobCardState extends State<JobCard> {
                             style: const TextStyle(
                                 fontSize: 13, fontWeight: FontWeight.w500),
                           ),
-                          Text(
-                            widget.job.title.length > 22
-                                ? '${widget.job.title.substring(0, 22)}...'
-                                : widget.job.title,
-                            style: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w600),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.45,
+                            child: Text(
+                              widget.job.title,
+                              style: const TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w600),
+                            ),
                           ),
                         ],
                       ),

@@ -40,8 +40,6 @@ class SearchBar extends StatelessWidget {
               ),
             ),
         child: Container(
-          height: 55,
-          padding: const EdgeInsets.only(left: 10, right: 10),
           decoration: BoxDecoration(
             border: Border.all(
                 color: AppColor.gray,
@@ -54,8 +52,12 @@ class SearchBar extends StatelessWidget {
           ),
           child: Row(children: [
             Container(
-              margin: const EdgeInsets.only(right: 10),
-              child: Icon(Icons.search, color: AppColor.gray),
+              padding: const EdgeInsets.all(10),
+              child: Icon(
+                Icons.search_outlined,
+                color: AppColor.gray,
+                size: 33,
+              ),
             ),
             Text(
               text,

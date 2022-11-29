@@ -100,4 +100,47 @@ class JobService {
 
     return listJobs;
   }
+
+  Future<List<String>> getRelateKeyWord(String keyword, int number) async {
+    var loginDetails = await SharedService.loginDetails();
+    Map<String, String> requestHeader = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ${loginDetails?.accessToken}',
+    };
+
+    var url = UriHelper.getUri('/job/suggest-keyword/$number/$keyword');
+    var response = await client.get(url, headers: requestHeader);
+
+    List<String> keywords = [];
+    print(url);
+    print(response.body);
+    var jobJson = jsonDecode(response.body);
+    for (var item in jobJson) {
+      keywords.add(item);
+    }
+
+    return keywords;
+  }
+
+  Future<List<Job>> findJobByKeyWord(String keyword) async {
+    var loginDetails = await SharedService.loginDetails();
+
+    Map<String, String> requestHeader = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ${loginDetails?.accessToken}',
+    };
+
+    var url = UriHelper.getUri('/job/find-by-keyword/$keyword');
+
+    var response = await client.get(url, headers: requestHeader);
+
+    //for add job from response to list
+    List<Job> listJobs = [];
+    var jobJson = jsonDecode(response.body);
+    for (var item in jobJson) {
+      listJobs.add(Job.fromJson(item));
+    }
+
+    return listJobs;
+  }
 }
