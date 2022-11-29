@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
 import 'package:jobsgo/component/search_bar.dart';
+import 'package:jobsgo/screens/Application/components/list_application.dart';
 
 class Application extends StatelessWidget {
   const Application({super.key});
@@ -17,9 +18,10 @@ class Application extends StatelessWidget {
         elevation: 0.0,
       ),
       body: ListView(
-        padding: const EdgeInsets.only(left: 30, right: 30),
+        padding: const EdgeInsets.only(left: 25, right: 25),
         children: const <Widget>[
           SearchBar(text: "Search"),
+          ListApplication(),
         ],
       ),
     );

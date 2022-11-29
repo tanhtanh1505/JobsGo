@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/avatar_widget.dart';
 import 'package:jobsgo/screens/Employer/component/chart_sex.dart';
-import 'package:jobsgo/themes/styles.dart';
 
 class SizeCompany extends StatelessWidget {
   const SizeCompany({super.key, required this.size});

@@ -112,8 +112,7 @@ class JobService {
     var response = await client.get(url, headers: requestHeader);
 
     List<String> keywords = [];
-    print(url);
-    print(response.body);
+
     var jobJson = jsonDecode(response.body);
     for (var item in jobJson) {
       keywords.add(item);

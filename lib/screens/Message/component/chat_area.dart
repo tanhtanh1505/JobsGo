@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:jobsgo/models/conversation/conversation.dart';
-import 'package:jobsgo/models/message/message_response.dart';
 import 'package:jobsgo/screens/Message/component/message_item.dart';
 import 'package:jobsgo/config.dart';
 import 'package:jobsgo/models/message/message.dart';

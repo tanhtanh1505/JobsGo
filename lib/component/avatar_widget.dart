@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jobsgo/themes/styles.dart';
 
 class AvatarWidget extends StatelessWidget {
   final double height;

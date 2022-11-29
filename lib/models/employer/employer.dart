@@ -51,6 +51,7 @@ class EmployerModel extends UserModel {
         json["size"],
       );
 
+  @override
   Map<String, dynamic> toJson() => {
         "id": id,
         "username": username,

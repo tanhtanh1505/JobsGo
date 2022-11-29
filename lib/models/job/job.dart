@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 Job jobFromJson(String str) => Job.fromJson(json.decode(str));
 

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:jobsgo/models/message/message_response.dart';
 import 'package:jobsgo/models/user/user.dart';
 
