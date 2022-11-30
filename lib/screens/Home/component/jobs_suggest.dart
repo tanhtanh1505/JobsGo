@@ -42,6 +42,7 @@ class _JobsSuggestState extends State<JobsSuggest> {
             ],
           ),
           Container(
+            margin: const EdgeInsets.only(top: 15),
             child: listJobSuggest(),
           )
         ],

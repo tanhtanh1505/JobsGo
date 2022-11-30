@@ -1,3 +1,5 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 import 'screens/Home/home.dart';
 import 'screens/SavedJobs/saved_jobs.dart';
 import 'screens/Application/application.dart';
@@ -13,6 +15,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print('Messsss $message');
+      final snackBar = SnackBar(
+        content: Text(message.notification?.title ?? ""),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    });
+    FirebaseMessaging.instance.getToken().then((value) {
+      print('Token $value');
+    });
+  }
+
   int currentIndex = 0;
   final screens = [
     const Home(),
