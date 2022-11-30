@@ -1,7 +1,8 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:jobsgo/screens/Auth/login.dart';
-import 'package:jobsgo/screens/Auth/register.dart';
-import 'package:jobsgo/screens/WelcomePages/welcome_page1.dart';
+import 'package:jobsgo/screens/Auth/Login.dart';
+import 'package:jobsgo/screens/Auth/Register.dart';
+import 'package:jobsgo/screens/WelcomePages/onboarding_page.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _WelcomePageState extends State<WelcomePage> {
         color: const Color(0xffFFFFFF),
         child: Column(
           children: [
+
             Container(
               //height: 269,
               //width: 315.88,
@@ -29,6 +31,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 width: 315.88,
               ),
             ),
+
             Container(
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(top: 42, left: 50),
@@ -41,6 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
+
             Container(
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(top: 10, left: 50, right: 35),
@@ -53,6 +57,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
+
             Container(
               padding: const EdgeInsets.only(top: 24, left: 50, right: 35),
               child: Row(
@@ -62,7 +67,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     height: 47.29,
                     width: 138.24,
                     child: TextButton(
-                      onPressed: () {
+                      onPressed: (){
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -73,11 +78,10 @@ class _WelcomePageState extends State<WelcomePage> {
                         );
                       },
                       style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        side: const BorderSide(color: Color(0xff3586D7)),
-                      ))),
+                          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: Color(0xff3586D7)),
+                          ))),
                       // ignore: sort_child_properties_last
                       child: const Text(
                         "Register",
@@ -87,13 +91,15 @@ class _WelcomePageState extends State<WelcomePage> {
                             fontWeight: FontWeight.bold,
                             color: Color(0xff3586D7)),
                       ),
+
                     ),
                   ),
+
                   SizedBox(
                     height: 47.29,
                     width: 138.24,
                     child: TextButton(
-                      onPressed: () {
+                      onPressed: (){
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -104,11 +110,10 @@ class _WelcomePageState extends State<WelcomePage> {
                         );
                       },
                       style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        side: const BorderSide(color: Color(0xff3586D7)),
-                      ))),
+                          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: Color(0xff3586D7)),
+                          ))),
                       // ignore: sort_child_properties_last
                       child: const Text(
                         "Login",
@@ -123,6 +128,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ],
               ),
             ),
+
             Container(
               padding: const EdgeInsets.only(top: 25, left: 50, right: 35),
               //height: 77,
@@ -136,7 +142,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const welcome_page1();
+                          return const OnboardingPage();
                         },
                       ),
                     );
@@ -152,7 +158,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(const Color(0xff176DC2)),
+                      MaterialStateProperty.all(const Color(0xff176DC2)),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         //side: const BorderSide(color: Colors.black),
