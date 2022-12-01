@@ -1,5 +1,5 @@
 # Group 7 - INT3020 40
-
+This is a clone of JobsGo. But the interface of the app changes constantly, so we designed a suitable version ourselves
 ### Members
 
 - Le Tuan Anh - 20021287
@@ -10,6 +10,26 @@
 
 ### <a href="https://www.figma.com/file/Dg8RZqQsy4TSgrC1egQ9EL/JobsGO">Figma</a>
 
+### <a href="https://tanhuet.site/docs">API List</a>
+
+### List features
+<img src="https://jobsgo-storage.s3.amazonaws.com/images/63892dc6d845a3f2d9d9cc0e" width=500/>
+
+### Deploy
+- <a href="https://jobsgo-3d607.web.app"> JobsGo </a> (Mobile version)
+- <a href="https://woparadise.tech"> WoringOnParadise </a> (Web version)
+
+### Technique
+- NodeJs
+- MySQL
+- Redis
+- AWS S3 Bucket
+- AWS EC2
+- Google Cloud
+- Firebase
+- GitHub CI/CD
+- Flutter
+
 ### Requirement
 
 ```
@@ -19,19 +39,16 @@ environment:
 
 ### Run
 
-- Mobile
-
-```
-flutter run
-```
-
 - Web
 
 ```
 flutter run -d chrome --web-port=3000
 ```
+- Mobile
 
-Because server only accept origin port 3000 when debugging
+```
+flutter run
+```
 
 # Report
 
