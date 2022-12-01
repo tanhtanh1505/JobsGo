@@ -6,6 +6,8 @@ import 'package:jobsgo/screens/WelcomePages/welcome_page.dart';
 import 'package:jobsgo/services/shared_service.dart';
 import 'package:logger/logger.dart';
 
+import 'firebase_options.dart';
+
 Future<void> _firebaseMessagingBackgroundHandler(message) async {
   await Firebase.initializeApp();
 
@@ -15,7 +17,7 @@ Future<void> _firebaseMessagingBackgroundHandler(message) async {
 Widget defaultHome = const WelcomePage();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
 
