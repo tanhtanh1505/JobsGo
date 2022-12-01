@@ -3,6 +3,7 @@ import 'package:jobsgo/component/job_card.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/services/job_service.dart';
 import 'package:jobsgo/themes/styles.dart';
+import 'package:logger/logger.dart';
 
 class JobsSuggest extends StatefulWidget {
   const JobsSuggest({super.key});
@@ -12,6 +13,26 @@ class JobsSuggest extends StatefulWidget {
 }
 
 class _JobsSuggestState extends State<JobsSuggest> {
+  List<Job> listJob = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+
+  getData() {
+    if (isLoading) {
+      JobService().getListSuggestJob().then((value) {
+        isLoading = false;
+        setState(() {
+          listJob = value;
+        });
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,26 +71,27 @@ class _JobsSuggestState extends State<JobsSuggest> {
     );
   }
 
+  //setstate
+  Future<void> _refresh() async {
+    Logger().d("refresh");
+    setState(() {
+      isLoading = true;
+      getData();
+    });
+  }
+
   Widget listJobSuggest() {
-    return FutureBuilder<List<Job>>(
-      future: JobService().getListSuggestJob(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          List<Job>? listJob = snapshot.data;
-          return ListView.builder(
-              itemCount: listJob?.length,
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              itemBuilder: (BuildContext context, int index) {
-                return JobCard(
-                  job: listJob!.elementAt(index),
-                );
-              });
-        } else if (snapshot.hasError) {
-          return const Text("Error");
-        }
-        return const CircularProgressIndicator();
-      },
-    );
+    return isLoading
+        ? const CircularProgressIndicator()
+        : ListView.builder(
+            itemCount: listJob.length,
+            shrinkWrap: true,
+            physics: const ClampingScrollPhysics(),
+            itemBuilder: (BuildContext context, int index) {
+              return JobCard(
+                job: listJob.elementAt(index),
+                callBack: _refresh,
+              );
+            });
   }
 }

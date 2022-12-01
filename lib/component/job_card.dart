@@ -6,9 +6,10 @@ import 'package:jobsgo/services/job_service.dart';
 import 'package:jobsgo/themes/styles.dart';
 
 class JobCard extends StatefulWidget {
-  const JobCard({super.key, required this.job});
+  const JobCard({super.key, required this.job, this.callBack});
 
   final Job job;
+  final Function? callBack;
 
   @override
   State<JobCard> createState() => _JobCardState();
@@ -32,7 +33,7 @@ class _JobCardState extends State<JobCard> {
         MaterialPageRoute(
           builder: (context) => JobDetail(job: widget.job),
         ),
-      ),
+      ).then((value) => widget.callBack!()),
       child: Container(
           height: 140,
           padding: const EdgeInsets.all(16),
