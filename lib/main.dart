@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:jobsgo/my_home_page.dart';
 import 'package:jobsgo/screens/WelcomePages/welcome_page.dart';
 import 'package:jobsgo/services/shared_service.dart';
+import 'package:logger/logger.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(message) async {
   await Firebase.initializeApp();
 
-  print('Handling a background message ${message.messageId}');
+  Logger().d('Handling a background message ${message.messageId}');
 }
 
 Widget defaultHome = const WelcomePage();
@@ -28,8 +29,7 @@ Future<void> main() async {
     sound: true,
   );
 
-  print('User granted permission: ${settings.authorizationStatus}');
-
+  Logger().d('User granted permission: ${settings.authorizationStatus}');
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   bool result = await SharedService.isLoggedIn();
   if (result) {

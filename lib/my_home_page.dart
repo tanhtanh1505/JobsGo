@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:logger/logger.dart';
 
 import 'screens/Home/home.dart';
 import 'screens/SavedJobs/saved_jobs.dart';
@@ -19,14 +20,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Messsss $message');
+      Logger().d('Got a message whilst in the foreground! $message');
       final snackBar = SnackBar(
         content: Text(message.notification?.title ?? ""),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     });
     FirebaseMessaging.instance.getToken().then((value) {
-      print('Token $value');
+      Logger().d('Token: $value');
     });
   }
 
