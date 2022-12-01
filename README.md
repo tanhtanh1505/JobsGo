@@ -1,5 +1,7 @@
 # Group 7 - INT3020 40
+
 This is a clone of JobsGo. But the interface of the app changes constantly, so we designed a suitable version ourselves
+
 ### Members
 
 - Le Tuan Anh - 20021287
@@ -13,14 +15,18 @@ This is a clone of JobsGo. But the interface of the app changes constantly, so w
 ### <a href="https://tanhuet.site/docs">API List</a>
 
 ### List features
+
 <img src="https://jobsgo-storage.s3.amazonaws.com/images/63892dc6d845a3f2d9d9cc0e" width=500/>
 
 ### Deploy
+
 - <a href="https://jobsgo-3d607.web.app"> JobsGo </a> (Mobile version)
 - <a href="https://woparadise.tech"> WoringOnParadise </a> (Web version)
 
 ### Technique
+
 - NodeJs
+- SocketIO
 - MySQL
 - Redis
 - AWS S3 Bucket
@@ -44,6 +50,7 @@ environment:
 ```
 flutter run -d chrome --web-port=3000
 ```
+
 - Mobile
 
 ```

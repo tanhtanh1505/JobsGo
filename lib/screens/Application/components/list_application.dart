@@ -32,7 +32,7 @@ class _ListApplicationState extends State<ListApplication> {
   Widget build(BuildContext context) {
     return isLoaded
         ? buildListApplication()
-        : const CircularProgressIndicator();
+        : const Center(child: CircularProgressIndicator());
   }
 
   Widget buildListApplication() {

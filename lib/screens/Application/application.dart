@@ -4,7 +4,9 @@ import 'package:jobsgo/component/search_bar.dart';
 import 'package:jobsgo/screens/Application/components/list_application.dart';
 
 class Application extends StatelessWidget {
-  const Application({super.key});
+  const Application({super.key, this.reload = false});
+
+  final bool reload;
 
   @override
   Widget build(BuildContext context) {
