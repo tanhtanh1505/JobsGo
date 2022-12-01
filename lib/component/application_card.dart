@@ -39,59 +39,60 @@ class _ApplicationCardState extends State<ApplicationCard> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(right: 12),
-                        child: ButtonImage(
-                          urlImage: widget.application.job.authorAvatar,
-                          goto: JobDetail(job: widget.application.job),
-                          isNetWorkImage: true,
+                  Expanded(
+                    flex: 3,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(right: 12),
+                          child: ButtonImage(
+                            urlImage: widget.application.job.authorAvatar,
+                            goto: JobDetail(job: widget.application.job),
+                            isNetWorkImage: true,
+                          ),
                         ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.application.job.authorName,
-                            style: const TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.38,
-                            child: Text(
-                              widget.application.job.title,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.application.job.authorName,
                               style: const TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.w600),
+                                  fontSize: 13, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                            SizedBox(
+                              child: Text(
+                                widget.application.job.title,
+                                style: const TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   Container(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 4),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: AppColor.gray,
-                            width: 0.8,
-                            style: BorderStyle.solid),
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      child: Text(
-                        widget.application.status,
-                        style: const TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w600),
+                    width: 80,
+                    height: 33,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: AppColor.gray,
+                          width: 0.8,
+                          style: BorderStyle.solid),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(10),
                       ),
                     ),
-                  )
+                    child: Text(
+                      widget.application.status,
+                      style: const TextStyle(
+                          fontSize: 12, fontWeight: FontWeight.w600),
+                    ),
+                  ),
                 ],
               ),
               Row(

@@ -19,9 +19,19 @@ environment:
 
 ### Run
 
+- Mobile
+
 ```
 flutter run
 ```
+
+- Web
+
+```
+flutter run -d chrome --web-port=3000
+```
+
+Because server only accept origin port 3000 when debugging
 
 # Report
 

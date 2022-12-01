@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_frame/flutter_web_frame.dart';
 import 'package:jobsgo/my_home_page.dart';
 import 'package:jobsgo/screens/WelcomePages/welcome_page.dart';
 import 'package:jobsgo/services/shared_service.dart';
@@ -46,13 +48,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'jobsgo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Poppins',
-      ),
-      home: defaultHome,
+    return FlutterWebFrame(
+      builder: (context) {
+        return MaterialApp(
+          title: 'jobsgo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            fontFamily: 'Poppins',
+          ),
+          home: defaultHome,
+        );
+      },
+      maximumSize: Size(500.0, 812.0),
+      enabled: kIsWeb,
     );
   }
 }

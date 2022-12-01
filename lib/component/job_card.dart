@@ -50,71 +50,76 @@ class _JobCardState extends State<JobCard> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(right: 12),
-                        child: ButtonImage(
-                          urlImage: widget.job.authorAvatar,
-                          goto: JobDetail(job: widget.job),
-                          isNetWorkImage: true,
+                  Expanded(
+                    flex: 6,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(right: 12),
+                          child: ButtonImage(
+                            urlImage: widget.job.authorAvatar,
+                            goto: JobDetail(job: widget.job),
+                            isNetWorkImage: true,
+                          ),
                         ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.job.authorName,
-                            style: const TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.45,
-                            child: Text(
-                              widget.job.title,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.job.authorName,
                               style: const TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.w600),
+                                  fontSize: 13, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                            SizedBox(
+                              child: Text(
+                                widget.job.title,
+                                style: const TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: isMarked
-                        ? IconButton(
-                            onPressed: () async {
-                              var res =
-                                  await JobService().unmarkJob(widget.job.id);
-                              if (res) {
-                                setState(() {
-                                  isMarked = false;
-                                });
-                              }
-                            },
-                            icon: Icon(
-                              Icons.favorite,
-                              color: AppColor.red,
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: isMarked
+                          ? IconButton(
+                              onPressed: () async {
+                                var res =
+                                    await JobService().unmarkJob(widget.job.id);
+                                if (res) {
+                                  setState(() {
+                                    isMarked = false;
+                                  });
+                                }
+                              },
+                              icon: Icon(
+                                Icons.favorite,
+                                color: AppColor.red,
+                              ),
+                            )
+                          : IconButton(
+                              onPressed: () async {
+                                var res =
+                                    await JobService().markJob(widget.job.id);
+                                if (res) {
+                                  setState(() {
+                                    isMarked = true;
+                                  });
+                                }
+                              },
+                              icon: Icon(
+                                Icons.favorite,
+                                color: AppColor.gray,
+                              ),
                             ),
-                          )
-                        : IconButton(
-                            onPressed: () async {
-                              var res =
-                                  await JobService().markJob(widget.job.id);
-                              if (res) {
-                                setState(() {
-                                  isMarked = true;
-                                });
-                              }
-                            },
-                            icon: Icon(
-                              Icons.favorite,
-                              color: AppColor.gray,
-                            ),
-                          ),
-                  )
+                    ),
+                  ),
                 ],
               ),
               Row(
