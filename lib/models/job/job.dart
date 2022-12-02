@@ -28,6 +28,7 @@ class JobModel {
   final String authorAvatar;
   final String authorAbout;
   final int authorSize;
+  final bool apply;
 
   JobModel(
       {required this.id,
@@ -54,7 +55,8 @@ class JobModel {
       required this.authorPhone,
       required this.authorAvatar,
       required this.authorAbout,
-      required this.authorSize});
+      required this.authorSize,
+      required this.apply});
 
   factory JobModel.fromJson(Map<String, dynamic> json) {
     return JobModel(
@@ -82,7 +84,8 @@ class JobModel {
         authorPhone: json["authorPhone"],
         authorAvatar: json["authorAvatar"],
         authorAbout: json["authorAbout"],
-        authorSize: json["authorSize"]);
+        authorSize: json["authorSize"],
+        apply: json["apply"]);
   }
 
   //to json
@@ -113,6 +116,7 @@ class JobModel {
       "authorAvatar": authorAvatar,
       "authorAbout": authorAbout,
       "authorSize": authorSize,
+      "apply": apply
     };
   }
 }
@@ -142,7 +146,8 @@ JobModel exampleJobModel() => JobModel.fromJson({
       "authorPhone": "authorPhone",
       "authorAvatar": "authorAvatar",
       "authorAbout": "authorAbout",
-      "authorSize": "authorSize"
+      "authorSize": "authorSize",
+      "apply": "apply"
     });
 JobModel nullJobModel = JobModel.fromJson({
   "id": "x",
@@ -169,5 +174,6 @@ JobModel nullJobModel = JobModel.fromJson({
   "authorPhone": "x",
   "authorAvatar": "x",
   "authorAbout": "x",
-  "authorSize": 0
+  "authorSize": 0,
+  "apply": false
 });

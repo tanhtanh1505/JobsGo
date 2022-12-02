@@ -175,20 +175,29 @@ class _FooterJobDetailState extends State<FooterJobDetail> {
           margin: const EdgeInsets.only(left: 10),
           height: 44,
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: widget.job.apply ? Colors.grey.shade400 : Colors.blue,
             borderRadius: BorderRadius.circular(5),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                "Apply",
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 14,
-                  color: AppColor.white,
-                ),
-              ),
+              widget.job.apply
+                  ? Text(
+                      "Applied",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: AppColor.white,
+                      ),
+                    )
+                  : Text(
+                      "Apply",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: AppColor.white,
+                      ),
+                    ),
             ],
           ),
         ),
