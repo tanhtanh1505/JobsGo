@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/button_image.dart';
-import 'package:jobsgo/screens/Message/message.dart';
-import 'package:jobsgo/screens/TypeOfJob/remote.dart';
+import 'package:jobsgo/screens/TypeOfJob/type_job.dart';
 
 class Category extends StatefulWidget {
   const Category({super.key, required this.title, required this.urlImage});
@@ -22,7 +21,9 @@ class _CategoryState extends State<Category> {
           child: ButtonImage(
             urlImage: widget.urlImage,
             paddingImage: 13,
-            goto: const Remote(),
+            goto: TypeJob(
+              title: widget.title,
+            ),
           )),
       Text(
         widget.title,

@@ -73,6 +73,7 @@ class _JobCardState extends State<JobCard> {
                                   fontSize: 13, fontWeight: FontWeight.w500),
                             ),
                             SizedBox(
+                              width: 180,
                               child: Text(
                                 widget.job.title,
                                 style: const TextStyle(

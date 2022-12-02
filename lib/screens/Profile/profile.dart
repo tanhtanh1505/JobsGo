@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
 import 'package:jobsgo/screens/Auth/login.dart';
 import 'package:jobsgo/screens/Profile/component/profile_button.dart';
 import 'package:jobsgo/screens/Profile/component/profile_ava.dart';
+import 'package:jobsgo/services/cv_service.dart';
+import 'package:jobsgo/themes/styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -134,17 +138,15 @@ class Profile extends StatelessWidget {
           const ProfileButton(
             text: 'Personal Data',
             asset: "assets/images/Account.png",
-            goto: Profile(),
           ),
           const ProfileButton(
-            text: 'Resume & My info',
+            key: Key('profile_button_cv'),
+            text: 'Resume & My Cv',
             asset: "assets/images/Info.png",
-            goto: Profile(),
           ),
           const ProfileButton(
             text: 'My Application',
             asset: "assets/images/Application.png",
-            goto: Profile(),
           ),
           Container(
             padding: const EdgeInsets.only(left: 32),
@@ -161,7 +163,11 @@ class Profile extends StatelessWidget {
           const ProfileButton(
             text: 'Setting',
             asset: "assets/images/Setting.png",
-            goto: Profile(),
+          ),
+          ProfileButton(
+            text: 'Generate CV',
+            asset: "assets/images/Setting.png",
+            onClick: () {},
           ),
           const ProfileButton(
             text: 'Logout',

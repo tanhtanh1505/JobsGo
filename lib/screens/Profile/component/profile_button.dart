@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:jobsgo/services/cv_service.dart';
 import 'package:jobsgo/themes/styles.dart';
+import 'package:logger/logger.dart';
+import 'package:url_launcher/url_launcher.dart';
 // ignore_for_file: file_names
 
 class ProfileButton extends StatelessWidget {
@@ -7,11 +11,13 @@ class ProfileButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.asset,
-    required this.goto,
+    this.goto,
+    this.onClick,
   }) : super(key: key);
 
   final String text, asset;
-  final Widget goto;
+  final Widget? goto;
+  final Function? onClick;
 
   //final VoidCallback? press;
 
@@ -20,12 +26,52 @@ class ProfileButton extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 22, right: 22, bottom: 3),
       child: TextButton(
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => goto,
-          ),
-        ),
+        onPressed: () async {
+          if (key == const Key('profile_button_cv')) {
+            Logger().i('CV button pressed');
+            await launchUrl(
+              Uri.parse(
+                  "https://jobsgo-storage.s3.ap-southeast-1.amazonaws.com/files/638a0d020a30f4200c865d8c"),
+            );
+          }
+          if (text == 'Generate CV') {
+            showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text('Generate CV?'),
+                content: const Text('Your CV will be generated!'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'Cancel'),
+                    child: const Text('Cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () async {
+                      Navigator.pop(context, 'OK');
+                      String url = await CvService().genCv();
+                      Logger().d(url);
+                      Fluttertoast.showToast(
+                          msg: "Your CV are created!",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.TOP,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.green.shade500,
+                          textColor: AppColor.white,
+                          fontSize: 15.0);
+                    },
+                    child: const Text('OK'),
+                  ),
+                ],
+              ),
+            );
+          }
+          onClick != null
+              ? onClick!()
+              : (goto != null
+                  ? Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => goto!))
+                  : null);
+        },
         child: Row(
           children: [
             Image.asset(asset),

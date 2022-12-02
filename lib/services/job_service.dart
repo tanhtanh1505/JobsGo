@@ -5,7 +5,6 @@ import 'package:jobsgo/helper/uri_helper.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/services/shared_service.dart';
 import 'package:http/http.dart' as http;
-import 'package:logger/logger.dart';
 
 class JobService {
   static var client = http.Client();
