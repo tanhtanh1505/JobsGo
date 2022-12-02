@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/screens/Auth/login.dart';
+import 'package:jobsgo/screens/FillProfile/fill_profile.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -136,7 +137,16 @@ class _RegisterState extends State<Register> {
                 padding: const EdgeInsets.fromLTRB(29, 31, 29, 0),
                 child: TextButton(
                   key: const Key('register'),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) {
+                              return const FillProfile();
+                            }
+                        )
+                    );
+                  },
                   style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(const Color(0xff1976D2)),

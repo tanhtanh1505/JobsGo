@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobsgo/component/appbar_custom.dart';
 import 'package:jobsgo/screens/Auth/login.dart';
-import 'package:jobsgo/screens/Profile/conponent/profile_button.dart';
-import 'package:jobsgo/screens/Profile/conponent/profile_ava.dart';
+import 'package:jobsgo/screens/Profile/component/profile_button.dart';
+import 'package:jobsgo/screens/Profile/component/profile_ava.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});

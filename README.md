@@ -1,8 +1,29 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+
+## Group 7 - INT3020 40
+
+## Members
+=======
 # Group 7 - INT3020 40
 
 This is a clone of JobsGo. But the interface of the app changes constantly, so we designed a suitable version ourselves
 
 ### Members
+>>>>>>> 9cbac032dd53495b2df0c86a40791f86764d52ee
 
 - Le Tuan Anh - 20021287
 
@@ -98,6 +119,9 @@ flutter run
 <td><img src="https://temp-data-doc.s3.us-east-2.amazonaws.com/Mobile/Week+4/c28fcab22a02ee5cb713.jpg" height="300"></td>
 </tr>
 </table>
+<<<<<<< HEAD
+>>>>>>> c5d4f4b8afb03e341b3014a5a1ac2e0f3740cac9
+=======
 
 </details>
 
@@ -203,3 +227,4 @@ flutter run
 </table>
 
 </details>
+>>>>>>> 9cbac032dd53495b2df0c86a40791f86764d52ee

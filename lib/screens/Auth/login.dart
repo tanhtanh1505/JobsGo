@@ -27,10 +27,10 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ProgressHUD(
-      key: UniqueKey(),
-      inAsyncCall: isApiCallProcess,
-      child: _loginUI(context),
-    ));
+          key: UniqueKey(),
+          inAsyncCall: isApiCallProcess,
+          child: _loginUI(context),
+        ));
   }
 
   void actionLogin() {
@@ -59,9 +59,9 @@ class _LoginState extends State<Login> {
         } else {
           FormHelper.showSimpleAlertDialog(
               context, Config.appName, "Invalid username or password", "Ok",
-              () {
-            Navigator.pop(context);
-          });
+                  () {
+                Navigator.pop(context);
+              });
         }
       });
     }
@@ -209,7 +209,7 @@ class _LoginState extends State<Login> {
                     },
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(const Color(0xff1976D2)),
+                      MaterialStateProperty.all(const Color(0xff1976D2)),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(90),
@@ -288,13 +288,13 @@ class _LoginState extends State<Login> {
   }
 
   buildCheckbox() => Checkbox(
-        value: value,
-        onChanged: (value) {
-          setState(() {
-            this.value = value!;
-          });
-        },
-        activeColor: const Color(0xff1976D2),
-        checkColor: Colors.white,
-      );
+    value: value,
+    onChanged: (value) {
+      setState(() {
+        this.value = value!;
+      });
+    },
+    activeColor: const Color(0xff1976D2),
+    checkColor: Colors.white,
+  );
 }

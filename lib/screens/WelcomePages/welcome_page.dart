@@ -75,10 +75,10 @@ class _WelcomePageState extends State<WelcomePage> {
                       },
                       style: ButtonStyle(
                           shape:
-                              MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        side: const BorderSide(color: Color(0xff3586D7)),
-                      ))),
+                          MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: Color(0xff3586D7)),
+                          ))),
                       // ignore: sort_child_properties_last
                       child: const Text(
                         "Register",
@@ -106,10 +106,10 @@ class _WelcomePageState extends State<WelcomePage> {
                       },
                       style: ButtonStyle(
                           shape:
-                              MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        side: const BorderSide(color: Color(0xff3586D7)),
-                      ))),
+                          MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: Color(0xff3586D7)),
+                          ))),
                       // ignore: sort_child_properties_last
                       child: const Text(
                         "Login",
@@ -153,7 +153,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(const Color(0xff176DC2)),
+                      MaterialStateProperty.all(const Color(0xff176DC2)),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         //side: const BorderSide(color: Colors.black),
