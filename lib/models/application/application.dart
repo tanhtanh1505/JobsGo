@@ -25,7 +25,7 @@ class ApplicationModel {
   String status;
   DateTime createdAt;
   DateTime? updatedAt;
-  Job job;
+  JobModel job;
 
   factory ApplicationModel.fromJson(Map<String, dynamic> json) {
     return ApplicationModel(
@@ -36,7 +36,7 @@ class ApplicationModel {
       createdAt: DateTime.parse(json["createdAt"]),
       updatedAt:
           json["updatedAt"] != null ? DateTime.parse(json["updatedAt"]) : null,
-      job: Job.fromJson(json["job"]),
+      job: JobModel.fromJson(json["job"]),
     );
   }
 

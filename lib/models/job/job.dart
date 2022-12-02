@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-Job jobFromJson(String str) => Job.fromJson(json.decode(str));
+JobModel jobModelFromJson(String str) => JobModel.fromJson(json.decode(str));
 
-class Job {
+class JobModel {
   final String id;
   final String title;
   final String description;
@@ -29,7 +29,7 @@ class Job {
   final String authorAbout;
   final int authorSize;
 
-  Job(
+  JobModel(
       {required this.id,
       required this.title,
       required this.description,
@@ -56,8 +56,8 @@ class Job {
       required this.authorAbout,
       required this.authorSize});
 
-  factory Job.fromJson(Map<String, dynamic> json) {
-    return Job(
+  factory JobModel.fromJson(Map<String, dynamic> json) {
+    return JobModel(
         id: json["id"],
         title: json["title"],
         description: json["description"],
@@ -117,7 +117,7 @@ class Job {
   }
 }
 
-Job exampleJob() => Job.fromJson({
+JobModel exampleJobModel() => JobModel.fromJson({
       "id": "id",
       "title": "title",
       "description": "description",
@@ -144,7 +144,7 @@ Job exampleJob() => Job.fromJson({
       "authorAbout": "authorAbout",
       "authorSize": "authorSize"
     });
-Job nullJob = Job.fromJson({
+JobModel nullJobModel = JobModel.fromJson({
   "id": "x",
   "title": "x",
   "description": "x",

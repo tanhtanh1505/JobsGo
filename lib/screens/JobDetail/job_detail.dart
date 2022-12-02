@@ -6,7 +6,7 @@ import 'package:jobsgo/themes/styles.dart';
 
 class JobDetail extends StatelessWidget {
   const JobDetail({Key? key, required this.job}) : super(key: key);
-  final Job job;
+  final JobModel job;
 
   @override
   Widget build(BuildContext context) {

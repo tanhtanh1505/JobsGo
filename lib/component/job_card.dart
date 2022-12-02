@@ -8,7 +8,7 @@ import 'package:jobsgo/themes/styles.dart';
 class JobCard extends StatefulWidget {
   const JobCard({super.key, required this.job, this.callBack});
 
-  final Job job;
+  final JobModel job;
   final Function? callBack;
 
   @override

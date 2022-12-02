@@ -53,13 +53,13 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'jobsgo',
           theme: ThemeData(
-            primarySwatch: Colors.blue,
-            fontFamily: 'Poppins',
-          ),
+              primarySwatch: Colors.blue,
+              fontFamily: 'Poppins',
+              useMaterial3: true),
           home: defaultHome,
         );
       },
-      maximumSize: Size(500.0, 812.0),
+      maximumSize: const Size(500.0, 812.0),
       enabled: kIsWeb,
     );
   }

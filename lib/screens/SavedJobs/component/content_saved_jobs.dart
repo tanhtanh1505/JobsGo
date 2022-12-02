@@ -12,7 +12,7 @@ class ContentSavedJobs extends StatefulWidget {
 }
 
 class _ContentSavedJobsState extends State<ContentSavedJobs> {
-  List<Job> jobs = [];
+  List<JobModel> jobs = [];
   bool isLoaded = false;
 
   @override
@@ -22,7 +22,7 @@ class _ContentSavedJobsState extends State<ContentSavedJobs> {
   }
 
   getData() async {
-    List<Job> temp = await JobService().listMarkedJob();
+    List<JobModel> temp = await JobService().listMarkedJob();
     if (temp.isNotEmpty) {
       setState(() {
         isLoaded = true;

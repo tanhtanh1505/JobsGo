@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobsgo/models/conversation/conversation.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/screens/Message/component/chat_area.dart';
+import 'package:jobsgo/services/application_service.dart';
 import 'package:jobsgo/services/chat_service.dart';
 import 'package:jobsgo/services/job_service.dart';
 import 'package:jobsgo/themes/styles.dart';
@@ -9,7 +10,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class FooterJobDetail extends StatefulWidget {
   const FooterJobDetail({super.key, required this.job});
-  final Job job;
+  final JobModel job;
   @override
   State<FooterJobDetail> createState() => _FooterJobDetailState();
 }
@@ -141,25 +142,55 @@ class _FooterJobDetailState extends State<FooterJobDetail> {
   Widget applyBtn() {
     return Expanded(
       flex: 3,
-      child: Container(
-        margin: const EdgeInsets.only(left: 10),
-        height: 44,
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              "Apply",
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 14,
-                color: AppColor.white,
+      child: GestureDetector(
+        onTap: () => showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: const Text('AlertDialog Title'),
+            content: const Text('AlertDialog description'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () => Navigator.pop(context, 'Cancel'),
+                child: const Text('Cancel'),
               ),
-            ),
-          ],
+              TextButton(
+                onPressed: () {
+                  ApplicationService().applyJob(widget.job.id);
+                  Navigator.pop(context, 'OK');
+                  Fluttertoast.showToast(
+                      msg: "Your CV sent!",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.TOP,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.green.shade500,
+                      textColor: AppColor.white,
+                      fontSize: 15.0);
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        ),
+        child: Container(
+          margin: const EdgeInsets.only(left: 10),
+          height: 44,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                "Apply",
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                  color: AppColor.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

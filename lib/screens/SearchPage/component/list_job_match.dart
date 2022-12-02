@@ -13,7 +13,7 @@ class ListJobMatch extends StatefulWidget {
 
 class _ListJobMatchState extends State<ListJobMatch> {
   bool isLoaded = false;
-  List<Job> jobs = [];
+  List<JobModel> jobs = [];
 
   @override
   void initState() {

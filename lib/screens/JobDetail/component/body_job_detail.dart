@@ -6,7 +6,7 @@ import 'package:jobsgo/screens/Profile/profile.dart';
 class BodyJobDetail extends StatefulWidget {
   const BodyJobDetail({super.key, required this.job});
 
-  final Job job;
+  final JobModel job;
 
   @override
   State<BodyJobDetail> createState() => _BodyJobDetailState();

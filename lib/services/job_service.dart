@@ -10,10 +10,10 @@ class JobService {
   static var client = http.Client();
 
   //future function get a job
-  Future<Job> getJob(String id) async {
+  Future<JobModel> getJob(String id) async {
     //get job from api
     //return job
-    return Job.fromJson({
+    return JobModel.fromJson({
       'id': 'id',
       'title': 'title',
       'company': 'company',
@@ -27,7 +27,7 @@ class JobService {
     });
   }
 
-  Future<List<Job>> getListSuggestJob() async {
+  Future<List<JobModel>> getListSuggestJob() async {
     var loginDetails = await SharedService.loginDetails();
 
     Map<String, String> requestHeader = {
@@ -40,10 +40,10 @@ class JobService {
     var response = await client.get(url, headers: requestHeader);
 
     //for add job from response to list
-    List<Job> listJobs = [];
+    List<JobModel> listJobs = [];
     var jobJson = jsonDecode(response.body);
     for (var item in jobJson) {
-      listJobs.add(Job.fromJson(item));
+      listJobs.add(JobModel.fromJson(item));
     }
 
     return listJobs;
@@ -82,7 +82,7 @@ class JobService {
     }
   }
 
-  Future<List<Job>> listMarkedJob() async {
+  Future<List<JobModel>> listMarkedJob() async {
     var loginDetails = await SharedService.loginDetails();
     Map<String, String> requestHeader = {
       'Content-Type': 'application/json',
@@ -92,10 +92,10 @@ class JobService {
     var url = UriHelper.getUri('/job/list-marked');
     var response = await client.get(url, headers: requestHeader);
 
-    List<Job> listJobs = [];
+    List<JobModel> listJobs = [];
     var jobJson = jsonDecode(response.body);
     for (var item in jobJson) {
-      listJobs.add(Job.fromJson(item));
+      listJobs.add(JobModel.fromJson(item));
     }
 
     return listJobs;
@@ -121,7 +121,7 @@ class JobService {
     return keywords;
   }
 
-  Future<List<Job>> findJobByKeyWord(String keyword) async {
+  Future<List<JobModel>> findJobByKeyWord(String keyword) async {
     var loginDetails = await SharedService.loginDetails();
 
     Map<String, String> requestHeader = {
@@ -134,10 +134,10 @@ class JobService {
     var response = await client.get(url, headers: requestHeader);
 
     //for add job from response to list
-    List<Job> listJobs = [];
+    List<JobModel> listJobs = [];
     var jobJson = jsonDecode(response.body);
     for (var item in jobJson) {
-      listJobs.add(Job.fromJson(item));
+      listJobs.add(JobModel.fromJson(item));
     }
 
     return listJobs;

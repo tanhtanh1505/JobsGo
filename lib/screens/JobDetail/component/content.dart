@@ -9,7 +9,7 @@ Widget temp = const Text("temp");
 
 class Content extends StatefulWidget {
   const Content({super.key, required this.job});
-  final Job job;
+  final JobModel job;
 
   @override
   State<Content> createState() => _ContentState();

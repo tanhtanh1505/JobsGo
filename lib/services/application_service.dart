@@ -26,4 +26,21 @@ class ApplicationService {
 
     return listApplications;
   }
+
+  Future<bool> applyJob(String id) async {
+    var loginDetails = await SharedService.loginDetails();
+    Map<String, String> requestHeader = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ${loginDetails?.accessToken}',
+    };
+
+    var url = UriHelper.getUri('/job/$id/apply');
+    var response = await client.post(url, headers: requestHeader);
+
+    if (response.statusCode < 300) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

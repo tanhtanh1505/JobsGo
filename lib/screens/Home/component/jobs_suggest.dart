@@ -13,7 +13,7 @@ class JobsSuggest extends StatefulWidget {
 }
 
 class _JobsSuggestState extends State<JobsSuggest> {
-  List<Job> listJob = [];
+  List<JobModel> listJob = [];
   bool isLoading = true;
 
   @override
