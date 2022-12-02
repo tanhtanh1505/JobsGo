@@ -13,7 +13,7 @@ class Config {
   static const String employer = "/employer/";
 
   //job api
-  static const String recommendJobAPI = "/job/recommend/";
+  static const String job = "/job";
 
   //chat api
   static const String chatAPI = "/chat";

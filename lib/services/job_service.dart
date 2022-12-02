@@ -5,6 +5,7 @@ import 'package:jobsgo/helper/uri_helper.dart';
 import 'package:jobsgo/models/job/job.dart';
 import 'package:jobsgo/services/shared_service.dart';
 import 'package:http/http.dart' as http;
+import 'package:logger/logger.dart';
 
 class JobService {
   static var client = http.Client();
@@ -35,7 +36,7 @@ class JobService {
       'Authorization': 'Bearer ${loginDetails?.accessToken}',
     };
 
-    var url = UriHelper.getUri('${Config.recommendJobAPI}3');
+    var url = UriHelper.getUri('${Config.job}/recommend/3');
 
     var response = await client.get(url, headers: requestHeader);
 

@@ -73,7 +73,6 @@ class _JobsSuggestState extends State<JobsSuggest> {
 
   //setstate
   Future<void> _refresh() async {
-    Logger().d("refresh");
     setState(() {
       isLoading = true;
       getData();

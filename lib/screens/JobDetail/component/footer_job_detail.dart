@@ -143,34 +143,39 @@ class _FooterJobDetailState extends State<FooterJobDetail> {
     return Expanded(
       flex: 3,
       child: GestureDetector(
-        onTap: () => showDialog<String>(
-          context: context,
-          builder: (BuildContext context) => AlertDialog(
-            title: const Text('AlertDialog Title'),
-            content: const Text('AlertDialog description'),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () => Navigator.pop(context, 'Cancel'),
-                child: const Text('Cancel'),
+        onTap: () {
+          if (!widget.job.apply) {
+            showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text('Apply this job?'),
+                content: Text(
+                    'Your CV will send to ${widget.job.authorName}. This action cannot be undone!'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'Cancel'),
+                    child: const Text('Cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      ApplicationService().applyJob(widget.job.id);
+                      Navigator.pop(context, 'OK');
+                      Fluttertoast.showToast(
+                          msg: "Your CV sent!",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.TOP,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.green.shade500,
+                          textColor: AppColor.white,
+                          fontSize: 15.0);
+                    },
+                    child: const Text('OK'),
+                  ),
+                ],
               ),
-              TextButton(
-                onPressed: () {
-                  ApplicationService().applyJob(widget.job.id);
-                  Navigator.pop(context, 'OK');
-                  Fluttertoast.showToast(
-                      msg: "Your CV sent!",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.TOP,
-                      timeInSecForIosWeb: 1,
-                      backgroundColor: Colors.green.shade500,
-                      textColor: AppColor.white,
-                      fontSize: 15.0);
-                },
-                child: const Text('OK'),
-              ),
-            ],
-          ),
-        ),
+            );
+          }
+        },
         child: Container(
           margin: const EdgeInsets.only(left: 10),
           height: 44,
